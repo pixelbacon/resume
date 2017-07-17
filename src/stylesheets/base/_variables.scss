@@ -1,0 +1,7 @@
+// Bootstrap 4
+@import "~bootstrap/scss/variables";
+
+$screen-sm: map-get($grid-breakpoints, sm);
+$screen-md: map-get($grid-breakpoints, md);
+$screen-lg: map-get($grid-breakpoints, lg);
+$screen-xl: map-get($grid-breakpoints, xl);

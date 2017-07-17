@@ -1,0 +1,21 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin lockRatio($height, $width: 1920) {
+  display: block;
+  padding-top: #{($height/$width) * 100%};
+}
+
+@mixin lockRatioMobile($height) {
+  @include lockRatio($height, strip-unit($screen-xs));
+}
+
+@mixin subtleBackgroundGradient($angle:135deg, $opacity:0.2){
+  $angle: strip-unit($angle) * 1deg;
+  background: linear-gradient($angle, rgba(black, 0), rgba(black, $opacity));
+}

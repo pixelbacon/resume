@@ -1,0 +1,97 @@
+{
+  "employmentHistory": [
+    {
+      "title": "Senior Creative Technologist",
+      "company": "We Are Unlimited/Critical Mass",
+      "companyUrl": "http://weareunlimited.com",
+      "dateRange": "Mar 2016 - Present",
+      "summary": "Style guides for coding, introducing new frameworks and build tools, CD on games via Snapchat, tech stack for social strategy, modernizing 7 year old tech stacks, being on the governance for Omnicomm for how we spend millions with Amazon... Every hat."
+    },
+    {
+      "title": "Interim CTO/Chief Creative Technologist",
+      "company": "Player's Health",
+      "companyUrl": "http://playershealth.com",
+      "dateRange": "Nov 2014 - Apr 2015 & Oct 2015 - Feb 2016 ",
+      "summary": "A company truly doing good. Attempting to digitize every child athlete's athletic record. Interviewed for developer, hired as CTO and helped refactor data structures and split the front end from the backend. They went on to win Google's international Demo Day Award."
+    },
+    {
+      "title": "Contract CT",
+      "company": "Self-Employed",
+      "dateRange": "2001 - Present",
+      "summary": "Interactive development utilizing branding requirements with inherent goal to expand. Information architecture with a visual and promising form. Art Direction suited to brand guideline and audience. Cut throat visual agenda promising brand confidence before hands on experience."
+    }
+  ],
+  "linkedIn": "https://linkedin.com/in/whydoyouwork",
+  "process": [
+    "Think",
+    "Sketch",
+    "Prototype",
+    "Viability Check",
+    "Re-Think",
+    "Build",
+    "Test",
+    "Perfect",
+    "🥃🥃🥃"
+  ],
+  "references": [{
+      "name": "Michael Lanyon",
+      "linkedIn": "https://www.linkedin.com/in/lanyonm/",
+      "title": "VP of Engineering",
+      "company": "Critical Mass",
+      "companyLink": "http://www.criticalmass.com?ref=michael.minor"
+    },
+    {
+      "name": "Omari Miller",
+      "linkedIn": "http://www.linkedin.com/in/ojmiller/",
+      "title": "Integrated Creative Director",
+      "company": "Leo Burnett",
+      "companyLink": "http://www.leoburnett.com/?ref=michael.minor"
+    },
+    {
+      "name": "Miles Green",
+      "linkedIn": "https://www.linkedin.com/in/milesgreen/",
+      "title": "Head of Creative Technology",
+      "company": "Haygarth",
+      "companyLink": "http://www.haygarth.co.uk/?ref=michael.minor"
+    },
+    {
+      "name": "Darren Marshall",
+      "linkedIn": "https://www.linkedin.com/in/darrenmarshall/",
+      "title": "Managing Partner",
+      "company": "Doejo",
+      "companyLink": "http://www.doejo.com?ref=michael.minor"
+    },
+    {
+      "name": "Brandon Lee Cox",
+      "linkedIn": "https://www.linkedin.com/in/imheretomakeyoufamous/",
+      "title": "SVP, Executive Creative Director",
+      "company": "Leo Burnett",
+      "companyLink": "http://www.leoburnett.com/?ref=michael.minor"
+    },
+    {
+      "name": "Chad Mirshak",
+      "linkedIn": "https://www.linkedin.com/in/chadmirshak/",
+      "title": "Creative Director, Game Developer",
+      "company": "SapientRazorfish",
+      "companyLink": "http://www.sapientrazorfish.com/?ref=michael.minor"
+    }
+  ],
+  "technicalities": [
+    "Art Direction/Design",
+    "UX Design/Analytics",
+    "Devops/Technical Structure",
+    "Javascript in bounds",
+    "Node/Express/Sails",
+    "Flight/Angular/React/Vue",
+    "CSS/SCSS/PreCSS",
+    "Strategy, Viability, Sustainability",
+    "Information Architecture and Flow",
+    "Legos... Seriously"
+  ],
+  "todos": [
+    [false, "Play a major role in a successful company that will affect my grand children, and every one elses for that matter"],
+    [false, "Obtain said Grandchildren"],
+    [false, "Purchase BMW motor cyle from the 70's"],
+    [false, "Skydive"]
+  ]
+}
