@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="passions">
     <h2>Passions</h2>
-    <img src="/static/passions.png" alt="">
+    <img src="static/passions.png" alt="">
   </div>
 </template>
 
