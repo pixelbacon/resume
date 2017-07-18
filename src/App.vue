@@ -19,7 +19,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, rgba(white, 0.6), rgba(white, 0.3)) repeat, url("static/patterns/concrete_seamless.png");
+  background: linear-gradient(135deg, rgba(white, 0.6), rgba(white, 0.3)) repeat, url("assets/patterns/concrete_seamless.png");
   color: #2c3e50;
 
   .bodyContainer {

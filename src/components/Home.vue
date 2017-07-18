@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <coverLetter></coverLetter>
+    <!-- <coverLetter></coverLetter> -->
     <appHeader />
     <div class="bodyContainer container">
       <div class="row">

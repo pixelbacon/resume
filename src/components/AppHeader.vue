@@ -4,7 +4,7 @@
       <div class="row justify-content-center">
         <div class=" col-8 col-sm-4 col-md-3">
           <div class="me">
-            <img src="static/me.jpg" alt="">
+            <img src="../assets/me.jpg" alt="">
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default {
 .header {
   @extend .app-component;
 
-  background: linear-gradient(0deg, rgba(black, 1), rgba(black, 0.33)), url("static/patterns/footer_lodyas.png");
+  background: linear-gradient(0deg, rgba(black, 1), rgba(black, 0.33)), url("../assets/patterns/footer_lodyas.png");
   color: white;
   padding: 4em 1em;
   text-align: center;

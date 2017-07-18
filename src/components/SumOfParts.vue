@@ -3,7 +3,7 @@
     <h2>
       Sum <span class="hidden-sm-down">of Parts</span>
     </h2>
-    <img src="static/balance.png" alt="">
+    <img src="../assets/balance.png" alt="">
   </div>
 </template>
 
