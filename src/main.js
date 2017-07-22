@@ -2,10 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueAwesome from 'vue-awesome'
+
 // Baseline
 import App from './App'
 import router from './router'
 import _data from '@/data.json'
+
 // OUR Components
 import AppHeader from '@/components/AppHeader'
 import CoverLetter from '@/components/CoverLetter'
@@ -13,6 +15,7 @@ import Drive from '@/components/Drive'
 import EmploymentHistory from '@/components/EmploymentHistory'
 import Experience from '@/components/Experience'
 import JobSingle from '@/components/JobSingle'
+import Notes from '@/components/Notes'
 import Passions from '@/components/Passions'
 import Process from '@/components/Process'
 import References from '@/components/References'
@@ -32,6 +35,7 @@ Vue.component( 'drive', Drive )
 Vue.component( 'employmentHistory', EmploymentHistory )
 Vue.component( 'experience', Experience )
 Vue.component( 'job', JobSingle )
+Vue.component( 'notes', Notes )
 Vue.component( 'passions', Passions )
 Vue.component( 'process', Process )
 Vue.component( 'references', References )

@@ -3,7 +3,7 @@
     <h2>Experience</h2>
 
     <p>
-      I've been doing multimedia for 13 years. Before that it was designing with
+      I've been doing multimedia for since <strong>17 years</strong>. Before that it was designing with
       the original 3D printer: Legos. From sketch to meticulous crafting.
       Eventually the Web came along; and Lego's weren't part of the W3C standard.
       So I had to upgrade my skill set.

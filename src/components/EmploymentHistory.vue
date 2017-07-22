@@ -10,7 +10,7 @@
     <div class="linkedInFull text-center">
       <hr />
       <p>
-        More details can be found on <a :href="$root.$data.linkedIn">LinkedIn</a>
+        More details can be found on <a :href="$root.$data.linkedIn">{{$root.$data.linkedInLiteral}}</a>
       </p>
     </div>
   </div>

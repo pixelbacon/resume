@@ -34,7 +34,6 @@
 
 @mixin screen-only {
   @media screen {
-    display: inherit;
     visibility: visible;
 
     @content;
@@ -48,7 +47,6 @@
 
 @mixin print-only {
   @media print {
-    display: inherit;
     visibility: visible;
 
     @content;

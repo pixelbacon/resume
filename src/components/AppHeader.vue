@@ -41,7 +41,7 @@
         <hr />
         <a href="tel:3125766767">312.576.6767</a>
         ◦ <a :href="('mailto:' + $root.$data.email)">{{$root.$data.email}}</a>
-        ◦ <a :href="$root.$data.linkedIn">linkedIn/in/WhyDoYouWork</a>
+        ◦ <a :href="$root.$data.linkedIn">{{$root.$data.linkedInLiteral}}</a>
       </div>
     </div>
   </div>
@@ -99,7 +99,7 @@ export default {
   }
 
   .summaryDetail {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 
   .pdfLink {
@@ -127,6 +127,8 @@ export default {
   }
 
   @include print(){
+    border: 1px solid lighten(black, 80);
+    color: black;
     height: 100vh;
     width: 100vw;
     padding: 0;
@@ -143,6 +145,10 @@ export default {
 
     .name {
       color: black;
+    }
+
+    .summaryDetail {
+      color: lighten(black, 20);
     }
   }
 }
