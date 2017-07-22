@@ -31,7 +31,5 @@ export default {
 <style lang="scss" scoped>
 @import "../components";
 
-.whatIKnow {
-
-}
+.whatIKnow {}
 </style>

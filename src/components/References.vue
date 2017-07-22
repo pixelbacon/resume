@@ -10,7 +10,7 @@
           {{person.title}}
         </div>
         <div class="company">
-          <a target="_blank" :href="person.companyLink">@{{person.company}}</a>
+          <a target="_blank" :href="person.companyLink">{{person.company}}</a>
         </div>
       </div>
     </div>
@@ -29,34 +29,46 @@ export default {
 @import "../components";
 
 .references {
-  .person {
-    margin-bottom: 1.5em;
+    .person {
+        margin-bottom: 1.5em;
 
-    .name {
-      margin-bottom: 0;
+        .name {
+            margin-bottom: 0;
+        }
+
+        .company {
+            font-size: 0.9em;
+            font-weight: bold;
+
+            a {
+                color: darken(blue, 40);
+            }
+        }
     }
+}
+@include print() {
+    .person {
+        float: left;
+        width: 33%;
 
-    .company {
-      font-size: 0.9em;
-      font-weight: bold;
+        .name {
+            font-size: 1em;
+        }
 
-      a {
-        color: darken(blue, 40);
-      }
+        .title {
+          font-size: 0.8em;
+        }
     }
-  }
 }
-
-@include breakpoint($screen-md){
-  .person {
-    float: left;
-    width: 50%;
-  }
+@include breakpoint($screen-md) {
+    .person {
+        float: left;
+        width: 50%;
+    }
 }
-
-@include breakpoint($screen-lg){
-  .person {
-    width: 33%;
-  }
+@include breakpoint($screen-lg) {
+    .person {
+        width: 33%;
+    }
 }
 </style>

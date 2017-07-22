@@ -34,5 +34,13 @@ export default {
       width: auto;
     }
   }
+
+  @include print(){
+    ul > li {
+      float: left;
+      width: 33%;
+      font-size: 0.8em;
+    }
+  }
 }
 </style>

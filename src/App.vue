@@ -13,10 +13,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 @import 'main';
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(135deg, rgba(white, 0.6), rgba(white, 0.3)) repeat, url("assets/patterns/concrete_seamless.png");
@@ -29,6 +30,10 @@ export default {
       margin-top: 1em;
       margin-bottom: 0.5em;
     }
+  }
+
+  @include print(){
+    background: white;
   }
 }
 </style>

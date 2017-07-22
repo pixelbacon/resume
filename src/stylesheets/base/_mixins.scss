@@ -19,3 +19,61 @@
   $angle: strip-unit($angle) * 1deg;
   background: linear-gradient($angle, rgba(black, 0), rgba(black, $opacity));
 }
+
+@mixin print(){
+  @media print {
+    @content;
+  }
+}
+
+@mixin screen {
+  @media screen {
+    @content;
+  }
+}
+
+@mixin screen-only {
+  @media screen {
+    display: inherit;
+    visibility: visible;
+
+    @content;
+  }
+
+  @media print {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@mixin print-only {
+  @media print {
+    display: inherit;
+    visibility: visible;
+
+    @content;
+  }
+
+  @media screen {
+    display: none;
+    visibility: hidden;
+
+    @content;
+  }
+}
+
+// Fixes incorrect printing in Chrome
+// @see https://github.com/twbs/bootstrap/issues/21771
+@mixin print-fixFirstLetter(){
+  &::first-letter {
+    @include print() {
+      margin-top: 0;
+    }
+  }
+}
+
+@mixin print-pageBreakAfter(){
+  @media print {
+    page-break-after: always;
+  }
+}

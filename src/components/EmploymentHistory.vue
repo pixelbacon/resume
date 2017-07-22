@@ -4,9 +4,15 @@
     <div class="jobs">
       <job :job="job" v-if="index < 6" v-for="(job, index) in $root.$data.employmentHistory" :key="index"></job>
     </div>
-    <p>
+    <p class="linkedInIcon">
       <a :href="$root.$data.linkedIn"><icon name="linkedin-square" scale="2"></icon></a>
     </p>
+    <div class="linkedInFull text-center">
+      <hr />
+      <p>
+        More details can be found on <a :href="$root.$data.linkedIn">LinkedIn</a>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -22,5 +28,16 @@ export default {
 @import "../components";
 
 .employmentHistory {
+    .linkedInIcon {
+        @include screen-only();
     }
+
+    .linkedInFull {
+        @include print-only();
+    }
+
+    @include print {
+        height: 100vh;
+    }
+}
 </style>

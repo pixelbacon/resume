@@ -1,8 +1,8 @@
 <template lang="html">
-  <div class="header hidden-print">
-    <div class="">
+  <div class="header">
+    <div class="container">
       <div class="row justify-content-center">
-        <div class=" col-8 col-sm-4 col-md-3">
+        <div class=" col-8 col-sm-4 col-md-3 col-print-3">
           <div class="me">
             <img src="../assets/me.jpg" alt="">
           </div>
@@ -16,24 +16,33 @@
         Creative Technologist
       </div>
       <hr>
-    </div>
-    <div class="summary">
-      <div class="row justify-content-center">
+      <div class="summaryHead row justify-content-center">
         <p class="col-12 col-md-10 col-lg-9">
           Creative Brand Technologist using vast amounts of energy to pursue new business ventures. The fields have varied greatly to which I have been involved and that alone has been a strong reason for such an enthusiasm and passion in my work.
         </p>
       </div>
-      <div class="row justify-content-center">
-        <p class="col-12 col-sm-10 col-lg-7">
-          <small>
+      <div class="summaryDetail row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-7">
+          <p>
             From guerrilla marketing to big budget ad campaigns I have helped in one way major or another. Planning, designing, developing, pitching, and brand analysis/improvement have all been major requirements within my pursuits that started when I was 15 years old.
-          </small>
-        </p>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 screen-only text-center">
+          <a class="pdfLink" :href="$root.$data.pdf">Download PDF</a>
+        </div>
+      </div>
+      <a class="linkedInIcon" alt="View Michael Minor's LinkedIn profile" :href="$root.$data.linkedIn">
+        <icon name="linkedin-square" scale="2"></icon>
+      </a>
+      <div class="printFooter">
+        <hr />
+        <a href="tel:3125766767">312.576.6767</a>
+        ◦ <a :href="('mailto:' + $root.$data.email)">{{$root.$data.email}}</a>
+        ◦ <a :href="$root.$data.linkedIn">linkedIn/in/WhyDoYouWork</a>
       </div>
     </div>
-    <a class="linkedIn" :href="$root.$data.linkedIn">
-      <icon name="linkedin-square" scale="2"></icon>
-    </a>
   </div>
 </template>
 
@@ -50,7 +59,6 @@ export default {
 
 .header {
   @extend .app-component;
-
   background: linear-gradient(0deg, rgba(black, 1), rgba(black, 0.33)), url("../assets/patterns/footer_lodyas.png");
   color: white;
   padding: 4em 1em;
@@ -80,11 +88,60 @@ export default {
     margin-bottom: 1em;
   }
 
-  .linkedIn {
+  .linkedInIcon {
+    @include screen-only();
     position: absolute;
     top: 1em;
     right: 1em;
     color: #0077B5;
+  }
+
+  .summaryDetail {
+    font-size: 0.8em;
+  }
+
+  .pdfLink {
+    border: 1px solid $link-color;
+    margin: 0 auto;
+    padding: 0.4em 0.6em;
+    font-size: 0.75em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    transition: all 0.25s;
+
+    &:hover {
+      color: white;
+      background: $link-color;
+      border-color: rgba(black, 0.15);
+      box-shadow: 0 0 1em rgba(white, 0.25);
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      text-shadow: 0 0 0.33em rgba(black, 0.25), 0 0 1em rgba(white, 0.5);
+    }
+  }
+
+  .printFooter {
+    @include print-only();
+  }
+
+  @include print(){
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+
+    .container {
+      width: 76vw;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .name {
+      color: black;
+    }
   }
 }
 </style>

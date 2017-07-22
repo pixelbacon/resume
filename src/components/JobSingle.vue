@@ -58,5 +58,12 @@ export default {
   .summary {
     font-size: 0.9em;
   }
+
+  @include print(){
+    .title {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  }
 }
 </style>

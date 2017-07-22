@@ -1,4 +1,6 @@
 {
+  "pdf": "http://bit.ly/michael-minor-resume-githubio",
+  "email": "me@pixelbacon.com",
   "employmentHistory": [
     {
       "title": "Senior Creative Technologist",
@@ -15,18 +17,18 @@
       "summary": "A company truly doing good. Attempting to digitize every child athlete's health record. Interviewed for developer, hired as CTO and helped refactor data structures and split the front end from the backend. They went on to win Google's international Demo Day Award."
     },
     {
-      "title": "Contract CT",
+      "title": "Contract CT/Designer/Strategist/Ops",
       "company": "Self-Employed",
       "dateRange": "2001 - Present",
       "summary": "Interactive development utilizing branding requirements with inherent goal to expand. Information architecture with a visual and promising form. Art Direction suited to brand guideline and audience. Cut throat visual agenda promising brand confidence before hands on experience."
     }
   ],
-  "linkedIn": "https://linkedin.com/in/whydoyouwork",
+  "linkedIn": "http://bit.ly/michael-minor-linkedin-githubio",
   "process": [
     "Think",
     "Sketch/Prototype",
     "Viability Check",
-    "Re-Think",
+    "Play a video game or two",
     "Build/Test",
     "Perfect",
     "Double Captain & Coke, in a tall, w/ lime"
@@ -80,7 +82,7 @@
     "Devops/Technical Structure",
     "Javascript in bounds",
     "Node/Express/Sails",
-    "Flight/Angular/React/Vue",
+    "Flight/Angular/React/Vue/Phaser",
     "CSS/SCSS/PreCSS",
     "Strategy, Viability, Sustainability",
     "Information Architecture and Flow",
