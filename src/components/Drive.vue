@@ -2,7 +2,7 @@
   <div class="drive">
     <h2>Drive</h2>
 
-    <img src="/static/importance.png" alt="">
+    <img src="../assets/importance.png" alt="">
   </div>
 </template>
 
