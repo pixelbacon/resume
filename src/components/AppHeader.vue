@@ -1,28 +1,32 @@
 <template lang="html">
   <div class="header">
+    <a class="linkedInIcon" alt="View Michael Minor's LinkedIn profile" :href="$root.$data.linkedIn">
+      <icon name="linkedin-square" scale="2"></icon>
+    </a>
     <div class="container">
       <div class="row justify-content-center">
-        <div class=" col-8 col-sm-4 col-md-3 col-print-3">
+        <div class=" col-10 col-sm-5 col-md-4 col-print-5">
           <div class="me">
             <img src="../assets/me.jpg" alt="">
           </div>
         </div>
       </div>
-
       <h1 class="name">
         Michael Minor
       </h1>
       <div class="ct">
         Creative Technologist
       </div>
-      <hr>
+      <hr class="hidden-xs-down">
       <div class="summaryHead row justify-content-center">
-        <p class="col-12 col-md-10 col-lg-9">
-          Creative Brand Technologist using vast amounts of energy to pursue new business ventures. The fields have varied greatly to which I have been involved and that alone has been a strong reason for such an enthusiasm and passion in my work.
-        </p>
+        <div class="col-12 col-md-11 col-lg-9">
+          <p>
+            Creative Brand Technologist using vast amounts of energy to pursue new business ventures. The fields have varied greatly to which I have been involved and that alone has been a strong reason for such an enthusiasm and passion in my work.
+          </p>
+        </div>
       </div>
       <div class="summaryDetail row justify-content-center">
-        <div class="col-12 col-sm-10 col-lg-7">
+        <div class="col-11 col-sm-10 col-lg-7">
           <p>
             From guerrilla marketing to big budget ad campaigns I have helped in one way major or another. Planning, designing, developing, pitching, and brand analysis/improvement have all been major requirements within my pursuits that started when I was 15 years old.
           </p>
@@ -33,9 +37,6 @@
           <a class="pdfLink" :href="$root.$data.pdf">Download PDF</a>
         </div>
       </div>
-      <a class="linkedInIcon" alt="View Michael Minor's LinkedIn profile" :href="$root.$data.linkedIn">
-        <icon name="linkedin-square" scale="2"></icon>
-      </a>
       <div class="printFooter">
         <hr />
         <a href="tel:3125766767">312.576.6767</a>
@@ -61,7 +62,7 @@ export default {
   @extend .app-component;
   background: linear-gradient(0deg, rgba(black, 1), rgba(black, 0.33)), url("../assets/patterns/footer_lodyas.png");
   color: white;
-  padding: 4em 1em;
+  padding: 4em 0em;
   text-align: center;
 
   .me {
@@ -69,7 +70,7 @@ export default {
     overflow: hidden;
     box-shadow: 0 0 2em rgba(black, 0.66);
     content: ' ';
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 
     img {
       width: 100%;
@@ -79,6 +80,7 @@ export default {
 
   .name {
     color: white;
+    font-size: 2.2em;
     margin: 0;
   }
 
