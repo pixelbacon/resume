@@ -24,14 +24,12 @@
   "linkedIn": "https://linkedin.com/in/whydoyouwork",
   "process": [
     "Think",
-    "Sketch",
-    "Prototype",
+    "Sketch/Prototype",
     "Viability Check",
     "Re-Think",
-    "Build",
-    "Test",
+    "Build/Test",
     "Perfect",
-    "Double Captain and Coke in a tall, with a lime"
+    "Double Captain & Coke, in a tall, w/ lime"
   ],
   "references": [{
       "name": "Michael Lanyon",
@@ -92,6 +90,6 @@
     [false, "Play a major role in a successful company that will affect my grand children, and every one elses for that matter"],
     [false, "Obtain said Grandchildren"],
     [false, "Purchase BMW motor cyle from the 70's"],
-    [false, "Skydive"]
+    [false, "Skydive... in my birthday suit"]
   ]
 }
