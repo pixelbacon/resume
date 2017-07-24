@@ -5,7 +5,7 @@
     <p>
       It takes a logical approach to chaos to make beautiful things.
       To push beyond the known limits for anything, it takes that discomfort and curiosity.
-      But to actually proceed forward it takes a logical approach; making guideliens to remove the former discomfort.
+      But to actually proceed forward it takes a logical approach; making guidelines to remove the former discomfort and foster the curiosity.
       I'm lucky to make a living at what I do naturally, and I know the industry is always going to be changing.
     </p>
 
