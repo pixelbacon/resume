@@ -2,25 +2,27 @@
   <div class="home">
     <appHeader />
     <div class="bodyContainer container">
-      <div class="row print-pageBreakAfter page">
-        <experience class="col-12 col-md-6"></experience>
-        <whatIKnow class="col-12 col-md-6"></whatIKnow>
+      <div class="row">
+        <experience class="col-12 col-md-6"/>
+        <whatIKnow class="col-12 col-md-6"/>
       </div>
-      <div class="row justify-content-center page">
-        <sumOfParts class="col-12 col-md-4 col-print-6"></sumOfParts>
-        <drive class="col-12 col-md-4 col-print-6"></drive>
+      <div class="row print-pageBreakBefore">
+        <technicalities class="col-12 "/>
       </div>
-      <div class="row print-pageBreakAfter page">
-        <technicalities class="col-12 col-lg-4 col-print-12" />
-        <process class="col-12 col-sm-6 col-lg-3 col-print-6"></process>
-        <toDo class="col-12 col-sm-6 col-lg-5 col-print-6"></toDo>
+      <div class="row">
+        <process class="col-12 col-sm-6 col-print-6"/>
+        <toDo class="col-12 col-sm-6 col-print-6"/>
+      </div>
+      <div class="row justify-content-center">
+        <sumOfParts class="col-12 col-md-4 col-print-4"/>
+        <drive class="col-12 col-md-4 col-print-4"/>
+      </div>
+      <div class="row page print-pageBreakBefore">
+        <references class="col-12"/>
+        <employmentHistory class="col-12 lastSectionBeforeNotes"/>
       </div>
       <div class="row page">
-        <references class="col-12"></references>
-        <employmentHistory class="col-12 lastSectionBeforeNotes"></employmentHistory>
-      </div>
-      <div class="row page">
-        <notes class="col-12"></notes>
+        <notes class="col-12"/>
       </div>
     </div>
   </div>

@@ -75,3 +75,9 @@
     page-break-after: always;
   }
 }
+
+@mixin print-pageBreakBefore(){
+  @media print {
+    page-break-before: always;
+  }
+}

@@ -47,7 +47,7 @@ export default {
   }
 
   .company {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
   }
 

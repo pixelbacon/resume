@@ -29,6 +29,10 @@ small {
   @include print-pageBreakAfter();
 }
 
+.print-pageBreakBefore {
+  @include print-pageBreakBefore()
+}
+
 .screen-only {
   @include screen-only();
 }

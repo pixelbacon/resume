@@ -3,10 +3,10 @@
     <h2>Experience</h2>
 
     <p>
-      I've been doing multimedia for since <strong>17 years</strong>. Before that it was designing with
-      the original 3D printer: Legos. From sketch to meticulous crafting.
-      Eventually the Web came along; and Lego's weren't part of the W3C standard.
-      So I had to upgrade my skill set.
+      It starting with designing through the original 3D printer: Legos. From
+      sketch to meticulous crafting, what was in my brain as a simple idea was
+      built out to a complex and tangible object. Eventually the Web came along;
+      and Legos were not part of the W3C standard. So I had to upgrade my skill set.
      </p>
 
      <p>

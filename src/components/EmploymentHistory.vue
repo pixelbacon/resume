@@ -31,12 +31,11 @@ export default {
     .linkedInIcon {
         @include screen-only();
     }
-
     .linkedInFull {
         @include print-only();
     }
-
     @include print {
+        font-size: 0.8em;
         height: 100vh;
     }
 }

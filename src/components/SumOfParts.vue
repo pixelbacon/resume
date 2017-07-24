@@ -23,12 +23,5 @@ export default {
     width: 100%;
     height: auto;
   }
-
-  @include print(){
-    img {
-      max-height: 20vh;
-      width: auto;
-    }
-  }
 }
 </style>

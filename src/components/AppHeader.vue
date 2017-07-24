@@ -21,14 +21,14 @@
       <div class="summaryHead row justify-content-center">
         <div class="col-12 col-md-11 col-lg-9">
           <p>
-            Creative Brand Technologist using vast amounts of energy to pursue new business ventures. The fields have varied greatly to which I have been involved and that alone has been a strong reason for such an enthusiasm and passion in my work.
+            Creative Brand Technologist using vast amounts of energy to pursue new business ventures. The fields have varied greatly to which I have been involved, strongly sustaining enthusiasm and passion in my work.
           </p>
         </div>
       </div>
       <div class="summaryDetail row justify-content-center">
         <div class="col-11 col-sm-10 col-lg-7">
           <p>
-            From guerrilla marketing to big budget ad campaigns I have helped in one way major or another. Planning, designing, developing, pitching, and brand analysis/improvement have all been major requirements within my pursuits that started when I was 15 years old.
+            From guerrilla marketing to big budget ad campaigns I have helped in one way major or another. Planning, designing, developing, pitching, and brand analysis/improvement have all been major requirements within my pursuits that started when I was 16 years old; 17+ years.
           </p>
         </div>
       </div>
