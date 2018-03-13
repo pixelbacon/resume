@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "breakpoint-sass": "^2.7.1",
+    "ejs": "^2.5.7",
     "moment": "^2.21.0",
     "moment-range": "^3.1.1",
     "node-sass": "^4.5.3",
