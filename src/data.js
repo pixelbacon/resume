@@ -65,9 +65,9 @@ const myProcess = [
   'Think',
   'Sketch/Prototype',
   'Viability',
-  'Play a video game or two',
+  'Play a video game or another zero consequence brain game',
   'Build/Test',
-  'Perfect',
+  'Launch (Perfect for now)',
   'Double Captain & Coke, in a tall, w/ lime'
 ]
 
