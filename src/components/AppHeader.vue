@@ -28,7 +28,7 @@
       <div class="summaryDetail row justify-content-center">
         <div class="col-11 col-sm-10 col-lg-7">
           <p>
-            From guerrilla marketing to big budget ad campaigns I have helped in one way major or another. Planning, designing, developing, pitching, and brand analysis/improvement have all been major requirements within my pursuits that started when I was 16 years old; 17+ years.
+            From guerrilla marketing to big budget ad campaigns I have helped in one way major or another. Planning, designing, developing, pitching, and brand analysis/improvement have all been major requirements within my pursuits that started when I was 16 years old; {{yearsIn}} years.
           </p>
         </div>
       </div>
@@ -48,10 +48,14 @@
 </template>
 
 <script>
+import moment from 'moment'
 const _name = 'appHeader'
 
 export default {
-  name: _name
+  name: _name,
+  data: () => ({
+    yearsIn: moment().diff(moment('19981001'), 'years')
+  })
 }
 </script>
 
