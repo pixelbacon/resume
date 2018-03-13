@@ -12,7 +12,7 @@
       </span>
     </div>
     <div class="dateRange">
-      {{job.dateRange}}
+      {{calculatedDate(job)}}
     </div>
     <div class="summary">
       <p>
@@ -28,11 +28,33 @@
 </template>
 
 <script>
+// import Moment from 'moment'
+// import { extendMoment } from 'moment-range'
+import data from '@/data'
+
 const _name = 'jobSingle'
+// const moment = extendMoment(Moment)
 
 export default {
   name: _name,
-  props: ['job']
+  props: ['job'],
+  methods: {
+    calculatedDate(job) {
+      return job.dateRange ? job.dateRange : `${this.dateStartStop(job)} ${this.dateRange(job)}`
+    },
+    dateRange(job) {
+      let diff = job.dateEnd ? Math.round(job.dateEnd.diff(job.dateStart, 'months', true)) : null
+      if (diff) {
+        let years = diff >= 12 ? Math.floor(diff / 12) : null
+        let months = diff - (12 * years)
+        diff = years ? `${years} year${years > 1 ? 's' : ''}, ${months} months` : `${months} months`
+      }
+      return job.dateRange || `(${diff})`
+    },
+    dateStartStop(job) {
+      return `${job.dateStart.format(data.dateFormat)} - ${job.dateEnd.format(data.dateFormat)}`
+    }
+  }
 }
 </script>
 

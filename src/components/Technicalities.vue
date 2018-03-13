@@ -40,7 +40,7 @@ export default {
 
         ul > li {
             float: left;
-            width: 33%;
+            width: 50%;
             font-size: 0.8em;
         }
     }

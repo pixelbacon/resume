@@ -2,7 +2,7 @@
   <div class="process">
     <h2>Process</h2>
     <ol>
-      <li v-for="(item, index) in $root.$data.process" :key="index">
+      <li v-for="(item, index) in $root.$data.myProcess" :key="index">
         {{item}}
       </li>
     </ol>

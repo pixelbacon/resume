@@ -6,7 +6,7 @@ import VueAwesome from 'vue-awesome'
 // Baseline
 import App from './App'
 import router from './router'
-import _data from '@/data.json'
+import _data from '@/data'
 
 // OUR Components
 import AppHeader from '@/components/AppHeader'
