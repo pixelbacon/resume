@@ -12,8 +12,8 @@ const employmentHistory = [
     'company': 'Players Health',
     'companyUrl': 'http://playershealth.com',
     'dateStart': moment('20171001'),
-    'dateEnd': moment(),
-    'summary': 'Sherpa from prototype/1st time startup into production mode for measurable value for customer, investor, and employees. Using all the skills in the toolset to guide through cadence, valued users vs value to users, industry standards. Currently going through TechStars 2018 in Boulder, CO.'
+    'dateEnd': moment('20180319'),
+    'summary': 'Sherpa from prototype/1st time startup into production mode for measurable value for customer, investor, and employees. Using all the skills in the toolset to guide through cadence, valued users vs value to users, industry standards. Currently going through TechStars 2018 in Boulder, CO. After years of wanting a mission to give the platform away, finally achieved.'
   },
   {
     'title': 'Senior Creative Technologist',
@@ -45,7 +45,7 @@ const employmentHistory = [
     // 'dateRange': 'Nov 2009 - Apr 2013 (3 yrs 6 mos)',
     'dateStart': moment('20091101'),
     'dateEnd': moment('20130401'),
-    'summary': 'Lead front end engineer turned mad scientist through a proper Creative Technology department. Alternative interfaces, interactive installations, etc. The so called \'glory days\'.'
+    'summary': 'Lead front end engineer turned mad scientist through a proper Creative Technology department. Alternative interfaces, interactive installations, etc... it was lovely and chaotic.'
   },
   {
     'title': 'Contract CT/Designer/Strategist/Ops',
@@ -57,7 +57,7 @@ const employmentHistory = [
   }
 ]
 
-const linkedIn = 'http://bit.ly/michael-minor-linkedin-githubi'
+const linkedIn = 'https://bit.ly/michael-minor-linkedin-resume'
 
 const linkedInLiteral = 'linkedin.com/in/WhyDoYouWork'
 
@@ -72,6 +72,13 @@ const myProcess = [
 ]
 
 const references = [
+  {
+    'name': 'Tyrre Burks',
+    'linkedIn': 'https://www.linkedin.com/in/tyrre-burks-12a59237/',
+    'title': 'CEO/Founder',
+    'company': 'Players Health',
+    'companyLink': 'http://www.playershealth.com?ref=michael.minor'
+  },
   {
     'name': 'Michael Lanyon',
     'linkedIn': 'https://www.linkedin.com/in/lanyonm/',
@@ -106,14 +113,14 @@ const references = [
     'title': 'SVP, Executive Creative Director',
     'company': 'Leo Burnett',
     'companyLink': 'http://www.leoburnett.com/?ref=michael.minor'
-  },
-  {
-    'name': 'Chad Mirshak',
-    'linkedIn': 'https://www.linkedin.com/in/chadmirshak/',
-    'title': 'Creative Director, Game Developer',
-    'company': 'SapientRazorfish',
-    'companyLink': 'http://www.sapientrazorfish.com/?ref=michael.minor'
   }
+  // {
+  //   'name': 'Chad Mirshak',
+  //   'linkedIn': 'https://www.linkedin.com/in/chadmirshak/',
+  //   'title': 'Creative Director, Game Developer',
+  //   'company': 'SapientRazorfish',
+  //   'companyLink': 'http://www.sapientrazorfish.com/?ref=michael.minor'
+  // }
 ]
 
 const technicalities = [
