@@ -131,6 +131,7 @@ const references = [
 ]
 
 const technicalities = [
+  'TechStars: Boulder 2018 Alumni',
   'Angular, React, Vue, Phaser',
   'Art Direction, Design, Process',
   'Conflict Resolution, Cultural Building',
@@ -148,6 +149,7 @@ const technicalities = [
 ]
 
 const todos = [
+  [false, 'Go back to TechStars: Boulder with my own company'],
   [false, 'Play a major role in a successful company that will affect my grand children, and every one elses for that matter'],
   [false, 'Obtain said Grandchildren'],
   [false, 'Purchase BMW motor cyle from the 70\'s'],
