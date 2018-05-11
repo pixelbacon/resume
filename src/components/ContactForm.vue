@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="contactForm screen-only">
-    <h2>Contact Me</h2>
+    <h2>Reach Out</h2>
     <p>
       I would love to hear from you, whether it's a new opportunity, seeking advice, anything that comes to mind.
     </p>
