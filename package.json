@@ -20,7 +20,7 @@
     "ejs": "^2.5.7",
     "moment": "^2.21.0",
     "moment-range": "^3.1.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.9.0",
     "node-sass-json-importer": "^3.0.2",
     "sass-loader": "^6.0.6",
     "vue": "^2.4.1",
