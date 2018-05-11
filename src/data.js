@@ -73,18 +73,32 @@ const myProcess = [
 
 const references = [
   {
+    'name': 'Nathaniel Zola',
+    'linkedIn': 'https://www.linkedin.com/in/nattyzola/',
+    'title': 'Managing Director, Boulder',
+    'company': 'Techstars',
+    'companyLink': 'http://www.techstars.com?ref=michael.minor'
+  },
+  {
     'name': 'Tyrre Burks',
     'linkedIn': 'https://www.linkedin.com/in/tyrre-burks-12a59237/',
     'title': 'CEO/Founder',
     'company': 'Players Health',
     'companyLink': 'http://www.playershealth.com?ref=michael.minor'
   },
+  // {
+  //   'name': 'Michael Lanyon',
+  //   'linkedIn': 'https://www.linkedin.com/in/lanyonm/',
+  //   'title': 'VP of Engineering',
+  //   'company': 'Critical Mass',
+  //   'companyLink': 'http://www.criticalmass.com?ref=michael.minor'
+  // },
   {
-    'name': 'Michael Lanyon',
-    'linkedIn': 'https://www.linkedin.com/in/lanyonm/',
-    'title': 'VP of Engineering',
-    'company': 'Critical Mass',
-    'companyLink': 'http://www.criticalmass.com?ref=michael.minor'
+    'name': 'Miles Green',
+    'linkedIn': 'https://www.linkedin.com/in/milesgreen/',
+    'title': 'Head of Creative Technology',
+    'company': 'Haygarth',
+    'companyLink': 'http://www.haygarth.co.uk/?ref=michael.minor'
   },
   {
     'name': 'Omari Miller',
@@ -92,13 +106,6 @@ const references = [
     'title': 'Integrated Creative Director',
     'company': 'Leo Burnett',
     'companyLink': 'http://www.leoburnett.com/?ref=michael.minor'
-  },
-  {
-    'name': 'Miles Green',
-    'linkedIn': 'https://www.linkedin.com/in/milesgreen/',
-    'title': 'Head of Creative Technology',
-    'company': 'Haygarth',
-    'companyLink': 'http://www.haygarth.co.uk/?ref=michael.minor'
   },
   {
     'name': 'Darren Marshall',

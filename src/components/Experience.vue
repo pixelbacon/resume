@@ -13,8 +13,9 @@
        That skill set expanded to Design, Photography, HTML, CSS, Javascript,
        PHP, ActionScript, Coding Design Patterns, User Interfaces,
        User Experience Design. Marketing, Print Design, Web Standards,
-       Motion graphics, Mobile Design, and all the in betweens that are needed
-       to make sure things go smoothly to and from all those areas.
+       Motion graphics, Mobile Design/UX, and all the in betweens that are needed
+       to make sure things go smoothly to and from all those areas with varying
+       department sizes.
      </p>
 
      <p>
