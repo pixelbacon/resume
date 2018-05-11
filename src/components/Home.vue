@@ -22,6 +22,9 @@
         <employmentHistory class="col-12 lastSectionBeforeNotes"/>
       </div>
       <div class="row page">
+        <contactForm class="col-12"/>
+      </div>
+      <div class="row page">
         <notes class="col-12"/>
       </div>
     </div>
