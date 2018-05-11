@@ -10,10 +10,10 @@
 </template>
 
 <script>
-const _name = 'toDo'
+const NAME = 'toDo'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

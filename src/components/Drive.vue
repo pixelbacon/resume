@@ -7,10 +7,10 @@
 </template>
 
 <script>
-const _name = 'drive'
+const NAME = 'drive'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

@@ -5,10 +5,10 @@
 </template>
 
 <script>
-const _name = 'work'
+const NAME = 'work'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

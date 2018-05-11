@@ -7,9 +7,10 @@
 </template>
 
 <script>
-const _name = 'notes'
+const NAME = 'notes'
+
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

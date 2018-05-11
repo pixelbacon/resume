@@ -27,10 +27,10 @@
 </template>
 
 <script>
-const _name = 'experience'
+const NAME = 'experience'
 
 export default {
-  name: _name
+  name: NAME
 
 }
 </script>

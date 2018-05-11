@@ -2,7 +2,7 @@
   <div class="employmentHistory">
     <h2>Employment</h2>
     <div class="jobs">
-      <job :job="job" v-if="index < 5" v-for="(job, index) in $root.$data.employmentHistory" :key="index"></job>
+      <jobSingle :job="job" v-if="index < 5" v-for="(job, index) in $root.$data.employmentHistory" :key="index"></jobSingle>
     </div>
     <p class="linkedInIcon">
       <a :href="$root.$data.linkedIn"><icon name="linkedin-square" scale="2"></icon></a>
@@ -17,10 +17,10 @@
 </template>
 
 <script>
-const _name = 'employmentHistory'
+const NAME = 'employmentHistory'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

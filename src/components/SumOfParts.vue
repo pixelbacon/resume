@@ -8,10 +8,10 @@
 </template>
 
 <script>
-const _name = 'sumOfPaerts'
+const NAME = 'sumOfParts'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

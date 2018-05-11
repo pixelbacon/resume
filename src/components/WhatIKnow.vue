@@ -22,10 +22,10 @@
 </template>
 
 <script>
-const _name = 'whatIKnow'
+const NAME = 'whatIKnow'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

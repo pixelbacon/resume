@@ -18,10 +18,10 @@
 </template>
 
 <script>
-const _name = 'references'
+const NAME = 'references'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

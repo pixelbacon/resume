@@ -10,10 +10,10 @@
 </template>
 
 <script>
-const _name = 'technicalities'
+const NAME = 'technicalities'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

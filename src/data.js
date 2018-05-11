@@ -8,6 +8,14 @@ const email = 'me@pixelbacon.com'
 
 const employmentHistory = [
   {
+    'title': 'Creative Technologist',
+    'company': 'Upcare Health',
+    'companyUrl': 'http://upcarehealth.com?ref=michael.minor',
+    'dateStart': moment('20180301'),
+    'dateEnd': moment(),
+    'summary': 'Applying industry standards and latest methods for organization and process. Applying creative and technical skills for low effort high reward during the founding days.'
+  },
+  {
     'title': 'Chief Technology Officer',
     'company': 'Players Health',
     'companyUrl': 'http://playershealth.com',
@@ -134,7 +142,7 @@ const technicalities = [
   'TechStars: Boulder 2018 Alumni',
   'Angular, React, Vue, Phaser',
   'Art Direction, Design, Process',
-  'Conflict Resolution, Cultural Building',
+  'Authentic Cultural Building',
   'Curiosity vs Rigidity vs Scalability',
   'CSS, SCSS, PreCSS',
   'Devops, Technical Structure and Support',

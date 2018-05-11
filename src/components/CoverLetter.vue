@@ -15,10 +15,10 @@
 </template>
 
 <script>
-const _name = 'coverLetter'
+const NAME = 'coverLetter'
 
 export default {
-  name: _name
+  name: NAME
 }
 </script>
 

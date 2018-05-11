@@ -10,7 +10,9 @@
 </template>
 
 <script>
+const NAME = 'process'
 export default {
+  name: NAME
 }
 </script>
 

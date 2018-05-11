@@ -29,10 +29,10 @@
 </template>
 
 <script>
-const _name = 'home'
+const NAME = 'home'
 
 export default {
-  name: _name,
+  name: NAME,
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

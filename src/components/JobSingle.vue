@@ -32,11 +32,11 @@
 // import { extendMoment } from 'moment-range'
 import data from '@/data'
 
-const _name = 'jobSingle'
+const NAME = 'jobSingle'
 // const moment = extendMoment(Moment)
 
 export default {
-  name: _name,
+  name: NAME,
   props: ['job'],
   methods: {
     calculatedDate(job) {
