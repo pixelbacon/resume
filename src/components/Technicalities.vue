@@ -21,21 +21,40 @@ export default {
 @import "../components";
 
 .technicalities {
-    @include breakpoint ($screen-sm) {
-        ul > li {
-            float: left;
-            width: 50%;
-        }
-    }
-    @include breakpoint ($screen-md) {
-        ul > li {
-            float: left;
-            width: 33%;
-        }
-    }
-    @include print() {
-         @include clearfix();
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
+      > li {
+        position: relative;
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+        // text-indent: 0;
+
+        &:before {
+          content: '\203A';
+          content: '\2022';
+          font-weight: bold;
+          position: absolute;
+          left: 0;
+        }
+
+        @include breakpoint ($screen-sm) {
+            width: 50%
+        }
+
+        @include breakpoint ($screen-md) {
+            width: 33%
+        }
+      }
+    }
+
+    @include print() {
+        @include clearfix();
         margin-bottom: 2em;
 
         ul > li {

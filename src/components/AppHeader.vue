@@ -30,6 +30,11 @@
           <p>
             From guerrilla marketing to big budget ad campaigns I have helped in one way major or another. Planning, designing, developing, pitching, and brand analysis/improvement have all been major requirements within my pursuits that started when I was 16 years old; {{yearsIn}} years.
           </p>
+          <p>
+            <strong>
+              And what I do know... there is no value in being right; just knowing and acknowledging when you're wrong and having a team to figure out what's right titles be damned.
+            </strong>
+          </p>
         </div>
       </div>
       <div class="row">

@@ -56,7 +56,8 @@ export default {
   .page {
     @include print(){
       max-height: 100vh;
-      overflow: hidden;
+      page-break-after: always;
+      // overflow: hidden;
     }
   }
 }

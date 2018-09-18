@@ -37,6 +37,8 @@ export default {
     @include print {
         font-size: 0.8em;
         height: 100vh;
+        min-height: 100vh;
+        overflow: visible;
     }
 }
 </style>

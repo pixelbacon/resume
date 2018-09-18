@@ -8,12 +8,12 @@ const email = 'me@pixelbacon.com'
 
 const employmentHistory = [
   {
-    'title': 'Creative Technologist',
-    'company': 'Uphold Health',
-    'companyUrl': 'http://upholdhealth.com?ref=michael.minor',
-    'dateStart': moment('20180301'),
+    'title': 'Cofounder & Creative Technologist',
+    'company': 'Phood',
+    'companyUrl': 'http://orderPhood.com?ref=michael.minor',
+    'dateStart': moment('20180801'),
     'dateEnd': moment(),
-    'summary': 'Applying industry standards and latest methods for organization and process. Applying creative and technical skills for low effort high reward during the founding days.'
+    'summary': 'Aiming at sustainable industry practices while incorporating start-up frequency changes. Applying creative and technical skills for low effort high reward during the founding days. Add value to platform that makes the company unique in culture, ethics, without slowing down growth or funding.'
   },
   {
     'title': 'Chief Technology Officer',
@@ -83,17 +83,38 @@ const references = [
   {
     'name': 'Nathaniel Zola',
     'linkedIn': 'https://www.linkedin.com/in/nattyzola/',
-    'title': 'Managing Director, Boulder',
-    'company': 'Techstars',
-    'companyLink': 'http://www.techstars.com?ref=michael.minor'
+    'title': 'Partner at Matchstick Ventures, Managing Director at Techstars',
+    'company': 'Matchstick Ventures',
+    'companyLink': 'https://www.matchstickventures.com/?ref=Michael.Minor'
   },
   {
-    'name': 'Tyrre Burks',
-    'linkedIn': 'https://www.linkedin.com/in/tyrre-burks-12a59237/',
-    'title': 'CEO/Founder',
-    'company': 'Players Health',
-    'companyLink': 'http://www.playershealth.com?ref=michael.minor'
+    'name': 'Crystal Williams',
+    'linkedIn': 'https://www.linkedin.com/in/crystalwilliams/',
+    'title': 'Sr. Staff Web Architect',
+    'company': 'Tesla Motors',
+    'companyLink': 'https://www.tesla.com/?ref=Michael.Minor'
   },
+  {
+    'name': 'Julie Penner',
+    'linkedIn': 'https://www.linkedin.com/in/juliepenner/',
+    'title': 'Director',
+    'company': 'Techstars',
+    'companyLink': 'https://www.techstars.com?ref=Michael.Mino'
+  },
+  {
+    'name': 'Michael Jacobs',
+    'linkedIn': 'https://www.linkedin.com/in/michael-jacobs-91584547/?ref=Michael.Minor',
+    'title': 'Cofounder and COO',
+    'company': 'Ordermark',
+    'companyLink': 'https://www.ordermark.com/?ref=Michael.Minor'
+  },
+  // {
+  //   'name': 'Tyrre Burks',
+  //   'linkedIn': 'https://www.linkedin.com/in/tyrre-burks-12a59237/',
+  //   'title': 'CEO/Founder',
+  //   'company': 'Players Health',
+  //   'companyLink': 'http://www.playershealth.com?ref=michael.minor'
+  // },
   // {
   //   'name': 'Michael Lanyon',
   //   'linkedIn': 'https://www.linkedin.com/in/lanyonm/',
@@ -111,9 +132,9 @@ const references = [
   {
     'name': 'Omari Miller',
     'linkedIn': 'http://www.linkedin.com/in/ojmiller/',
-    'title': 'Integrated Creative Director',
-    'company': 'Leo Burnett',
-    'companyLink': 'http://www.leoburnett.com/?ref=michael.minor'
+    'title': 'VP Creative Director',
+    'company': 'Momentum Wordlwide',
+    'companyLink': 'http://www.momentumww.com/?ref=michael.minor'
   },
   {
     'name': 'Darren Marshall',
@@ -144,7 +165,7 @@ const technicalities = [
   'Art Direction, Design, Process',
   'Authentic Cultural Building',
   'Curiosity vs Rigidity vs Scalability',
-  'CSS, SCSS, PreCSS',
+  'CSS, Stylus, SCSS, PreCSS',
   'Devops, Technical Structure and Support',
   'Information Architecture and Flow',
   'Javascript in bounds',
