@@ -1,93 +1,22 @@
-<template lang="html">
-  <div class="references">
-    <h2>
-      References
-      <small><i>Contact details upon request.</i></small>
-    </h2>
-    <div class="people">
-      <div class="person" v-for="(person, index) in $root.$data.references  " :key="index">
-        <h4 class="name">
-          <a target="_blank" :href="person.linkedIn">{{person.name}}</a>
-        </h4>
-        <div class="company">
-          <a target="_blank" :href="person.companyLink">{{person.company}}</a>
-        </div>
-        <div class="title">
-          {{person.title}}
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  section.references
+    h2 References
+    p Due to the high profile of references, contact information is available upon request. Thank you for your understanding.
+    //- v-container(fluid)
+    ReferenceItemVue(v-for="(reference, index) in references" :key="index" :reference="reference")
 </template>
 
-<script>
-const NAME = 'references'
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import data from './../data';
+import ReferenceItemVue from '@/components/ReferenceItem.vue';
 
-export default {
-  name: NAME
+@Component({
+  components: {
+    ReferenceItemVue,
+  },
+})
+export default class References extends Vue {
+  public references = data.references;
 }
 </script>
-
-<style lang="scss" scoped>
-@import "../components";
-
-.references {
-
-    small {
-        font-size: 0.4em
-    }
-
-    .people {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .person {
-        // flex-grow: 2;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 1.5em;
-
-        @include breakpoint($screen-sm) {
-          width: 50%;
-        }
-
-        @include breakpoint($screen-md) {
-          width: 33%;
-        }
-
-        @include print() {
-          width: 25%;
-
-          .name {
-            font-size: 1em;
-          }
-
-          .company {
-            font-size: 0.7em;
-          }
-
-          .title {
-            font-size: 0.6em;
-          }
-        }
-
-        .name {
-            margin-bottom: 0;
-        }
-
-        .company {
-            font-size: 0.9em;
-            font-weight: bold;
-
-            a {
-                color: darken(blue, 40);
-            }
-        }
-
-        .title {
-          font-size: 0.8em;
-        }
-    }
-}
-</style>

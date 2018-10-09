@@ -1,0 +1,23 @@
+{
+  "colors": {
+    "primary": "#ee44aa",
+    "secondary": "#5f0ca8",
+    "accent": "#680F3D",
+    "error": "#FF5252",
+    "info": "#2196F3",
+    "success": "#4CAF50",
+    "warning": "#FFC107"
+  },
+  "font": {
+    "family": {
+      "body": "Roboto",
+      "secondary": "Raleway, Avenir, Helvetica, Arial, sans-serif"
+    },
+    "weight": {
+      "regular": 400,
+      "light": 100,
+      "bold": 500,
+      "extraBold": 600
+    }
+  }
+}

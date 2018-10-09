@@ -1,0 +1,15 @@
+body
+  font-family: $font.family.body
+
+for $num in (1..6)
+  h{$num}
+    $print_fixFirstLetter()
+    font-family: $font.family.header
+    font-weight: $font.weight.bold
+
+p,
+small
+  $print_fixFirstLetter()
+
+hr
+  margin 2em 0

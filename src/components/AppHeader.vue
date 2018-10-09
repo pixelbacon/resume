@@ -1,164 +1,167 @@
-<template lang="html">
-  <div class="header">
-    <a class="linkedInIcon" alt="View Michael Minor's LinkedIn profile" :href="$root.$data.linkedIn">
-      <icon name="linkedin-square" scale="2"></icon>
-    </a>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class=" col-10 col-sm-5 col-md-4 col-print-5">
-          <div class="me">
-            <img src="../assets/me.jpg" alt="">
-          </div>
-        </div>
-      </div>
-      <h1 class="name">
-        Michael Minor
-      </h1>
-      <div class="ct">
-        Creative Technologist
-      </div>
-      <hr class="hidden-xs-down">
-      <div class="summaryHead row justify-content-center">
-        <div class="col-12 col-md-11 col-lg-9">
-          <p>
-            Creative Brand Technologist using vast amounts of energy to pursue new business ventures. The fields have varied greatly to which I have been involved, strongly sustaining enthusiasm and passion in my work.
-          </p>
-        </div>
-      </div>
-      <div class="summaryDetail row justify-content-center">
-        <div class="col-11 col-sm-10 col-lg-7">
-          <p>
-            From guerrilla marketing to big budget ad campaigns I have helped in one way major or another. Planning, designing, developing, pitching, and brand analysis/improvement have all been major requirements within my pursuits that started when I was 16 years old; {{yearsIn}} years.
-          </p>
-          <p>
-            <strong>
-              And what I do know... there is no value in being right; just knowing and acknowledging when you're wrong and having a team to figure out what's right titles be damned.
-            </strong>
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 screen-only text-center">
-          <a class="pdfLink" :href="$root.$data.pdf">Download PDF</a>
-        </div>
-      </div>
-      <div class="printFooter">
-        <hr />
-        <a href="tel:3125766767">312.576.6767</a>
-        ◦ <a :href="('mailto:' + $root.$data.email)">{{$root.$data.email}}</a>
-        ◦ <a :href="$root.$data.linkedIn">{{$root.$data.linkedInLiteral}}</a>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  div.header.print-page
+    a.linkedInIcon.screen(alt="View Michael Minor's LinkedIn profile" :href="linkedIn" target="_blank")
+      v-icon(color="primary" large) mdi-linkedin-box
+    v-container()
+      v-layout(align-center justify-center row wrap)
+        v-flex(xs10 sm6 md5 lg3).p4
+          img(src="../assets/me.jpg").me
+        v-flex(xs12)
+          h1.name Michael Minor
+          div.ct.h2 Maker of Things + Creative Technologist
+        v-flex(xs12).summary.p10
+          p.summary__header Planning, designing, developing, pitching, and sustaining brand creation/analysis/improvement are all within my pursuits. I started learning all the things {{yearsIn}} years ago. And what I keep noticing; there is little value in being right. There is however, far greater value in knowing when you're wrong and having a team to figure out what is right.
+          p.summary__detail I have high functioning <a :href="aspergers" target="_blank" class="aspergers">Aspergers</a>. It's a bit weird but I've focussed on it's strengths since I was a child, so that's a thing.
+        v-flex(xs12).screen
+          a.pdfLink(:href="pdf") Download PDF
+        v-flex(xs12).print.printFooter
+          p
+            a(href="tel:3125766767") 312.576.6767
+            br
+            a(:href="('mailto:' + email)") {{email}}
+            br
+            a(:href="linkedIn") {{linkedInLiteral}}
 </template>
 
-<script>
-import moment from 'moment'
-const _name = 'appHeader'
+<script lang="ts">
+import moment from 'moment';
+import { Component, Vue } from 'vue-property-decorator';
+import data from './../data';
 
-export default {
-  name: _name,
-  data: () => ({
-    yearsIn: moment().diff(moment('19981001'), 'years')
-  })
+@Component({})
+export default class AppHeader extends Vue {
+  public aspergers = 'https://www.autismspeaks.org/what-asperger-syndrome';
+  public email = data.email;
+  public linkedIn = data.linkedIn;
+  public linkedInLiteral = data.linkedInLiteral;
+  public pdf = data.pdf;
+  public yearsIn = moment().diff(moment('19981001'), 'years');
 }
 </script>
 
-<style lang="scss" scoped>
-@import "../components";
+<style scoped lang="stylus">
+.header
+  display flex
+  text-align center
+  height 100vh
+  min-height 100vh
 
-.header {
-  @extend .app-component;
-  background: linear-gradient(0deg, rgba(black, 1), rgba(black, 0.33)), url("../assets/patterns/footer_lodyas.png");
-  color: white;
-  padding: 4em 0em;
-  text-align: center;
+  +$screen()
+    background: linear-gradient(135deg, rgba($theme.colors.accent, 0.3), rgba($theme.colors.secondary, 0.0)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1)), url("../assets/patterns/footer_lodyas.png")
+    color white
+    text-shadow 0.1em 0.1em 1em rgba(black, 0.3)
 
-  .me {
-    border-radius: 999px;
-    overflow: hidden;
-    box-shadow: 0 0 2em rgba(black, 0.66);
-    content: ' ';
-    margin-bottom: 1em;
+  +$print()
+    border: 1px solid $theme.colors.accent
 
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
+p
+  +$print()
+    // font-size 0.5em
 
-  .name {
-    color: white;
-    font-size: 2.2em;
-    margin: 0;
-  }
+.printFooter
+  line-height 2em
 
-  .ct {
-    color: lighten(blue, 30);
-    font-size: 1.33em;
-    margin-bottom: 1em;
-  }
+h1
+  border-bottom none
 
-  .linkedInIcon {
-    @include screen-only();
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    color: #0077B5;
-  }
+hr
+  border-color: $theme.colors.secondary
+  width 50%
+  margin-left auto
+  margin-right auto
 
-  .summaryDetail {
-    font-size: 0.9em;
-  }
+.me
+  border-radius 999px
+  overflow hidden
+  content ' '
+  margin-bottom 1em
+  width 100%
+  height auto
 
-  .pdfLink {
-    border: 1px solid $link-color;
-    margin: 0 auto;
-    padding: 0.4em 0.6em;
-    font-size: 0.75em;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    transition: all 0.25s;
+  +$screen()
+    box-shadow 0 0 2em rgba(black, 0.66)
 
-    &:hover {
-      color: white;
-      background: $link-color;
-      border-color: rgba(black, 0.15);
-      box-shadow: 0 0 1em rgba(white, 0.25);
-      letter-spacing: 0.2em;
-      text-decoration: none;
-      text-shadow: 0 0 0.33em rgba(black, 0.25), 0 0 1em rgba(white, 0.5);
-    }
-  }
+  img
+    width 100%
+    height auto
 
-  .printFooter {
-    @include print-only();
-  }
+.name
+  margin 0
 
-  @include print(){
-    border: 1px solid lighten(black, 80);
-    color: black;
-    height: 100vh;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
+  +$screen()
+    color white
 
-    .container {
-      width: 76vw;
-      height: auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+.aspergers
+  font-weight: $theme.font.weight.extraBold
 
-    .name {
-      color: black;
-    }
+.ct
+  color: lighten($theme.colors.primary, 50%)
+  font-size 1.33em
+  margin-bottom 1em
 
-    .summaryDetail {
-      color: lighten(black, 20);
-    }
-  }
-}
+  +$print()
+    color: $theme.colors.secondary
+
+.linkedInIcon
+  $screen-only()
+  position absolute
+  top 1em
+  right 1em
+  color #0077B5
+
+.summary
+  &__header
+    +$screen()
+      font-size 1.2em
+
+  &__detail
+    $centerWidth(80%)
+
+    +$screen()
+      font-weight: $theme.font.weight.bold
+
+.pdfLink
+  border: 1px solid $theme.colors.primary
+  display inline-block
+  margin 0 auto
+  margin-top 1em
+  padding 0.4em 0.6em
+  font-size 0.9em
+  font-weight bold
+  letter-spacing 0.1em
+  transition all 0.25s
+
+  &:hover
+    color white
+    background: $theme.colors.primary
+    box-shadow 0 0 1em rgba(white, 0.25)
+    letter-spacing 0.2em
+    text-decoration none
+    text-shadow 0 0 0.33em rgba(black, 0.25), 0 0 1em rgba(white, 0.5)
+    transform scale(1.1)
+
+  .printFooter
+    $print-only()
+
+    $print()
+      border 1px solid $theme.colors.secondary
+      color black
+      height 100vh
+      width 100vw
+      padding 0
+      margin 0
+
+      .container
+        width 76vw
+        height auto
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+
+      .name
+        color black
+
+      .summaryDetail
+        color lighten(black, 20)
 </style>

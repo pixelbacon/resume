@@ -1,25 +1,16 @@
-<template lang="html">
-  <div class="process">
-    <h2>Process</h2>
-    <ol>
-      <li v-for="(item, index) in $root.$data.myProcess" :key="index">
-        {{item}}
-      </li>
-    </ol>
-  </div>
+<template lang="pug">
+  section.process
+    h2 Process
+    ol
+      li(v-for="(item, index) in process" :key="index") {{ item }}
 </template>
 
-<script>
-const NAME = 'process'
-export default {
-  name: NAME
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import data from './../data';
+
+@Component({})
+export default class Platter extends Vue {
+  public process = data.process;
 }
 </script>
-
-<style lang="scss" scoped>
-@import "../components";
-
-.process {
-
-}
-</style>

@@ -1,0 +1,41 @@
+.print
+  $print_only()
+
+.print-page
+  $print_pageBreakBefore()
+  $print_pageBreakAfter()
+  +$print()
+    position relative
+    display block
+    width 100%
+    min-width 100%
+    height 100%
+    min-height 100%
+
+.print-break-before
+  $print_pageBreakBefore()
+
+.print-break-after
+  $print_pageBreakAfter()
+
+.screen
+  $screen_only()
+
+.atBreaker
+  display inline-block
+  padding 0 0.3em
+  color #999
+  font-weight: $theme.font.weight.thin
+
+.container
+  &--noPadding
+    padding 0 !important
+
+// Print columns. Nest in v-layout, use in v-flex
+for $num in (1..12)
+  .p{$num}
+    +$print()
+      $width = (100/12 * $num) * 1% !important
+      // +print()
+      flex-basis $width
+      max-width $width

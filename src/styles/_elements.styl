@@ -1,0 +1,47 @@
+body
+  font-family: $theme.font.family.body
+  font-size 16px
+
+  +$screen()
+    background: linear-gradient(135deg, rgba(white, 0.6), rgba(white, 0.3)) repeat, url("./../patterns/concrete_seamless.png");
+
+for $num in (1..6)
+  $split = 0.25
+  $fontSize = ((2.5) - ($split * $num)) * 1em
+
+  .h{$num}
+  h{$num}
+    $print_fixFirstLetter()
+    color: darken($theme.colors.accent, 50%)
+    font-family: $theme.font.family.secondary
+    font-size $fontSize
+    font-weight: $theme.font.weight.light
+    padding-bottom 0.3em
+    margin-bottom 0.5em
+
+    +$print()
+      font-size $fontSize * 0.66em
+
+h2
+  border-bottom: 1px solid lighten($theme.colors.accent,30%)
+
+p,
+small
+  $print_fixFirstLetter()
+
+hr
+  margin 2em 0
+
+a
+  text-decoration none
+
+ul
+ol
+  $clearfix()
+
+  li
+    padding-bottom 0.2em
+
+section
+  margin-bottom 3em
+  width 100%

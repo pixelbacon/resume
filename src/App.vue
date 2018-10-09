@@ -1,39 +1,25 @@
-<template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+  v-app
+    DebugVue.screen
+    v-content
+      router-view
 </template>
 
-<script>
-const _name = 'app'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import DebugVue from '@/components/Debug.vue';
 
-export default {
-  name: _name
+@Component({
+  components: {
+    DebugVue,
+  },
+})
+export default class Home extends Vue {
+  public clipped = false;
+  public drawer = true;
+  public fixed = false;
+  public miniVariant = false;
+  public right = true;
+  public rightDrawer = false;
 }
 </script>
-
-<style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import 'main';
-
-#app {
-  font-family: 'Raleway', 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, rgba(white, 0.6), rgba(white, 0.3)) repeat, url("assets/patterns/concrete_seamless.png");
-  color: #2c3e50;
-
-  .bodyContainer {
-    h2 {
-      border-bottom: 1px solid rgba(black, 0.05);
-      padding-bottom: 0.25em;
-      margin-top: 1em;
-      margin-bottom: 0.5em;
-    }
-  }
-
-  @include print(){
-    background: white;
-  }
-}
-</style>

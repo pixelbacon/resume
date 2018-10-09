@@ -1,26 +1,16 @@
-<template lang="html">
-  <div class="toDo">
-    <h2>To Do</h2>
-    <ul>
-      <li v-for="(todo, index) in $root.$data.todos" :key="index">
-        {{todo[1]}}
-      </li>
-    </ul>
-  </div>
+<template lang="pug">
+  section.toDo
+    h2 To-Do
+    ol
+      li(v-for="(item, index) in todos" :key="index") {{ item[1] }}
 </template>
 
-<script>
-const NAME = 'toDo'
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import data from './../data';
 
-export default {
-  name: NAME
+@Component({})
+export default class ToDo extends Vue {
+  public todos = data.todos;
 }
 </script>
-
-<style lang="scss" scoped>
-@import "../components";
-
-.toDo {
-
-}
-</style>
