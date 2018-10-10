@@ -56,6 +56,16 @@ const employmentHistory = [
     tags: [employmentTags.analytics, employmentTags.selfTaught, employmentTags.design, employmentTags.animation, employmentTags.photography, employmentTags.product, employmentTags.frontend, employmentTags.backend, employmentTags.devOps, employmentTags.bizOps, employmentTags.mentoring, employmentTags.ux, employmentTags.installations, employmentTags.highCollaboration, employmentTags.selfDiscipline, employmentTags.tenacity, employmentTags.fullstack],
   },
   {
+    title: 'Technical Advisor',
+    company: 'Waves',
+    companyUrl: 'http://bit.ly/michael-minor-waves',
+    // dateRange: '2000 - Present (17+ yrs)',
+    dateStart: moment('20180801'),
+    dateEnd: moment(),
+    summary: 'Waves plans on decentralizing the benefits of 10,000 hours, both for the knowledge holder and those who want to learn. Founded by Cam Bartzen, I serve as an advisor/mentor during the critical early stage of a startup where finding co-founders, understanding their product, and finding a rhythm are the utmost important.',
+    tags: [employmentTags.product, employmentTags.bizOps, employmentTags.mentoring, employmentTags.highCollaboration, employmentTags.selfDiscipline, employmentTags.tenacity],
+  },
+  {
     title: 'Cofounder & Creative Technologist',
     company: 'Phood',
     companyUrl: 'http://bit.ly/michael-minor-phood',
@@ -128,6 +138,7 @@ const process = [
   'Build/Test',
   'Launch (Perfect for now)',
   'Double Captain & Coke, in a tall, w/ lime',
+  'Postmortem: What was a win, what was a lose'
 ];
 
 const linkRef = '?ref=Michael.Minor';
@@ -216,25 +227,25 @@ const references = [
 
 const skills = {
   backend: [
-    'Elastic Search', 'MySQL', 'PostgreSQL', 'Redis', 'MongoDB', 'GraghQL',
+    'Elastic Search', 'MySQL', 'PostgreSQL', 'Redis', 'MongoDB', 'GraghQL', 'REST',
   ].sort(),
   css: [
-    'CSS2/3', 'Sass', 'Stylus', 'Less',
+    'CSS2/3', 'Sass', 'Stylus', 'Less', 'Print', 'Screen', 'Responsive',
   ].sort(),
   design: [
-    'Direction & Execution', 'UX/UI', 'Photoshop/Illustrator', 'Sketch', 'Invision', 'Pipeline Creation',
+    'Direction & Execution', 'UX/UI', 'Photoshop/Illustrator', 'Sketch', 'Invision', 'Pipeline Creation', 'Photography', 'Motion Graphics', 'Animation',
   ].sort(),
   languages: [
-    'ActionScript (rusty)', 'JavaScript', 'PHP', '.Net (rusty)', 'Ruby (rusty)', 'bash', 'Unity',
+    'CSS', 'HTML', 'JavaScript', 'JSON', 'PHP (rusty)', '.Net (rusty)', 'ActionScript (rusty)', 'Bash (rusty)', 'Ruby (rusty)', 'Unity (rusty)', 'Python (rusty)', 'XML',
   ].sort(),
   javascript: [
-    'ES5/ES6', 'Angular/React/Vue/Nuxt', 'GSAP', 'Phaser', 'TypeScript', 'Cordova/PhoneGap', 'SocketIO', 'Node/Express/Sails',
+    'ES5/ES6', 'Angular', 'React', 'Vue/Nuxt', 'GSAP', 'Phaser', 'TypeScript', 'Cordova/PhoneGap', 'SocketIO', 'Node/Express/Sails', 'Ember/Knockout', 'Pug/Jade',
   ].sort(),
   operations: [
-    'Google Cloud Platform', 'AWS', 'Heroku', 'Digital Ocean', 'Docker', 'Kubernetes',
+    'Google Cloud Platform', 'AWS', 'Heroku', 'Digital Ocean', 'Docker', 'Kubernetes', 'Ansible', 'KPI/Cadence', 'IBM Cloud', 'Vagrant'
   ].sort(),
   projectManagement: [
-    'Asana', 'Trello', 'Monday.com', 'Jira', 'Confluence', 'Pivotal Tracker', 'KanBan',
+    'Asana', 'Trello', 'Monday.com', 'Jira', 'Confluence', 'Pivotal Tracker', 'KanBan', 'Scrum/Standups',
   ].sort(),
   miscellaneous: [
     'TechStars: Boulder 2018 Alumni', 'Information Architecture', 'Startup Culture & Process', 'Curiosity vs Rigidity vs Scalability', 'HIPAA Compliance', 'MVC, Object Oriented', 'Mentoring/Coaching',
@@ -266,6 +277,7 @@ const todos = [
   [false, 'Obtain said Grandchildren.'],
   [false, 'Restore a BMW motorcycle from the 70\'s.'],
   [false, 'Sail from New York City to Anchorage, Alaska.'],
+  [false, 'Retire onto a ranch off the grid, self sustained, with a bunch of fainting goats.'],
 ];
 
 export default {
