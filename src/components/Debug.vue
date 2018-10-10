@@ -2,7 +2,7 @@
 a(v-if="enableDebug" @click="toggle").debug.screen-only
   div(v-if="toggleDebug" key="info").debug__info
     div version:
-      span.val {{$root.version}}
+      span.val {{version}}
     div bp:
       span.val {{ $vuetify.breakpoint.name }}
     div breakpoint:
@@ -13,11 +13,13 @@ a(v-if="enableDebug" @click="toggle").debug.screen-only
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import data from '@/data';
 
 @Component({})
 export default class Debug extends Vue {
   public enableDebug = process.env.VUE_APP_ENABLE_GUI_DEBUG || false;
   public toggleDebug = false;
+  public version = data.version;
 
   public toggle() {
     this.toggleDebug = !this.toggleDebug;
