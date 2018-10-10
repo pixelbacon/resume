@@ -78,4 +78,8 @@ a
 
     +$print()
       font-size 0.9em
+
+  &__summary
+    +$print()
+      font-size 0.8em
 </style>
