@@ -32,6 +32,9 @@ a
 .reference
   margin-top 1.5em
 
+  +$print()
+    font-size 0.9em
+
   &__name
   &__company
     display inline-block

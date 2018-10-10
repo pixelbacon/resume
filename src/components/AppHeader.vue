@@ -10,7 +10,7 @@
           h1.name Michael Minor
           div.ct.h2 Maker of Things + Creative Technologist
         v-flex(xs12).summary.p10
-          p.summary__header Planning, designing, developing, pitching, and sustaining brand creation/analysis/improvement are all within my pursuits. I started learning all the things {{yearsIn}} years ago. And what I keep noticing; there is little value in being right. There is however, far greater value in knowing when you're wrong and having a team to figure out what is right.
+          p.summary__header Planning, designing, developing, pitching, and sustaining brand creation/analysis/improvement for {{yearsIn}} years. And what I keep noticing; there is little value in being right because there is far greater value in knowing when you're wrong and having a team to figure out what that means.
           p.summary__detail I have high functioning <a :href="aspergers" target="_blank" class="aspergers">Aspergers</a>. It's a bit weird but I've focussed on it's strengths since I was a child, so that's a thing.
         v-flex(xs12).screen
           a.pdfLink(:href="pdf") Download PDF
@@ -40,7 +40,7 @@ export default class AppHeader extends Vue {
 </script>
 
 <style scoped lang="stylus">
-$printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1)), url("../assets/backgrounds/hide-obara-434309-unsplash.jpg")
+$printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.7)), url("../assets/backgrounds/andre-benz-1092194-unsplash.jpg")
 
 .header
   background-image: $printBg
@@ -79,14 +79,12 @@ hr
 
 .me
   border-radius 999px
+  box-shadow: 0 0 3em rgba(black, 0.3), 0 0 6em rgba($theme.colors.secondary, 0.33), 0 0 100vw rgba($theme.colors.secondary, 1)
   overflow hidden
   content ' '
   margin-bottom 1em
   width 100%
   height auto
-
-  +$screen()
-    box-shadow: 0 0 3em rgba(black, 0.3), 0 0 6em rgba($theme.colors.secondary, 0.33), 0 0 100vw rgba($theme.colors.secondary, 1)
 
   +$print()
     border 0.33em solid white
@@ -157,6 +155,8 @@ hr
     transform scale(1.1)
 
 .printFooter
+  color: lighten($theme.colors.primary, 33%)
   font-weight: $theme.font.weight.extraBold
+  letter-spacing 0.1em
   line-height 2em
 </style>

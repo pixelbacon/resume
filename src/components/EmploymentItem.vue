@@ -58,6 +58,9 @@ a
   margin-bottom -0.3em
 
 .employment
+  +$print()
+    font-size 0.9em
+
   &__title
   &__company
     display inline-block
@@ -73,15 +76,6 @@ a
     // font-weight: $theme.font.weight.bold
     margin-bottom 0.2em
 
-  &__summary
     +$print()
-      font-size 0.7em
-    // color: $theme.colors.secondary
-
-// .employment
-//   &__name
-//
-//   &__company
-//
-//   &__title
+      font-size 0.9em
 </style>

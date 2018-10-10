@@ -4,16 +4,19 @@
     v-layout(row wrap).employmentsContainer
       v-flex(xs12 v-for="(employment, index) in employment" :key="index")
         EmploymentItemVue(:employment="employment")
+    MoreOnVue
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import data from './../data';
+import MoreOnVue from '@/components/MoreOn.vue';
 import EmploymentItemVue from '@/components/EmploymentItem.vue';
 
 @Component({
   components: {
     EmploymentItemVue,
+    MoreOnVue,
   },
 })
 export default class References extends Vue {

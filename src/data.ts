@@ -224,10 +224,10 @@ const skills = {
     'Direction & Execution', 'UX/UI', 'Photoshop/Illustrator', 'Sketch', 'Invision', 'Pipeline Creation',
   ].sort(),
   languages: [
-    'ActionScript', 'JavaScript', 'PHP', '.Net (rusty)', 'Ruby (rusty)', 'bash',
+    'ActionScript (rusty)', 'JavaScript', 'PHP', '.Net (rusty)', 'Ruby (rusty)', 'bash', 'Unity',
   ].sort(),
   javascript: [
-    'ES5/ES6', 'Angular/React/Vue', 'GSAP', 'Phaser', 'TypeScript', 'Cordova/PhoneGap', 'SocketIO', 'Node/Express/Sails',
+    'ES5/ES6', 'Angular/React/Vue/Nuxt', 'GSAP', 'Phaser', 'TypeScript', 'Cordova/PhoneGap', 'SocketIO', 'Node/Express/Sails',
   ].sort(),
   operations: [
     'Google Cloud Platform', 'AWS', 'Heroku', 'Digital Ocean', 'Docker', 'Kubernetes',
@@ -236,7 +236,7 @@ const skills = {
     'Asana', 'Trello', 'Monday.com', 'Jira', 'Confluence', 'Pivotal Tracker', 'KanBan',
   ].sort(),
   miscellaneous: [
-    'TechStars: Boulder 2018 Alumni', 'Information Architecture', 'Startup Culture & Process', 'Curiosity vs Rigidity vs Scalability', 'HIPAA Compliance', 'MVC, Object Oriented',
+    'TechStars: Boulder 2018 Alumni', 'Information Architecture', 'Startup Culture & Process', 'Curiosity vs Rigidity vs Scalability', 'HIPAA Compliance', 'MVC, Object Oriented', 'Mentoring/Coaching',
   ].sort(),
 };
 
@@ -259,11 +259,11 @@ const technicalities = [
 ].sort();
 
 const todos = [
-  [false, 'Be involved with TechStars:Boulder to help good people make good things.'],
   [false, 'Play a major role in a company that will affect my grand children, and every one elses for that matter'],
+  [false, 'Rent a scooter in Vietnam and ride along the Ho Chi Minh Trail ala Top Gear'],
+  [false, 'Be involved with TechStars:Boulder to help good people make good things.'],
   [false, 'Obtain said Grandchildren'],
   [false, 'Restore a BMW motorcycle from the 70\'s'],
-  [false, 'Rent a scooter in Vietnam and ride along the Ho Chi Minh Trail ala Top Gear'],
   [false, 'Sail from New York City to Anchorage, Alaska.'],
 ];
 

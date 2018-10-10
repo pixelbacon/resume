@@ -14,11 +14,10 @@
           ToDoVue
       div.print-break
       PlatterVue
-      div.print-break
-        ReferencesVue
-      div.print-break
-        EmploymentVue
+      ReferencesVue.print-break
+      EmploymentVue.print-break
       ReachOutVue.screen
+      NotesVue.print.print-break
 </template>
 
 <script lang="ts">
@@ -26,6 +25,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import AppHeaderVue from '@/components/AppHeader.vue';
 import EmploymentVue from '@/components/Employment.vue';
 import ExperienceVue from '@/components/Experience.vue';
+import NotesVue from '@/components/Notes.vue';
 import PlatterVue from '@/components/Platter.vue';
 import ProcessVue from '@/components/Process.vue';
 import ReachOutVue from '@/components/ReachOut.vue';
@@ -38,9 +38,10 @@ import WhatIKnowVue from '@/components/WhatIKnow.vue';
     AppHeaderVue,
     EmploymentVue,
     ExperienceVue,
+    NotesVue,
     PlatterVue,
-    ReachOutVue,
     ProcessVue,
+    ReachOutVue,
     ReferencesVue,
     ToDoVue,
     WhatIKnowVue,
