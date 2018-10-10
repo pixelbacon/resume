@@ -7,7 +7,7 @@ import theme from './theme.json';
 const dateFormat = 'MMM YYYY';
 
 // const pdf = 'http://bit.ly/michael-minor-resume-githubio';
-const pdf = 'http://bit.ly/michael-minor-resume';
+const pdf = 'http://bit.ly/michael-minor-resume-github';
 
 const email = 'mikeminor.creativetechnologist@gmail.com';
 
