@@ -1,7 +1,8 @@
 <template lang="pug">
   section.whatIKnow
     h2 The Inbetween
-    p It takes a logical approach to chaos to make beautiful things. To push beyond the known limits for anything, it takes that discomfort and curiosity. But to actually proceed forward it takes a logical approach; making guidelines to remove the former discomfort and foster the curiosity. I'm lucky to make a living at what I do naturally, and I know the industry is always going to be changing.
-    p Understanding that inputs are changing when it comes to devices, thoughts, and social progress is really where the strife comes from. And those changes need people to help guide them, and ease the discomfort.
-    p What I know is this isn't just a job and more than a passion and curiosity, it's a hell of a ride and worth the extra hours when required. It's a responsibility to new ideas and cultivating their existence.
+    p Beautifil things take a certain amount of chaos. That chaos needs to be respected and guidelines setup whenever possible. It takes being comfortable with the unknown, appreciation for the known, and comfort in acknowledging the blind spots. All of those requires a team.
+    p With a team, a tribe, anything is possible. Technology does not limit humans, it allows us to thrive. It allows us the best ways to support each other, minimize risk, and urges us all to value how we think, not just what we know. When it comes to trends, whether social or technical, "what" we know can become obsolete with a single day.
+    p What I know is this isn't just a job, it is a genuine passion and curiosity that bucks complacency. It's a hell of a ride and worth the extra hours when required.
+    p It's a responsibility to new ideas, cultivating their existence, and growing makers and process.
 </template>

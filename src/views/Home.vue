@@ -51,4 +51,8 @@ export default class Home extends Vue {}
 </script>
 
 <style lang="stylus">
++$print()
+  .experience
+  .toDo
+    font-size 0.9em
 </style>
