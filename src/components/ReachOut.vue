@@ -1,7 +1,7 @@
 <template lang="pug">
   section.reachOut
     h2 Reach Out
-    p I would love to hear from you, whether it's a new opportunity, seeking advice, anything that comes to mind.
+    p I would love to hear from you! Whether it's a new opportunity, seeking advice, anything that comes to mind is something I am glad to discuss.
     v-form(:action="action" v-model="valid" method="POST")
       v-container(fluid).container--noPadding
         v-layout(row wrap grid-list-lg="$vuetify.breakpoint.mdAndUp")
