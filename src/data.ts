@@ -138,7 +138,7 @@ const process = [
   'Build/Test',
   'Launch (Perfect for now)',
   'Double Captain & Coke, in a tall, w/ lime',
-  'Postmortem: What was a win, what was a lose'
+  'Postmortem: What was a win, what was a lose',
 ];
 
 const linkRef = '?ref=Michael.Minor';
@@ -242,7 +242,7 @@ const skills = {
     'ES5/ES6', 'Angular', 'React', 'Vue/Nuxt', 'GSAP', 'Phaser', 'TypeScript', 'Cordova/PhoneGap', 'SocketIO', 'Node/Express/Sails', 'Ember/Knockout', 'Pug/Jade',
   ].sort(),
   operations: [
-    'Google Cloud Platform', 'AWS', 'Heroku', 'Digital Ocean', 'Docker', 'Kubernetes', 'Ansible', 'KPI/Cadence', 'IBM Cloud', 'Vagrant'
+    'Google Cloud Platform', 'AWS', 'Heroku', 'Digital Ocean', 'Docker', 'Kubernetes', 'Ansible', 'KPI/Cadence', 'IBM Cloud', 'Vagrant',
   ].sort(),
   projectManagement: [
     'Asana', 'Trello', 'Monday.com', 'Jira', 'Confluence', 'Pivotal Tracker', 'KanBan', 'Scrum/Standups',
