@@ -213,6 +213,33 @@ const references = [
   // }
 ];
 
+const skills = {
+  backend: [
+    'Elastic Search', 'MySQL', 'PostgreSQL', 'Redis', 'MongoDB', 'GraghQL',
+  ].sort(),
+  css: [
+    'CSS2/3', 'Sass', 'Stylus', 'Less',
+  ].sort(),
+  design: [
+    'Direction & Execution', 'UX/UI', 'Photoshop/Illustrator', 'Sketch', 'Invision', 'Pipeline Creation',
+  ].sort(),
+  languages: [
+    'ActionScript', 'JavaScript', 'PHP', '.Net (rusty)', 'Ruby (rusty)', 'bash',
+  ].sort(),
+  javascript: [
+    'ES5/ES6', 'Angular/React/Vue', 'GSAP', 'Phaser', 'TypeScript', 'Cordova/PhoneGap', 'SocketIO', 'Node/Express/Sails',
+  ].sort(),
+  operations: [
+    'Google Cloud Platform', 'AWS', 'Heroku', 'Digital Ocean', 'Docker', 'Kubernetes',
+  ].sort(),
+  projectManagement: [
+    'Asana', 'Trello', 'Monday.com', 'Jira', 'Confluence', 'Pivotal Tracker', 'KanBan',
+  ].sort(),
+  miscellaneous: [
+    'TechStars: Boulder 2018 Alumni', 'Information Architecture', 'Startup Culture & Process', 'Curiosity vs Rigidity vs Scalability', 'HIPAA Compliance', 'MVC, Object Oriented',
+  ].sort(),
+};
+
 const technicalities = [
   'TechStars: Boulder 2018 Alumni',
   'Angular, React, Vue, Phaser',
@@ -229,14 +256,15 @@ const technicalities = [
   'Strategy, Viability, Sustainability',
   'UX Design, Analytics, Direction',
   'Legos... Seriously',
-];
+].sort();
 
 const todos = [
-  [false, 'Go back to TechStars: Boulder with my own company'],
-  [false, 'Play a major role in a successful company that will affect my grand children, and every one elses for that matter'],
+  [false, 'Be involved with TechStars:Boulder to help good people make good things.'],
+  [false, 'Play a major role in a company that will affect my grand children, and every one elses for that matter'],
   [false, 'Obtain said Grandchildren'],
-  [false, 'Purchase BMW motor cyle from the 70\'s'],
-  [false, 'Skydive... in my birthday suit'],
+  [false, 'Restore a BMW motorcycle from the 70\'s'],
+  [false, 'Rent a scooter in Vietnam and ride along the Ho Chi Minh Trail ala Top Gear'],
+  [false, 'Sail from New York City to Anchorage, Alaska.'],
 ];
 
 export default {
@@ -249,6 +277,7 @@ export default {
   pdf,
   process,
   references,
+  skills,
   technicalities,
   theme,
   todos,

@@ -4,7 +4,7 @@
       v-icon(color="primary" large) mdi-linkedin-box
     v-container()
       v-layout(align-center justify-center row wrap)
-        v-flex(xs10 sm6 md5).p4
+        v-flex(xs10 sm6 md5 lg3).p3
           img(src="../assets/me.jpg").me
         v-flex(xs12)
           h1.name Michael Minor
@@ -40,26 +40,33 @@ export default class AppHeader extends Vue {
 </script>
 
 <style scoped lang="stylus">
+$printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1)), url("../assets/backgrounds/hide-obara-434309-unsplash.jpg")
+
 .header
+  background-image: $printBg
+  background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1)), url("../assets/backgrounds/andre-benz-1092194-unsplash--mobile.jpg")
+  background-size cover
+  background-position center center
+  color white
   display flex
   text-align center
+  text-shadow 0.1em 0.1em 1em rgba(black, 0.3)
   height 100vh
   min-height 100vh
 
-  +$screen()
-    background: linear-gradient(135deg, rgba($theme.colors.accent, 0.3), rgba($theme.colors.secondary, 0.0)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1)), url("../assets/patterns/footer_lodyas.png")
-    color white
-    text-shadow 0.1em 0.1em 1em rgba(black, 0.3)
+  +above(2)
+    background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1)), url("../assets/backgrounds/andre-benz-1092194-unsplash.jpg")
 
   +$print()
-    border: 1px solid $theme.colors.accent
+    background-image $printBg
+
+a
+  +$print()
+    color: lighten($theme.colors.primary, 20%) !important
 
 p
   +$print()
     // font-size 0.5em
-
-.printFooter
-  line-height 2em
 
 h1
   border-bottom none
@@ -79,28 +86,37 @@ hr
   height auto
 
   +$screen()
-    box-shadow 0 0 2em rgba(black, 0.66)
+    box-shadow: 0 0 3em rgba(black, 0.3), 0 0 6em rgba($theme.colors.secondary, 0.33), 0 0 100vw rgba($theme.colors.secondary, 1)
+
+  +$print()
+    border 0.33em solid white
 
   img
     width 100%
     height auto
 
 .name
+  color white
+  font-size 2em
   margin 0
+  margin-bottom -0.5em
 
-  +$screen()
-    color white
+  +above(2)
+    font-size 4em
+
+  +$print()
+    font-size 4em
 
 .aspergers
+  color: lighten($theme.colors.primary, 20%)
   font-weight: $theme.font.weight.extraBold
 
 .ct
-  color: lighten($theme.colors.primary, 50%)
-  font-size 1.33em
+  // color: $theme.colors.secondary
+  color: lighten($theme.colors.secondary, 80%)
+  font-size 2em
+  font-weight: $theme.font.weight.bold
   margin-bottom 1em
-
-  +$print()
-    color: $theme.colors.secondary
 
 .linkedInIcon
   $screen-only()
@@ -140,28 +156,7 @@ hr
     text-shadow 0 0 0.33em rgba(black, 0.25), 0 0 1em rgba(white, 0.5)
     transform scale(1.1)
 
-  .printFooter
-    $print-only()
-
-    $print()
-      border 1px solid $theme.colors.secondary
-      color black
-      height 100vh
-      width 100vw
-      padding 0
-      margin 0
-
-      .container
-        width 76vw
-        height auto
-        position absolute
-        top 50%
-        left 50%
-        transform translate(-50%, -50%)
-
-      .name
-        color black
-
-      .summaryDetail
-        color lighten(black, 20)
+.printFooter
+  font-weight: $theme.font.weight.extraBold
+  line-height 2em
 </style>

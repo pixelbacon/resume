@@ -1,3 +1,6 @@
+@page
+  // size A4 portrait
+
 body
   font-family: $theme.font.family.body
   font-size 16px
@@ -17,13 +20,15 @@ for $num in (1..6)
     font-size $fontSize
     font-weight: $theme.font.weight.light
     padding-bottom 0.3em
-    margin-bottom 0.5em
+    // margin-bottom 0.5em
 
     +$print()
       font-size $fontSize * 0.66em
 
 h2
   border-bottom: 1px solid lighten($theme.colors.accent,30%)
+  padding-bottom 0.3em
+  margin-bottom 0.5em
 
 p,
 small
@@ -41,7 +46,8 @@ ol
 
   li
     padding-bottom 0.2em
+    padding-right 0.5em
 
 section
-  margin-bottom 3em
+  margin-bottom 2em
   width 100%

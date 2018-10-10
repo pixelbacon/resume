@@ -1,21 +1,24 @@
 <template lang="pug">
   div.home
     AppHeaderVue.print-page
-    v-container
-      v-layout(wrap)
+    v-container(grid-list-lg)
+      v-layout(wrap row)
         v-flex(xs12 lg6).p12
           ExperienceVue
         v-flex(xs12 lg6).p12
           WhatIKnowVue
+      v-layout(wrap row)
         v-flex(xs12 md6).p6
           ProcessVue
         v-flex(xs12 md6).p6
           ToDoVue
-        v-flex(xs12).p12
-          PlatterVue
-        ReferencesVue.print-page
-        EmploymentVue.print-page
-        ReachOutVue.screen
+      div.print-break
+      PlatterVue
+      div.print-break
+        ReferencesVue
+      div.print-break
+        EmploymentVue
+      ReachOutVue.screen
 </template>
 
 <script lang="ts">
