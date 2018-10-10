@@ -47,7 +47,7 @@ const employmentTags = {
 
 const employmentHistory = [
   {
-    title: 'Creative Technologist/Designer/Strategist/Ops',
+    title: 'Creative Technologist, Designer, Strategist, Ops',
     company: 'Self-Employed',
     // dateRange: '2000 - Present (17+ yrs)',
     dateStart: moment('19981001'),
@@ -158,7 +158,7 @@ const references = [
     title: 'Inventor - Engineer - CEO',
     company: 'Dynepic',
     companyLink: `http://bit.ly/michael-minor-playportal`,
-    affiliation: 'Colleague turned friend turned colleague through TechStars. Post TechStars became a client, a VERY happy client.',
+    affiliation: 'Colleague turned friend turned client through TechStars. Post TechStars became a client, a VERY happy client.',
   },
   {
     name: 'Crystal Williams',
@@ -174,7 +174,7 @@ const references = [
     title: 'Cofounder and COO',
     company: 'Ordermark',
     companyLink: `http://bit.ly/michael-minor-ordermark`,
-    affiliation: 'Colleague and friend through TechStars; a genuinely good person always willing to help good people make good things. Amazing observational and processing skills lead to natural sympatico.',
+    affiliation: 'Colleague and friend through TechStars; a genuine person that is always willing to help good people make good things. Amazing observation and processing skills lead to natural sympatico.',
   },
   {
     name: 'Julie Penner',
@@ -198,7 +198,7 @@ const references = [
     title: 'VP Creative Director',
     company: 'Momentum Wordlwide',
     companyLink: `http://www.momentumww.com/${linkRef}`,
-    affiliation: 'A true creative at heart with a love for the expressive world, we both worked at Leo Burnett. He stood out as someone that disregarded "limits" to push clients into better spaces.',
+    affiliation: 'A true creative at heart with a love for the expressive world. At Leo Burnett he stood out as someone that disregarded "limits" to push clients into better spaces.',
   },
   {
     name: 'Darren Marshall',
@@ -214,7 +214,7 @@ const references = [
     title: 'SVP, Executive Creative Director',
     company: 'Leo Burnett',
     companyLink: `http://www.leoburnett.com/${linkRef}`,
-    affiliation: 'A creative technologist that dove into the designing/brand development side. We worked together as the creative/front end leads on Copenhagen while at Leo Burnett and with mututal backgrounds challenged and supported each other via hive mind.',
+    affiliation: 'A creative technologist that dove into the designing/brand development side. We worked cohesively as the creative/front end leads on Copenhagen at Leo Burnett. Our mututal backgrounds challenged and supported each other via hive mind.',
   },
   // {
   //   name: 'Chad Mirshak',
@@ -248,7 +248,7 @@ const skills = {
     'Asana', 'Trello', 'Monday.com', 'Jira', 'Confluence', 'Pivotal Tracker', 'KanBan', 'Scrum/Standups',
   ].sort(),
   miscellaneous: [
-    'TechStars: Boulder 2018 Alumni', 'Information Architecture', 'Startup Culture & Process', 'Curiosity vs Rigidity vs Scalability', 'HIPAA Compliance', 'MVC, Object Oriented', 'Mentoring/Coaching',
+    'TechStars: Boulder 2018 Alumni', 'Information Architecture', 'Startup Culture & Process', 'Curiosity vs Rigidity vs Scalability', 'HIPAA Compliance', 'MVC, Object Oriented', 'Mentoring/Coaching', 'Legos... Seriously', 'Game Mechanics',
   ].sort(),
 };
 
@@ -274,10 +274,10 @@ const todos = [
   [false, 'Play a major role in a company that will affect my grand children, and every one elses for that matter.'],
   [false, 'Rent a scooter in Vietnam and ride along the Ho Chi Minh Trail ala Top Gear.'],
   [false, 'Be involved with TechStars:Boulder to help good people make good things.'],
-  [false, 'Obtain said Grandchildren.'],
+  [false, 'Obtain said grandchildren through nature or adoption.'],
   [false, 'Restore a BMW motorcycle from the 70\'s.'],
   [false, 'Sail from New York City to Anchorage, Alaska.'],
-  [false, 'Retire onto a ranch off the grid, self sustained, with a bunch of fainting goats.'],
+  [false, 'Retire onto a self sustaining ranch off the grid with a bunch of adorable fainting goats.'],
 ];
 
 export default {
