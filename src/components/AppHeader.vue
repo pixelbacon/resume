@@ -4,7 +4,7 @@
       v-icon(color="primary" large) mdi-linkedin-box
     v-container()
       v-layout(align-center justify-center row wrap)
-        v-flex(xs10 sm6 md5 lg3).p4
+        v-flex(xs10 sm6 md5).p4
           img(src="../assets/me.jpg").me
         v-flex(xs12)
           h1.name Michael Minor
