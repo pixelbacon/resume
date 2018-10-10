@@ -50,5 +50,6 @@
     "vue-cli-plugin-vuetify": "^0.2.1",
     "vue-template-compiler": "^2.5.17"
   },
-  "wst": "/dist/"
+  "wst": "/dist/",
+  "homepage": "https://github.com/pixelbacon/resume"
 }
