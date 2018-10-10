@@ -15,5 +15,7 @@ export default class SectionWithList extends Vue {
 }
 </script>
 
-<style lang="css">
+<style scoped lang="stylus">
+section
+  margin-bottom 0
 </style>
