@@ -1,0 +1,37 @@
+$clearfix()
+  &::after
+    content ' '
+    display table
+    clear both
+
+$screen()
+  @media screen
+    {block}
+
+$screen_only()
+  @media screen
+    visibility visible
+    {block}
+
+  @media print
+    visibility hidden
+    display none
+
+$print()
+  @media print
+    {block}
+
+$print_only()
+  @media print
+    visibility visible
+    {block}
+
+  @media screen
+    visibility hidden
+    display none
+
+$print_pageBreakAfter()
+  page-break-after always
+
+$print_pageBreakBefore()
+  page-break-before always

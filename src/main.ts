@@ -11,12 +11,6 @@ import './plugins/vuetify';
 // Stylesheet
 import './styles/main.styl';
 
-import 'roboto-fontface/css/roboto/roboto-fontface.css';
-// Material design icons
-// @see https://materialdesignicons.com/
-import '@mdi/font/css/materialdesignicons.css';
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
-
 Vue.config.productionTip = false;
 
 new Vue({

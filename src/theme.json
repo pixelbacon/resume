@@ -1,4 +1,7 @@
 {
+  "animation": {
+    "common": "0.5s"
+  },
   "colors": {
     "primary": "#ee44aa",
     "secondary": "#5f0ca8",

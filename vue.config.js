@@ -6,9 +6,9 @@ module.exports = {
     loaderOptions: {
       stylus: {
         import: [
-          path.resolve(__dirname, './src/assets/styles/_libraries.styl'),
-          path.resolve(__dirname, './src/assets/styles/_variables.styl'),
-          path.resolve(__dirname, './src/assets/styles/_mixins.styl'),
+          path.resolve(__dirname, './src/styles/_libraries.styl'),
+          path.resolve(__dirname, './src/styles/_variables.styl'),
+          path.resolve(__dirname, './src/styles/_mixins.styl'),
         ]
       }
     }
