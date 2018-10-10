@@ -6,7 +6,8 @@ import theme from './theme.json';
 
 const dateFormat = 'MMM YYYY';
 
-const pdf = 'http://bit.ly/michael-minor-resume-githubio';
+// const pdf = 'http://bit.ly/michael-minor-resume-githubio';
+const pdf = 'http://bit.ly/michael-minor-resume';
 
 const email = 'mikeminor.creativetechnologist@gmail.com';
 
@@ -259,11 +260,11 @@ const technicalities = [
 ].sort();
 
 const todos = [
-  [false, 'Play a major role in a company that will affect my grand children, and every one elses for that matter'],
-  [false, 'Rent a scooter in Vietnam and ride along the Ho Chi Minh Trail ala Top Gear'],
+  [false, 'Play a major role in a company that will affect my grand children, and every one elses for that matter.'],
+  [false, 'Rent a scooter in Vietnam and ride along the Ho Chi Minh Trail ala Top Gear.'],
   [false, 'Be involved with TechStars:Boulder to help good people make good things.'],
-  [false, 'Obtain said Grandchildren'],
-  [false, 'Restore a BMW motorcycle from the 70\'s'],
+  [false, 'Obtain said Grandchildren.'],
+  [false, 'Restore a BMW motorcycle from the 70\'s.'],
   [false, 'Sail from New York City to Anchorage, Alaska.'],
 ];
 
