@@ -81,7 +81,6 @@ hr
   border-radius 999px
   box-shadow: 0 0 3em rgba(black, 0.3), 0 0 6em rgba($theme.colors.secondary, 0.33), 0 0 100vw rgba($theme.colors.secondary, 1)
   overflow hidden
-  content ' '
   margin-bottom 1em
   width 100%
   height auto
