@@ -11,14 +11,14 @@
           div.ct.h2 Maker of Things + Creative Technologist
         v-flex(xs12 sm10 md9 lg7 xl6).summary.p10
           p.summary__header Planning, designing, developing, pitching, and sustaining brand creation/analysis/improvement for {{yearsIn}} years... And what I keep seeing is there is little value in being right when there is far greater value in knowing when you're wrong. And most importantly having a team to figure out what that means.
-          p.summary__detail I have high functioning <a :href="aspergers" target="_blank" class="aspergers">Aspergers</a>. It's a bit weird but I've focussed on its strengths since I was a child, so that's a thing.
+          p.summary__detail I have high functioning <a :href="aspergersUrl" target="_blank" class="aspergers">Aspergers</a>. It's a bit weird but I've focussed on its strengths since I was a child, so that's a thing.
         v-flex(xs12).screen
-          a.pdfLink(:href="pdf") Download PDF
+          a.pdfLink(:href="pdfUrl") Download PDF
         v-flex(xs12).print.printFooter
           p
             a(href="tel:3125766767") 312.576.6767
             br
-            a(:href="('mailto:' + email)") {{email}}
+            a(:href="emailHref") {{emailAddress}}
             br
             a(:href="linkedIn") {{linkedInLiteral}}
 </template>
@@ -26,16 +26,23 @@
 <script lang="ts">
 import moment from 'moment';
 import { Component, Vue } from 'vue-property-decorator';
-import data from './../data';
+import { aspergersUrl } from '@/data/aspergersUrl';
+import { emailAddress } from '@/data/emailAddress';
+import { linkedIn, linkedInLiteral } from '@/data/linkedIn';
+import { pdfUrl } from '@/data/pdfUrl';
 
 @Component({})
 export default class AppHeader extends Vue {
-  public aspergers = 'https://www.autismspeaks.org/what-asperger-syndrome';
-  public email = data.email;
-  public linkedIn = data.linkedIn;
-  public linkedInLiteral = data.linkedInLiteral;
-  public pdf = data.pdf;
+  public aspergersUrl = aspergersUrl;
+  public emailAddress = emailAddress;
+  public linkedIn = linkedIn;
+  public linkedInLiteral = linkedInLiteral;
+  public pdfUrl = pdfUrl;
   public yearsIn = moment().diff(moment('19981001'), 'years');
+
+  get emailHref() {
+    return `mailto:${emailAddress}`;
+  }
 }
 </script>
 
