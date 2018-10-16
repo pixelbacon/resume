@@ -6,12 +6,12 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import data from './../data';
+import { linkedIn, linkedInLiteral } from '@/data/linkedIn';
 
 @Component({})
 export default class MoreOn extends Vue {
-  public linkedIn = data.linkedIn;
-  public linkedInLiteral = data.linkedInLiteral;
+  public linkedIn = linkedIn;
+  public linkedInLiteral = linkedInLiteral;
 }
 </script>
 

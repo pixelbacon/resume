@@ -19,11 +19,11 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import data from '@/data';
+import { emailAddress } from '@/data/emailAddress';
 
 @Component({})
 export default class ReachOut extends Vue {
-  public action = `https://formspree.io/${data.email}`;
+  public action = `https://formspree.io/${emailAddress}`;
   public comment = '';
   public email = '';
   public name = '';

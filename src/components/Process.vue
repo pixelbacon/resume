@@ -7,10 +7,10 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import data from './../data';
+import { process } from '@/data/process';
 
 @Component({})
 export default class Platter extends Vue {
-  public process = data.process;
+  public process = process;
 }
 </script>

@@ -7,10 +7,10 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import data from './../data';
+import { todos } from '@/data/todos';
 
 @Component({})
 export default class ToDo extends Vue {
-  public todos = data.todos;
+  public todos = todos;
 }
 </script>

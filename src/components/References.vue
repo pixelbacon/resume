@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import data from './../data';
+import { references } from '@/data/references';
 import MoreOnVue from '@/components/MoreOn.vue';
 import ReferenceItemVue from '@/components/ReferenceItem.vue';
 
@@ -20,6 +20,6 @@ import ReferenceItemVue from '@/components/ReferenceItem.vue';
   },
 })
 export default class References extends Vue {
-  public references = data.references;
+  public references = references;
 }
 </script>

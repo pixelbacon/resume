@@ -15,7 +15,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import _ from 'lodash';
 import SectionWithListVue from '@/components/SectionWithList.vue';
-import data from './../data';
+import { skills } from '@/data/skills';
 
 @Component({
   components: {
@@ -23,8 +23,7 @@ import data from './../data';
   },
 })
 export default class Platter extends Vue {
-  public technicalities = data.technicalities;
-  public skills = data.skills;
+  public skills = skills;
   public get _() {
     return _;
   }

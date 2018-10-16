@@ -6,46 +6,83 @@
       div.employment__company
         a(v-if="employment.companyUrl" :href="employment.companyUrl" target="_blank") {{employment.company}}
         span(v-else) {{employment.company}}
-    div.employment__dateRange {{calculatedDate(employment)}}
+    //- div.employment__dateRange {{calculatedDate(employment)}}
+    div.employment__dateRange {{formattedDates}}
     div.employment__summary
       p {{employment.summary}}
-    //- div.employment__tags(v-if="sortedTags")
-    //-   div.employment__tags__tag(v-for="(t, i) in sortedTags" :key"i")
-      //- v-chip.employment__tags__tag(v-for="(tag, index) in tags" :key"index") {{tag}}
-    //- div {{sortedTags}}
+    transition(name="fade")
+      div.screen.employment__tags(v-if="hasFilters")
+        EmploymentTagVue(v-for="(tag, index) in tags" :key="index" small :tag-text="tag")
 </template>
 
 <script lang="ts">
+import moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import data from '@/data';
+import { namespace } from 'vuex-class';
+import { dateFormat } from '@/data/dateFormat';
+import EmploymentTagVue from '@/components/EmploymentTag.vue';
 
-@Component({})
+const employmentModule = namespace('employment');
+
+@Component({
+  components: {
+    EmploymentTagVue
+  }
+})
 export default class EmploymentItem extends Vue {
   @Prop() private employment!: any;
+  @employmentModule.State('activeTags') activeTags: array;
+  @employmentModule.Getter('hasFilters') hasFilters: boolean;
 
-  public dateRange(job: any) {
-    const diff = job.dateEnd ? Math.round(job.dateEnd.diff(job.dateStart, 'months', true)) : 0;
-    let diffString = '';
-    if (diff) {
-      const years = diff >= 12 ? Math.floor(diff / 12) : 0;
-      const months = diff - (12 * years);
-      diffString = years ? `${years} year${years > 1 ? 's' : ''}` : '';
-      diffString += years && months ? ', ' : '';
-      diffString += months ? `${months} months` : '';
-    }
-    return job.dateRange || `(${diffString})`;
+  public monthsBetweenDates(dateSet: array): Moment {
+    const diff = Math.floor(moment.duration(dateSet[1].diff(dateSet[0])).as('months'));
+    return diff;
   }
 
-  public dateStartStop(job: any) {
-    return `${job.dateStart.format(data.dateFormat)} - ${job.dateEnd.format(data.dateFormat)}`;
+  get formattedDates() {
+    let months = 0;
+    this.employment.dates.forEach( startEnd => {
+      let diffMonths = this.monthsBetweenDates( startEnd );
+      months += diffMonths;
+    });
+
+    let datesString = '';
+    this.employment.dates.forEach((startEnd, index) => {
+      if(this.employment.dates.length > 1 && (index) < this.employment.dates.length && index > 0) {
+        datesString += ', '
+      }
+      datesString += `${startEnd[0].format(dateFormat)} - ${startEnd[1].format(dateFormat)}`;
+    });
+
+    const years = months >= 12 ? Math.floor(months / 12) : 0;
+    const remainingMonths = months - (years * 12);
+    let totalString = years ? `${years} year${years > 1 ? 's' : ''}` : '';
+    totalString += years && remainingMonths ? ', ' : '';
+    totalString += remainingMonths ? `${remainingMonths} months` : '';
+
+    return `${datesString} (${totalString})`;
+  }
+  
+
+  get includesActiveTags(): boolean {
+    return this.tagsInActiveTags.length > 0;
   }
 
-  public calculatedDate(job: any) {
-    return job.dateRange ? job.dateRange : `${this.dateStartStop(job)} ${this.dateRange(job)}`;
+  get tags() {
+    return this.includesActiveTags ? this.activeTagsFirst : this.sortedTags;
   }
 
-  public get sortedTags() {
+  get sortedTags() {
     return this.employment.tags.sort() || [];
+  }
+
+  get tagsInActiveTags() {
+    return this.activeTags.filter(t => this.sortedTags.includes(t)).sort();
+  }
+
+  get activeTagsFirst() {
+    const leftover = this.sortedTags.filter(t => !this.tagsInActiveTags.includes(t));
+    return this.tagsInActiveTags.concat(leftover);
   }
 }
 </script>
@@ -82,4 +119,7 @@ a
   &__summary
     +$print()
       font-size 0.8em
+
+  &__tags
+    margin-bottom 1em
 </style>
