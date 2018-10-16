@@ -1,0 +1,1 @@
+export const pdfUrl = 'http://bit.ly/michael-minor-resume-github';

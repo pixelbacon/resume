@@ -1,0 +1,1 @@
+export const linkRef = '?ref=Michael.Minor';
