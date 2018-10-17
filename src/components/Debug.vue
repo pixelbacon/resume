@@ -14,7 +14,7 @@ a(v-if="enableDebug" @click="toggle").debug.screen-only
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import {
-  namespace
+  namespace,
 } from 'vuex-class';
 
 const appModule = namespace('app');
@@ -24,7 +24,7 @@ export default class Debug extends Vue {
   public enableDebug = process.env.VUE_APP_ENABLE_GUI_DEBUG || false;
   public toggleDebug = false;
 
-  @appModule.State('version') version: string;
+  @appModule.State('version') public version: string;
 
   public toggle() {
     this.toggleDebug = !this.toggleDebug;

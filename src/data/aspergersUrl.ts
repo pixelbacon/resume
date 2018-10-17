@@ -1,1 +1,1 @@
-export const aspergersUrl = 'https://www.autismspeaks.org/what-asperger-syndrome';
+export const aspergersUrl: string = 'https://www.autismspeaks.org/what-asperger-syndrome';

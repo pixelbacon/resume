@@ -1,4 +1,4 @@
 import { MutationTree } from 'vuex';
-import { AppState } from './types';
+import { IAppState } from '@/types';
 
-export const mutations: MutationTree<AppState> = {};
+export const mutations: MutationTree<IAppState> = {};

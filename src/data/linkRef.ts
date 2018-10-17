@@ -1,1 +1,1 @@
-export const linkRef = '?ref=Michael.Minor';
+export const linkRef: string = '?ref=Michael.Minor';

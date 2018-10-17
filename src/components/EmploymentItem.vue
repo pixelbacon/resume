@@ -19,6 +19,7 @@
 import moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
+import { IDateRange, IEmployment } from '@/types';
 import { dateFormat } from '@/data/dateFormat';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
 
@@ -26,30 +27,30 @@ const employmentModule = namespace('employment');
 
 @Component({
   components: {
-    EmploymentTagVue
-  }
+    EmploymentTagVue,
+  },
 })
 export default class EmploymentItem extends Vue {
-  @Prop() private employment!: any;
-  @employmentModule.State('activeTags') activeTags: array;
-  @employmentModule.Getter('hasFilters') hasFilters: boolean;
+  @Prop({required: true}) public employment!: IEmployment;
 
-  public monthsBetweenDates(dateSet: array): Moment {
+  @employmentModule.State('activeTags') public activeTags!: string[];
+  @employmentModule.Getter('hasFilters') public hasFilters!: boolean;
+
+  public monthsBetweenDates(dateSet: IDateRange): number {
     const diff = Math.floor(moment.duration(dateSet[1].diff(dateSet[0])).as('months'));
     return diff;
   }
 
-  get formattedDates() {
+  get formattedDates(): string {
     let months = 0;
-    this.employment.dates.forEach( startEnd => {
-      let diffMonths = this.monthsBetweenDates( startEnd );
-      months += diffMonths;
+    this.employment.dates.forEach( (startEnd: IDateRange) => {
+      months += this.monthsBetweenDates( startEnd );
     });
 
     let datesString = '';
-    this.employment.dates.forEach((startEnd, index) => {
-      if(this.employment.dates.length > 1 && (index) < this.employment.dates.length && index > 0) {
-        datesString += ', '
+    this.employment.dates.forEach((startEnd: IDateRange, index: number) => {
+      if (this.employment.dates.length > 1 && (index) < this.employment.dates.length && index > 0) {
+        datesString += ', ';
       }
       datesString += `${startEnd[0].format(dateFormat)} - ${startEnd[1].format(dateFormat)}`;
     });
@@ -62,26 +63,26 @@ export default class EmploymentItem extends Vue {
 
     return `${datesString} (${totalString})`;
   }
-  
+
 
   get includesActiveTags(): boolean {
     return this.tagsInActiveTags.length > 0;
   }
 
-  get tags() {
+  get tags(): string[] {
     return this.includesActiveTags ? this.activeTagsFirst : this.sortedTags;
   }
 
-  get sortedTags() {
+  get sortedTags(): string[] {
     return this.employment.tags.sort() || [];
   }
 
-  get tagsInActiveTags() {
-    return this.activeTags.filter(t => this.sortedTags.includes(t)).sort();
+  get tagsInActiveTags(): string[] {
+    return this.activeTags.filter((t: string) => this.sortedTags.includes(t)).sort();
   }
 
-  get activeTagsFirst() {
-    const leftover = this.sortedTags.filter(t => !this.tagsInActiveTags.includes(t));
+  get activeTagsFirst(): string[] {
+    const leftover = this.sortedTags.filter((t: string) => !this.tagsInActiveTags.includes(t));
     return this.tagsInActiveTags.concat(leftover);
   }
 }

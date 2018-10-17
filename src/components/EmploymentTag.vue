@@ -4,55 +4,47 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import {
   State,
   Getter,
   Action,
   Mutation,
-  namespace
+  namespace,
 } from 'vuex-class';
 import { employmentTags } from '@/data/employmentTags';
 
 const employmentModule = namespace('employment');
 
-@Component({
-  props: {
-    removable: Boolean,
-    small: Boolean,
-    tagKey: String,
-    tagText: String
-  }
-})
+@Component
 export default class EmploymentTag extends Vue {
-  @employmentModule.Action('toggleTag') toggleTag: any;
-  @employmentModule.State('activeTags') activeTags: array;
+  @Prop({ required: false }) public removable!: boolean;
+  @Prop({ required: false }) public small!: boolean;
+  @Prop({ required: false }) public tagKey!: string;
+  @Prop({ required: false }) public tagText!: string;
 
-  public onClick() {
-    this.toggleTag(this.tagText)
-  }
+  // Vuex
+  @employmentModule.Action('toggleTag') public toggleTag: any;
+  @employmentModule.State('activeTags') public activeTags!: string[];
 
   get active() {
-    // return false;
     return this.activeTags.includes(this.tagText);
   }
 
-  get color() {
+  get color(): string {
     return this.active ? 'primary' : '#DEDEDE';
   }
 
-  get showClose() {
+  get showClose(): boolean {
     return false;
-    // return this.active;
   }
 
-  get textColor() {
+  get textColor(): string|null {
     return this.active ? '#FFF' : null;
   }
 
-  get text() {
-    return this.tagText || employmentTags[this.tagKey]
+  public onClick(): void {
+    this.toggleTag(this.tagText);
   }
 }
 </script>

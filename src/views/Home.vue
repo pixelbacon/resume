@@ -45,7 +45,7 @@ import WhatIKnowVue from '@/components/WhatIKnow.vue';
     ReferencesVue,
     ToDoVue,
     WhatIKnowVue,
-  }
+  },
 })
 export default class Home extends Vue {}
 </script>

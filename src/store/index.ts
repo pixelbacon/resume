@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { RootState } from './types';
+import { IRootState } from '@/types';
 import { app } from './app';
 import { employment } from './employment';
 
@@ -10,10 +10,12 @@ import { employment } from './employment';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store<RootState>({
-  state: {},
+export default new Vuex.Store<IRootState>({
+  state: {
+    name: 'Michael Minor - Resume',
+  },
   modules: {
     app,
-    employment
-  }
+    employment,
+  },
 });

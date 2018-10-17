@@ -1,5 +1,4 @@
 import { ActionTree } from 'vuex';
-import { AppState } from './types';
-import { RootState } from '../types';
+import { IAppState, IRootState } from '@/types';
 
-export const actions: ActionTree<AppState, RootState> = {};
+export const actions: ActionTree<IAppState, IRootState> = {};

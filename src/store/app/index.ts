@@ -3,21 +3,20 @@ import { Module } from 'vuex';
 import { getters } from './getters';
 import { actions } from './actions';
 import { mutations } from './mutations';
-import { RootState } from './../types';
-import { AppState } from './types';
+import { IAppState, IRootState } from '@/types';
 import { version } from '@/data/version';
 
-export const state: AppState = {
-    lastVersion: Cookies.get('version') || '',
-    version
+export const state: IAppState = {
+  lastVersion: Cookies.get('version') || '',
+  version,
 };
 
 const namespaced: boolean = true;
 
-export const app: Module<AppState, RootState> = {
-    namespaced,
-    state,
-    getters,
-    actions,
-    mutations,
+export const app: Module<IAppState, IRootState> = {
+  namespaced,
+  state,
+  getters,
+  actions,
+  mutations,
 };

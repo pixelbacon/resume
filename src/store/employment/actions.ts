@@ -1,15 +1,14 @@
 import { ActionTree } from 'vuex';
-import { EmploymentFilterState } from './types';
-import { RootState } from '../types';
+import { IEmploymentState, IRootState } from '@/types';
 
-export const actions: ActionTree<EmploymentFilterState, RootState> = {
-    addTag({ commit }, tag: String) {
-        commit('addTag', tag);
-    },
-    removeTag({ commit }, tag: String) {
-        commit('removeTag', tag);
-    },
-    toggleTag({ commit }, tag: String) {
-        commit('toggleTag', tag);
-    }
+export const actions: ActionTree<IEmploymentState, IRootState> = {
+  addTag({ commit }, tag: string) {
+    commit('addTag', tag);
+  },
+  removeTag({ commit }, tag: string) {
+    commit('removeTag', tag);
+  },
+  toggleTag({ commit }, tag: string) {
+    commit('toggleTag', tag);
+  },
 };

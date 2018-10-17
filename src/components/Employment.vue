@@ -14,8 +14,9 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import {
-  namespace
+  namespace,
 } from 'vuex-class';
+import { IEmployment } from '@/types';
 import MoreOnVue from '@/components/MoreOn.vue';
 import EmploymentItemVue from '@/components/EmploymentItem.vue';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
@@ -30,12 +31,12 @@ const employmentModule = namespace('employment');
   },
 })
 export default class Employment extends Vue {
-  @employmentModule.State('activeTags') activeTags: String[];
-  @employmentModule.State('employments') employments: Object[];
-  @employmentModule.Getter('filteredEmployments') filteredEmployments: Object[];
-  @employmentModule.Getter('hasFilters') hasFilters: boolean;
-  @employmentModule.State('tags') tags: String[];
-  viewLimit = 99
+  @employmentModule.State('activeTags') public activeTags!: string[];
+  @employmentModule.State('employments') public employments!: IEmployment[];
+  @employmentModule.Getter('filteredEmployments') public filteredEmployments!: IEmployment[];
+  @employmentModule.Getter('hasFilters') public hasFilters!: boolean;
+  @employmentModule.State('tags') public tags!: string[];
+  public viewLimit: number = 99;
 }
 </script>
 
