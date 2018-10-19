@@ -94,10 +94,10 @@ export default class FilterBar extends Vue {
   }
 
   @Watch('scrollPer')
-  onScrollPerChange(val: number, oldVal: number): void {
+  public onScrollPerChange(val: number, oldVal: number): void {
     TweenMax.to(this.$refs.progressBar, 0.2, {
-      width: `${val}%`
-    })
+      width: `${val}%`,
+    });
   }
 
   public mounted(): void {
