@@ -1,15 +1,11 @@
 <template lang="pug">
   span(@click="onClick").employmentTag
-    v-chip(label :color="color" :close="showClose" :small="small" :text-color="textColor") {{tagText}}
+    v-chip(:color="currentColor" :outline="!active" :close="showClose" :small="small" :text-color="textColor") {{tagText}}
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import {
-  State,
-  Getter,
-  Action,
-  Mutation,
   namespace,
 } from 'vuex-class';
 import { employmentTags } from '@/data/employmentTags';
@@ -18,6 +14,7 @@ const employmentModule = namespace('employment');
 
 @Component
 export default class EmploymentTag extends Vue {
+  @Prop({ required: false, default: '#DEDEDE' }) public color!: string;
   @Prop({ required: false }) public removable!: boolean;
   @Prop({ required: false }) public small!: boolean;
   @Prop({ required: false }) public tagKey!: string;
@@ -27,12 +24,13 @@ export default class EmploymentTag extends Vue {
   @employmentModule.Action('toggleTag') public toggleTag: any;
   @employmentModule.State('activeTags') public activeTags!: string[];
 
-  get active() {
+  get active(): boolean {
     return this.activeTags.includes(this.tagText);
   }
 
-  get color(): string {
-    return this.active ? 'primary' : '#DEDEDE';
+  get currentColor(): string {
+    return 'primary';
+    // return this.active ? 'primary' : this.color;
   }
 
   get showClose(): boolean {

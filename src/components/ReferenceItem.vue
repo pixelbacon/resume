@@ -6,6 +6,8 @@
       a(:href="reference.companyLink" target="_blank").reference__company {{reference.company}}
     p.reference__title {{reference.title}}
     p.reference__affiliation {{reference.affiliation}}
+    div.reference__tags
+      v-chip(v-for="(tag, index) in reference.tags" :key="index" small) {{ tag }}
 </template>
 
 <script lang="ts">
@@ -23,37 +25,41 @@ export default class Reference extends Vue {
 </script>
 
 <style scoped lang="stylus">
-a
++b('a')
   display block
 
-.h4
++b('h4')
   margin-bottom -0.3em
 
-.reference
++b('reference')
   margin-top 1.5em
 
   +$print()
-    font-size 0.9em
+    p
+      font-size 0.8em
 
-  &__name
-  &__company
+  +e('name')
+    color: $theme.colors.secondary
     display inline-block
     margin-bottom 0
 
-  &__name
-    color: $theme.colors.secondary
-
-  &__company
+  +e('company')
     color: $theme.colors.primary
+    display inline-block
+    margin-bottom 0
 
-  &__title
+  +e('tags')
+    margin-top -0.5em
+    margin-bottom -0.5em;
+
+  +e('title')
     color:  $theme.colors.accent
     // font-size 1.2em
     font-family: $theme.font.family.secondary
     font-size 1.1em
     margin-bottom 0.2em
 
-  &__affiliation
-    font-size 0.9em
+  +e('affiliation')
+    // font-size 0.9em
     // font-style italic
 </style>

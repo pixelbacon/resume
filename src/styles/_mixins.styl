@@ -1,3 +1,16 @@
+// ELEMENT MIXIN
+// $el(elName)
+//   define(‘content’, lookup(elName))
+//   &__{elName}
+//     {content}
+//     {block}
+// // MODIFIER MIXIN
+// $mod(modName)
+//   define(‘content’, lookup(modName))
+//   &--{modName}
+//     {content}
+//     {block}
+
 $clearfix()
   &::after
     content ' '
@@ -29,6 +42,11 @@ $print_only()
   @media screen
     visibility hidden
     display none
+
+$hTags()
+  for $num in (1..6)
+    h{$num}
+      {block}
 
 $print_pageBreakAfter()
   page-break-after always

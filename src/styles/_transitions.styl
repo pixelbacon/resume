@@ -6,3 +6,13 @@
     &-enter
     &-leave-to
         opacity 0
+
+.expand
+    &-enter-active
+    &-leave-active
+      transition height 0.5s ease-in-out
+      overflow hidden
+
+    &-enter
+    &-leave-to
+      height 0

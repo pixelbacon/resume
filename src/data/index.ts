@@ -5,6 +5,7 @@ export { employments } from './employments';
 export { employmentTags } from './employmentTags';
 export { linkedIn, linkedInLiteral } from './linkedIn';
 export { linkRef } from './linkRef';
+export { personas } from './personas';
 export { pdfUrl } from './pdfUrl';
 export { process } from './process';
 export { references } from './references';

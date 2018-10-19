@@ -8,6 +8,9 @@ body
   +$screen()
     background: linear-gradient(135deg, rgba(white, 0.8), rgba(white, 0.5)) repeat, url("./../assets/patterns/concrete_seamless.png");
 
+  +$print()
+      font-size 0.9em
+
 for $num in (1..6)
   $split = 0.25
   $fontSize = ((2.5) - ($split * $num)) * 1em
@@ -35,6 +38,10 @@ p,
 small
   $print_fixFirstLetter()
 
+p
+  +$print()
+    margin-bottom 1em
+
 hr
   margin 2em 0
 
@@ -51,4 +58,5 @@ ol
 
 section
   margin-bottom 2em
+  position relative
   width 100%

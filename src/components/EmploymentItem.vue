@@ -10,8 +10,8 @@
     div.employment__dateRange {{formattedDates}}
     div.employment__summary
       p {{employment.summary}}
-    transition(name="fade")
-      div.screen.employment__tags(v-if="hasFilters")
+    ExpandVue
+      div(v-if="hasFilters").employment__tags
         EmploymentTagVue(v-for="(tag, index) in tags" :key="index" small :tag-text="tag")
 </template>
 
@@ -22,12 +22,15 @@ import { namespace } from 'vuex-class';
 import { IDateRange, IEmployment } from '@/types';
 import { dateFormat } from '@/data/dateFormat';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
+import ExpandVue from '@/components/Expand.vue';
 
 const employmentModule = namespace('employment');
+const personaModule = namespace('persona');
 
 @Component({
   components: {
     EmploymentTagVue,
+    ExpandVue,
   },
 })
 export default class EmploymentItem extends Vue {
@@ -35,6 +38,7 @@ export default class EmploymentItem extends Vue {
 
   @employmentModule.State('activeTags') public activeTags!: string[];
   @employmentModule.Getter('hasFilters') public hasFilters!: boolean;
+  @personaModule.Getter('hasActivePersona') public hasActivePersona!: boolean;
 
   public monthsBetweenDates(dateSet: IDateRange): number {
     const diff = Math.floor(moment.duration(dateSet[1].diff(dateSet[0])).as('months'));
@@ -70,7 +74,8 @@ export default class EmploymentItem extends Vue {
   }
 
   get tags(): string[] {
-    return this.includesActiveTags ? this.activeTagsFirst : this.sortedTags;
+    return this.includesActiveTags ? this.tagsInActiveTags : this.sortedTags;
+    // return this.includesActiveTags ? this.hasActivePersona ? this.activeTagsFirst : this.tagsInActiveTags : this.sortedTags;
   }
 
   get sortedTags(): string[] {
@@ -95,19 +100,20 @@ a
 .h4
   margin-bottom -0.3em
 
-.employment
++b('employment')
   +$print()
-    font-size 0.9em
+    // font-size 0.9em
 
-  &__title
-  &__company
+  +e('title')
+    color: $theme.colors.secondary
     display inline-block
     margin-bottom 0
 
-  &__title
-    color: $theme.colors.secondary
+  +e('company')
+    display inline-block
+    margin-bottom 0
 
-  &__dateRange
+  +e('dateRange')
     color: $theme.colors.accent
     font-family: $theme.font.family.secondary
     font-size 1.1em
@@ -117,10 +123,11 @@ a
     +$print()
       font-size 0.9em
 
-  &__summary
+  +e('summary')
     +$print()
       font-size 0.8em
 
-  &__tags
-    margin-bottom 1em
+  +e('tags')
+    margin-top -0.5em
+    margin-bottom 1.5em
 </style>

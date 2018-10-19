@@ -1,6 +1,4 @@
-import { IEmploymentTags } from '@/types';
-
-export const employmentTags: IEmploymentTags = {
+export const employmentTags = {
   advisor: 'advisor',
   agency: 'agency',
   analytics: 'analytics',

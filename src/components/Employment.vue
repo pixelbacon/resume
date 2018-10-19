@@ -1,14 +1,14 @@
 <template lang="pug">
   section.employment
+    MoreOnVue(top-right)
     h2 Employment
-    div.filters.screen
-      p Go ahead and use the tags below to look and learn about specifics for places I've worked. I've gladly spanned multiple roles and various responsibilities, this may make it a bit easier to find out what those are.
-      EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
+    //- div.filters.screen
+    //-   p Go ahead and use the tags below to look and learn about specifics for places I've worked. I've gladly spanned multiple roles and various responsibilities, this may make it a bit easier to find out what those are.
+    //-   EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
     v-layout(row wrap).employmentsContainer
-      v-flex(xs12 v-for="(employment, index) in filteredEmployments" :key="index" v-if="index < viewLimit")
-        transition(name="fade")
-          EmploymentItemVue(:employment="employment")
-    MoreOnVue
+      transition-group(name="fade" mode="out-in")
+        v-flex(xs12 v-for="(employment, index) in filteredEmployments" :key="index" v-if="index < viewLimit").p12
+            EmploymentItemVue(:employment="employment")
 </template>
 
 <script lang="ts">
@@ -36,7 +36,10 @@ export default class Employment extends Vue {
   @employmentModule.Getter('filteredEmployments') public filteredEmployments!: IEmployment[];
   @employmentModule.Getter('hasFilters') public hasFilters!: boolean;
   @employmentModule.State('tags') public tags!: string[];
-  public viewLimit: number = 99;
+
+  public get viewLimit(): number {
+    return this.hasFilters ? 99 : 8;
+  }
 }
 </script>
 
@@ -48,5 +51,8 @@ $padding = 0.2em
     // padding 0 $padding 0 $padding
 
 .filters
-  margin-bottom 3em
+  display none
+
+  +above(3)
+    display block
 </style>

@@ -2,9 +2,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { IRootState } from '@/types';
 import { app } from './app';
 import { employment } from './employment';
+import { persona } from './persona';
+import { IRootState } from '@/types';
 
 // const debug = process.env.NODE_ENV !== 'production';
 
@@ -17,5 +18,6 @@ export default new Vuex.Store<IRootState>({
   modules: {
     app,
     employment,
+    persona,
   },
 });

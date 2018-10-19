@@ -22,20 +22,30 @@ export interface IEmployment {
 export interface IEmploymentState {
   activeTags: string[];
   employments: IEmployment[];
-  tags: IEmploymentTags;
+  tags: object;
 }
 
-export interface IEmploymentTags {
-  [key: string]: any;
+export interface IPersona {
+  description?: string;
+  title: string;
+  employmentTags?: string[];
+  slug: string;
+}
+
+export interface IPersonaState {
+  personas: IPersona[];
+  currentPersona: IPersona|null;
 }
 
 export interface IReference {
-  name: string;
+  affiliation: string;
   linkedIn: string;
-  title: string;
+  name: string;
   company: string;
   companyLink: string;
-  affiliation: string;
+  tags: string[];
+  telephone?: string;
+  title: string;
 }
 
 export interface IRootState {

@@ -1,6 +1,6 @@
 export const skills = {
     backend: [
-      'Elastic Search', 'MySQL', 'PostgreSQL', 'Redis', 'MongoDB', 'GraghQL', 'REST',
+      'Elastic Search', 'Firebase', 'MySQL', 'PostgreSQL', 'Redis', 'MongoDB', 'GraghQL', 'Prisma', 'REST',
     ].sort(),
     css: [
       'CSS2/3', 'Sass', 'Stylus', 'Less', 'Print', 'Screen', 'Responsive',
@@ -9,7 +9,7 @@ export const skills = {
       'Direction & Execution', 'UX/UI', 'Photoshop/Illustrator', 'Sketch', 'Invision', 'Pipeline Creation', 'Photography', 'Motion Graphics', 'Animation',
     ].sort(),
     languages: [
-      'CSS', 'HTML', 'JavaScript', 'JSON', 'PHP (rusty)', '.Net (rusty)', 'ActionScript (rusty)', 'Bash (rusty)', 'Ruby (rusty)', 'Unity (rusty)', 'Python (rusty)', 'XML',
+      'CSS', 'HTML', 'JavaScript', 'JSON/XML/YML', 'PHP (rusty)', '.Net (rusty)', 'ActionScript (rusty)', 'Bash (rusty)', 'Ruby (rusty)', 'Unity (rusty)', 'Python (rusty)',
     ].sort(),
     javascript: [
       'ES5/ES6', 'Angular', 'React', 'Vue/Nuxt', 'GSAP', 'Phaser', 'TypeScript', 'Cordova/PhoneGap', 'SocketIO', 'Node/Express/Sails', 'Ember/Knockout', 'Pug/Jade',

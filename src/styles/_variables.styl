@@ -5,5 +5,11 @@
  */
 rupture.scale = 0 480px 600px 960px 1264px 1904px
 
+// Depths are used to make sure there is order on the z-index. Production wise it can be very easy tp lose track.
+$depths = {
+  filterBar: 99,
+  linkedIn: 100
+}
+
 // Colors, weights, etc
 $theme = json('./../theme.json', { hash: true })

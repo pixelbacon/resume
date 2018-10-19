@@ -2,18 +2,19 @@ import { MutationTree } from 'vuex';
 import { IEmploymentState } from '@/types';
 
 export const mutations: MutationTree<IEmploymentState> = {
-  update(state, tags: string[]) {
+  SET_ACTIVE_TAGS(state, tags: string[]) {
+    // state.activeTags = state.activeTags.filter((t: string) => tags.includes(t));
     state.activeTags = tags;
   },
-  addTag(state, tag: string) {
+  ADD_TAG(state, tag: string) {
     if (!state.activeTags.includes(tag)) {
       state.activeTags.push(tag);
     }
   },
-  removeTag(state, tag: string) {
+  REMOVE_TAG(state, tag: string) {
     state.activeTags = state.activeTags.filter(e => e !== tag);
   },
-  toggleTag(state, tag: string) {
+  TOGGLE_TAG(state, tag: string) {
     if (state.activeTags.includes(tag)) {
       state.activeTags = state.activeTags.filter(e => e !== tag);
     } else {

@@ -51,6 +51,9 @@ export default class Home extends Vue {}
 </script>
 
 <style lang="stylus">
+.references
+  margin-bottom 3em
+
 +$print()
   .experience
   .toDo

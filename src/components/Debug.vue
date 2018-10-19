@@ -3,7 +3,7 @@ a(v-if="enableDebug" @click="toggle").debug.screen-only
   div(v-if="toggleDebug" key="info").debug__info
     div version:
       span.val {{version}}
-    div bp:
+    div $vuetify:
       span.val {{ $vuetify.breakpoint.name }}
     div breakpoint:
       span.val {{ $vuetify.breakpoint }}
@@ -21,12 +21,12 @@ const appModule = namespace('app');
 
 @Component({})
 export default class Debug extends Vue {
-  public enableDebug = process.env.VUE_APP_ENABLE_GUI_DEBUG || false;
-  public toggleDebug = false;
-
   @appModule.State('version') public version: string;
 
-  public toggle() {
+  public enableDebug: boolean = process.env.VUE_APP_ENABLE_GUI_DEBUG || false;
+  public toggleDebug: boolean = false;
+
+  public toggle(): void {
     this.toggleDebug = !this.toggleDebug;
   }
 }

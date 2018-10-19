@@ -3,8 +3,8 @@ import { Module } from 'vuex';
 import { getters } from './getters';
 import { actions } from './actions';
 import { mutations } from './mutations';
-import { IAppState, IRootState } from '@/types';
 import { version } from '@/data/version';
+import { IAppState, IRootState } from '@/types';
 
 export const state: IAppState = {
   lastVersion: Cookies.get('version') || '',
