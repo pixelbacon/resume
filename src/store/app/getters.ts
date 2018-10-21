@@ -1,5 +1,6 @@
 import { GetterTree } from 'vuex';
-import { IAppState, IRootState } from '@/types';
+import IAppState from '@/types/IAppState';
+import IRootState from '@/types/IRootState';
 
 export const getters: GetterTree<IAppState, IRootState> = {
   difVersion(state): boolean {

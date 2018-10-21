@@ -17,9 +17,6 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
   components: {},
 })
 export default class Reference extends Vue {
-  // Variables replace
-  public variableOne = false;
-
   @Prop() private reference!: object;
 }
 </script>

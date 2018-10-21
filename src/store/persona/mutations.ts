@@ -1,5 +1,6 @@
 import { MutationTree } from 'vuex';
-import { IPersona, IPersonaState } from '@/types';
+import IPersonaState from '@/types/IPersonaState';
+import IPersona from '@/types/IPersona';
 
 export const mutations: MutationTree<IPersonaState> = {
   SET_PERSONA(state: IPersonaState, persona: IPersona) {

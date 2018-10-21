@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { IToDo } from '@/types';
+import IToDo from '@/types/IToDo';
 import { todos } from '@/data/todos';
 
 @Component({})

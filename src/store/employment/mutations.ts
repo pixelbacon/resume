@@ -1,5 +1,5 @@
 import { MutationTree } from 'vuex';
-import { IEmploymentState } from '@/types';
+import IEmploymentState from '@/types/IEmploymentState';
 
 export const mutations: MutationTree<IEmploymentState> = {
   SET_ACTIVE_TAGS(state, tags: string[]) {

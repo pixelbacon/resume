@@ -21,7 +21,7 @@ const appModule = namespace('app');
 
 @Component({})
 export default class Debug extends Vue {
-  @appModule.State('version') public version: string;
+  @appModule.State('version') public version!: string;
 
   public enableDebug: boolean = process.env.VUE_APP_ENABLE_GUI_DEBUG || false;
   public toggleDebug: boolean = false;

@@ -2,9 +2,10 @@
   section.employment
     MoreOnVue(top-right)
     h2 Employment
-    //- div.filters.screen
-    //-   p Go ahead and use the tags below to look and learn about specifics for places I've worked. I've gladly spanned multiple roles and various responsibilities, this may make it a bit easier to find out what those are.
-    //-   EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
+    ExpandVue
+      div(v-if="!hasActivePersona").employment__filters.screen
+        p Go ahead and use the tags below to look and learn about specifics for places I've worked. I've gladly spanned multiple roles and various responsibilities, this may make it a bit easier to find out what those are.
+        EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
     v-layout(row wrap).employmentsContainer
       transition-group(name="fade" mode="out-in")
         v-flex(xs12 v-for="(employment, index) in filteredEmployments" :key="index" v-if="index < viewLimit").p12
@@ -16,17 +17,20 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import {
   namespace,
 } from 'vuex-class';
-import { IEmployment } from '@/types';
+import ExpandVue from '@/components/Expand.vue';
 import MoreOnVue from '@/components/MoreOn.vue';
 import EmploymentItemVue from '@/components/EmploymentItem.vue';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
+import IEmployment from '@/types/IEmployment';
 
 const employmentModule = namespace('employment');
+const personaModule = namespace('persona');
 
 @Component({
   components: {
     EmploymentItemVue,
     EmploymentTagVue,
+    ExpandVue,
     MoreOnVue,
   },
 })
@@ -36,6 +40,7 @@ export default class Employment extends Vue {
   @employmentModule.Getter('filteredEmployments') public filteredEmployments!: IEmployment[];
   @employmentModule.Getter('hasFilters') public hasFilters!: boolean;
   @employmentModule.State('tags') public tags!: string[];
+  @personaModule.Getter('hasActivePersona') public hasActivePersona!: boolean;
 
   public get viewLimit(): number {
     return this.hasFilters ? 99 : 8;
@@ -46,13 +51,7 @@ export default class Employment extends Vue {
 <style scoped lang="stylus">
 $padding = 0.2em
 
-.employment
-  +above(3)
-    // padding 0 $padding 0 $padding
-
-.filters
-  display none
-
-  +above(3)
-    display block
++b('employment')
+  +e('filters')
+    padding-bottom 1.5em
 </style>

@@ -5,7 +5,7 @@ import Vuex from 'vuex';
 import { app } from './app';
 import { employment } from './employment';
 import { persona } from './persona';
-import { IRootState } from '@/types';
+import IRootState from '@/types/IRootState';
 
 // const debug = process.env.NODE_ENV !== 'production';
 

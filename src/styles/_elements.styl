@@ -5,6 +5,9 @@ body
   font-family: $theme.font.family.body
   font-size 16px
 
+  +above(5)
+    font-size 17px
+
   +$screen()
     background: linear-gradient(135deg, rgba(white, 0.8), rgba(white, 0.5)) repeat, url("./../assets/patterns/concrete_seamless.png");
 
@@ -57,6 +60,6 @@ ol
     padding-right 0.5em
 
 section
-  margin-bottom 2em
+  margin-bottom 1em
   position relative
   width 100%

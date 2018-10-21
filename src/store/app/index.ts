@@ -4,10 +4,12 @@ import { getters } from './getters';
 import { actions } from './actions';
 import { mutations } from './mutations';
 import { version } from '@/data/version';
-import { IAppState, IRootState } from '@/types';
+import IAppState from '@/types/IAppState';
+import IRootState from '@/types/IRootState';
 
 export const state: IAppState = {
   lastVersion: Cookies.get('version') || '',
+  showFilters: false,
   version,
 };
 

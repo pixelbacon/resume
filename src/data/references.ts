@@ -1,6 +1,6 @@
 import { linkRef } from './linkRef';
 import { referenceTags } from './referenceTags';
-import { IReference } from '@/types';
+import IReference from '@/types/IReference';
 
 export const references: IReference[] = [
   {
@@ -130,14 +130,28 @@ export const references: IReference[] = [
   },
   {
     name: 'Brandon Lee Cox',
-    linkedIn: 'https://www.linkedin.com/in/imheretomakeyoufamous/',
+    linkedIn: 'https://www.linkedin.com/in/imheretomakeyoufamous/?ref="Michael.Minor',
     title: 'SVP, Executive Creative Director',
     company: 'Leo Burnett',
-    companyLink: `http://www.leoburnett.com/${linkRef}`,
+    companyLink: `http://bit.ly/michael-minor-leo-burnett`,
     affiliation: 'A creative technologist that dove into the designing/brand development side. We worked cohesively as the creative/front end leads on Copenhagen at Leo Burnett. Our mututal backgrounds challenged and supported each other via hive mind.',
     tags: [
       referenceTags.agency,
       referenceTags.colleague,
+    ],
+  },
+  {
+    name: 'Joshua Gore',
+    linkedIn: 'http://bit.ly/michael-minor-joshua-gore',
+    title: 'Founder at Alterna Cycles',
+    company: 'Alterna Cycles',
+    companyLink: `http://bit.ly/michael-minor-jgw`,
+    affiliation: 'Joshua Gore has been a long time friend and a business partner many times. Like myself, he compartmentalizes the intimidation that comes with making new things. He instead focusess on finding blind spots and supporting his comrades.',
+    tags: [
+      referenceTags.agency,
+      referenceTags.client,
+      referenceTags.colleague,
+      referenceTags.startups,
     ],
   },
 ];

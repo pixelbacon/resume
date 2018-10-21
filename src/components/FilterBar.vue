@@ -4,24 +4,24 @@
       div(ref="progressBar").filterBar__progressBar
       v-layout(row wrap align-center justify-space-between)
         v-flex
-          h1.filterBar__title Michael Minor
+          h1.filterBar__title {{title}}
         v-flex.filterBar__tools
           ul
             li
               LinkedInIconVue(:large="largeIcons")
             li
-              a(title="Toggle Filters" @click.stop="toggleFilters")
+              a(title="Toggle Filters" @click.stop="onFilterToggleClick")
                 v-icon(color="primary" :large="largeIcons") mdi-filter-outline
       ExpandVue
         div(v-if="showFilters").filterBar__filters
           hr
           PersonaTagsVue.filterBar__filters__set.filterBar__personas
-          ExpandVue
-            div(v-if="!hasActivePersona").filterBar__filters__set.filterBar__employment
-              h4 Responsibilities
-              p There's a lot going on in this resume... May be easier to use some filtering.
-              p
-                EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
+          //- ExpandVue
+          //-   div(v-if="!hasActivePersona").filterBar__filters__set.filterBar__employment
+          //-     h4 Responsibilities
+          //-     p There's a lot going on in this resume... May be easier to use some filtering.
+          //-     p
+          //-       EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
 
 </template>
 
@@ -36,7 +36,9 @@ import PersonaTagsVue from '@/components/PersonaTags.vue';
 import ExpandVue from '@/components/Expand.vue';
 import LinkedInIconVue from '@/components/LinkedInIcon.vue';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
+import IPersona from '@/types/IPersona';
 
+const appModule = namespace('app');
 const employmentModule = namespace('employment');
 const personaModule = namespace('persona');
 const cssName: string = 'filterBar';
@@ -50,11 +52,13 @@ const cssName: string = 'filterBar';
   },
 })
 export default class FilterBar extends Vue {
+  @appModule.Action('hideFilters') public hideFilters!: () => void;
+  @appModule.Action('toggleFilters') public toggleFilters!: () => void;
+  @appModule.State('showFilters') public showFilters!: boolean;
   @employmentModule.State('tags') public tags!: string[];
   @personaModule.Getter('hasActivePersona') public hasActivePersona!: boolean;
+  @personaModule.State('currentPersona') public currentPersona!: IPersona;
 
-  public personas = personas;
-  public showFilters: boolean = false;
   public scrollDirection: string = '';
   public scrollPer: number = 0;
   public scrollPosition: number = 0;
@@ -89,6 +93,14 @@ export default class FilterBar extends Vue {
     return !!this.scrollPosition;
   }
 
+  public get title(): string {
+    let t = 'Michael Minor';
+    if (this.hasActivePersona) {
+      t += `: ${this.currentPersona.title}`;
+    }
+    return t;
+  }
+
   public get windowHeight(): number {
     return window.innerHeight;
   }
@@ -101,45 +113,55 @@ export default class FilterBar extends Vue {
   }
 
   public mounted(): void {
-    this.checkScroll(0);
+    this.checkScroll();
   }
 
-  public checkScroll(yPos: number): void {
+  public checkScroll(e?: Event): void {
+    const yPos: number = e ? (e.target as any).documentElement.scrollTop : window.scrollY;
     this.scrollDirection = this.scrollPosition > yPos ? 'up' : 'down';
     this.scrollPosition = yPos;
     this.scrolledPast = this.scrollPosition > this.$el.clientHeight / 2;
     this.scrollPer = Math.ceil(yPos / (this.documentHeight - this.windowHeight) * 100);
-    if (!this.scrolledPast) {
-      this.showFilters = false;
-    }
+    // if (this.scrolledPast) {
+    //   this.hideFilters();
+    // }
   }
 
-  public toggleFilters(): void {
-    this.showFilters = !this.showFilters;
+  public onFilterToggleClick(e: Event): void {
+    this.toggleFilters();
   }
+
+  public onResize = (e: Event) => this.checkScroll(e);
 
   public onScroll(e: Event): void {
-    const yPos: number = window.scrollY || (e.target as any).documentElement.scrollTop;
-    this.checkScroll(yPos);
+    this.checkScroll(e);
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 +b('filterBar')
+  background: darken($theme.colors.secondary, 20%)
+  box-shadow 0 0 2em rgba(black, 0.5)
   position fixed
   top 0
   left 0
   width 100%
   z-index: $depths.filterBar
+  max-height 100vh
+  overflow visible
+  opacity 0
+  transform translateY(-100%)
+  transition all 0.5s
 
   +m('scroll')
-    +e('tools')
-      opacity 1
+    opacity 1
+    transform translateY(0)
 
-    +e('container')
-      opacity 1
-      transform translateY(0)
+    // +e('tools')
+    //   opacity 1
+
+    // +e('container')
 
   +e('progressBar')
     background black
@@ -154,12 +176,7 @@ export default class FilterBar extends Vue {
     z-index -1
 
   +e('container')
-    background: darken($theme.colors.secondary, 20%)
-    box-shadow 0 0 2em rgba(black, 0.5)
     color white
-    opacity 0
-    transform translateY(-100%)
-    transition all 0.5s
     // top 0
     // left 0
     // width 100%
@@ -177,7 +194,6 @@ export default class FilterBar extends Vue {
       transition all 1s
 
   +e('tools')
-    opacity 0
     text-align right
 
     > ul li

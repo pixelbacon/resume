@@ -4,6 +4,7 @@ export const referenceTags = {
   client: 'client',
   colleague: 'colleague',
   cofounder: 'cofounder',
+  partner: 'partner',
   pupil: 'pupil',
   startups: 'startups',
 };

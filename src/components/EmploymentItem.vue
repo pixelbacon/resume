@@ -19,10 +19,11 @@
 import moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
-import { IDateRange, IEmployment } from '@/types';
 import { dateFormat } from '@/data/dateFormat';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
 import ExpandVue from '@/components/Expand.vue';
+import IEmployment from '@/types/IEmployment';
+import IMomentRange from '@/types/IMomentRange';
 
 const employmentModule = namespace('employment');
 const personaModule = namespace('persona');
@@ -40,19 +41,19 @@ export default class EmploymentItem extends Vue {
   @employmentModule.Getter('hasFilters') public hasFilters!: boolean;
   @personaModule.Getter('hasActivePersona') public hasActivePersona!: boolean;
 
-  public monthsBetweenDates(dateSet: IDateRange): number {
+  public monthsBetweenDates(dateSet: IMomentRange): number {
     const diff = Math.floor(moment.duration(dateSet[1].diff(dateSet[0])).as('months'));
     return diff;
   }
 
   get formattedDates(): string {
     let months = 0;
-    this.employment.dates.forEach( (startEnd: IDateRange) => {
+    this.employment.dates.forEach( (startEnd: IMomentRange) => {
       months += this.monthsBetweenDates( startEnd );
     });
 
     let datesString = '';
-    this.employment.dates.forEach((startEnd: IDateRange, index: number) => {
+    this.employment.dates.forEach((startEnd: IMomentRange, index: number) => {
       if (this.employment.dates.length > 1 && (index) < this.employment.dates.length && index > 0) {
         datesString += ', ';
       }
@@ -67,7 +68,6 @@ export default class EmploymentItem extends Vue {
 
     return `${datesString} (${totalString})`;
   }
-
 
   get includesActiveTags(): boolean {
     return this.tagsInActiveTags.length > 0;

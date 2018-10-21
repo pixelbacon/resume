@@ -8,8 +8,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 import DebugVue from '@/components/Debug.vue';
 import FilterBar from '@/components/FilterBar.vue';
+
+const appModule = namespace('app');
 
 @Component({
   components: {

@@ -1,27 +1,28 @@
 import { ActionTree } from 'vuex';
-import { IEmploymentState, IRootState } from '@/types';
+import IEmploymentState from '@/types/IEmploymentState';
+import IRootState from '@/types/IRootState';
 
-const checkPersonaForCustomTags = (dispatch: any, rootGetters: any) => {
+const checkPersonaForCustomTags = (state: IEmploymentState, dispatch: any, rootGetters: any) => {
   if (!rootGetters['persona/hasActivePersona']) {
-    dispatch('persona/addEmploymentTagToMe', null, { root: true });
+    dispatch('persona/addEmploymentTagToMe', state.activeTags, { root: true });
   }
 };
 
 export const actions: ActionTree<IEmploymentState, IRootState> = {
-  setActiveTags({ commit, dispatch, rootGetters }, tags: string[]) {
+  setActiveTags({ state, commit, dispatch, rootGetters }, tags: string[]) {
     commit('SET_ACTIVE_TAGS', tags);
-    checkPersonaForCustomTags(dispatch, rootGetters);
+    checkPersonaForCustomTags(state, dispatch, rootGetters);
   },
-  addTag( { commit, dispatch, rootGetters }, tag: string) {
+  addTag( { state, commit, dispatch, rootGetters }, tag: string) {
     commit('ADD_TAG', tag);
-    checkPersonaForCustomTags(dispatch, rootGetters);
+    checkPersonaForCustomTags(state, dispatch, rootGetters);
   },
-  removeTag({ commit, dispatch, rootGetters }, tag: string) {
+  removeTag({ state, commit, dispatch, rootGetters }, tag: string) {
     commit('REMOVE_TAG', tag);
-    checkPersonaForCustomTags(dispatch, rootGetters);
+    checkPersonaForCustomTags(state, dispatch, rootGetters);
   },
-  toggleTag({ commit, dispatch, rootGetters }, tag: string) {
+  toggleTag({ state, commit, dispatch, rootGetters }, tag: string) {
     commit('TOGGLE_TAG', tag);
-    checkPersonaForCustomTags(dispatch, rootGetters);
+    checkPersonaForCustomTags(state, dispatch, rootGetters);
   },
 };

@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { employmentTags } from './employmentTags';
-import { IEmployment } from '@/types';
+import IEmployment from '@/types/IEmployment';
 
 // export const employments: Array<{ title: string, company: string, companyUrl?: string, dates: any[], leaving?: string, summary: string, tags: any[] }> = [
 export const employments: IEmployment[] = [

@@ -1,4 +1,4 @@
-import { IToDo } from '@/types';
+import IToDo from '@/types/IToDo';
 
 export const todos: IToDo[] = [
   {

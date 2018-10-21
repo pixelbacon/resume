@@ -1,14 +1,41 @@
+import IPersona from '@/types/IPersona';
+import IReference from '@/types/IReference';
 import { employmentTags } from '@/data/employmentTags';
-import { IPersona } from '@/types';
+import { references } from '@/data/references';
+import { referenceTags } from '@/data/referenceTags';
+import { intersects } from '@/utils/intersection';
+
+function assignReferencesToPersona(tags: string[]): IReference[] {
+  const refs: IReference[] = [];
+  references.filter( (reference: IReference): void => {
+    if (intersects(tags, reference.tags)) {
+      refs.push(reference);
+    }
+  });
+  return refs;
+}
 
 export const personas: IPersona[] = [
   {
-    title: 'ME',
+    slug: '/',
+    title: 'Maker',
+    subTitle: 'Maker of Things + Creative Technologist',
     employmentTags: [],
-    slug: '',
+    references: assignReferencesToPersona([
+      referenceTags.agency,
+      referenceTags.boss,
+      referenceTags.client,
+      referenceTags.colleague,
+      referenceTags.cofounder,
+      referenceTags.partner,
+      referenceTags.pupil,
+      referenceTags.startups,
+    ]),
   },
   {
+    slug: '/founder',
     title: 'Founder',
+    subTitle: 'Maker of Things + Helper of Minds',
     employmentTags: [
       employmentTags.bizOps,
       employmentTags.design,
@@ -27,51 +54,43 @@ export const personas: IPersona[] = [
       employmentTags.tenacity,
       employmentTags.ux,
     ],
-    slug: 'founder',
+    references: assignReferencesToPersona([
+      referenceTags.cofounder,
+      referenceTags.partner,
+      referenceTags.startups,
+    ]),
   },
   // {
+  //   slug: '/mentor',
   //   title: 'Mentor',
   //   employmentTags: [
   //     employmentTags.mentoring,
   //   ],
   // },
+  // {
+    //   slug: '/designer',
+  //   title: 'Designer',
+  //   subTitle: 'Designer of Things',
+  //   employmentTags: [
+  //     employmentTags.photography,
+  //     employmentTags.design,
+  //     employmentTags.ux,
+  //   ],
+  // },
   {
-    title: 'Designer',
-    employmentTags: [
-      employmentTags.photography,
-      employmentTags.design,
-      employmentTags.ux,
-    ],
-    slug: 'designer',
-  },
-  {
+    slug: '/developer',
     title: 'Developer',
+    subTitle: 'Developer of Things',
     employmentTags: [
       employmentTags.devBackend,
       employmentTags.devFrontend,
       employmentTags.devFullstack,
       employmentTags.devOps,
     ],
-    slug: 'developer',
+    references: assignReferencesToPersona([
+      referenceTags.client,
+      referenceTags.colleague,
+      referenceTags.agency,
+    ]),
   },
-  // {
-  //   title: 'Developer: Back End',
-  //   employmentTags: [
-  //     employmentTags.devBackend,
-  //     employmentTags.devOps,
-  //   ],
-  // },
-  // {
-  //   title: 'Developer: Front End',
-  //   employmentTags: [
-  //     employmentTags.devFrontend,
-  //     employmentTags.devOps,
-  //   ],
-  // },
-  // {
-  //   title: 'Photographer',
-  //   employmentTags: [
-  //     employmentTags.photographer,
-  //   ],
-  // },
 ];

@@ -1,5 +1,6 @@
 <template lang="pug">
-  div.header.print-page
+  div(:class="cssClass").header.print-page
+    div.header__bg.screen
     LinkedInIconVue(:large="true")
     v-container()
       v-layout(align-center justify-center row wrap)
@@ -7,9 +8,9 @@
           img(src="../assets/me.jpg").me
         v-flex(xs12)
           h1.name Michael Minor
-          div.ct.h2 Maker of Things + Creative Technologist
+          div.ct.h2 {{currentPersona.subTitle}}
         v-flex(xs12 sm10 md9 lg7 xl6).summary.p10
-          p.summary__header Planning, designing, developing, pitching, and sustaining brand creation/analysis/improvement for {{yearsIn}} years... And what I keep seeing is there is little value in being right when there is far greater value in knowing when you're wrong. And most importantly having a team to figure out what that means.
+          p.summary__header Creating, designing, developing, pitching, and sustaining brands for {{yearsIn}} years. I keep seeing there is little value in being right compared to the far greater value in knowing when you're wrong. And most importantly having a team to figure out what that means.
           //- p.summary__detail I have high functioning <a :href="aspergersUrl" target="_blank" class="aspergers">Aspergers</a>. It's a bit weird but I've focussed on its strengths since I was a child, so that's a thing.
         v-flex(xs12).screen
           a.pdfLink(:href="pdfUrl") Download PDF
@@ -30,12 +31,17 @@
 <script lang="ts">
 import moment from 'moment';
 import { Component, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 import { linkedIn, linkedInLiteral } from '@/data/linkedIn';
 import LinkedInIconVue from '@/components/LinkedInIcon.vue';
 import { aspergersUrl } from '@/data/aspergersUrl';
 import { emailAddress } from '@/data/emailAddress';
 import { pdfUrl } from '@/data/pdfUrl';
 import { resumeUrl } from '@/data/resumeUrl';
+import IPersona from '@/types/IPersona';
+
+const cssName = 'header';
+const personaModule = namespace('persona');
 
 @Component({
   components: {
@@ -51,6 +57,20 @@ export default class AppHeader extends Vue {
   public resumeUrl: string = resumeUrl;
   public yearsIn: number = moment().diff(moment('19981001'), 'years');
 
+  @personaModule.Getter('isPersonaDeveloper') public isPersonaDeveloper!: boolean;
+  @personaModule.Getter('isPersonaFounder') public isPersonaFounder!: boolean;
+  @personaModule.Getter('isPersonaMaker') public isPersonaMaker!: boolean;
+  @personaModule.State('currentPersona') public currentPersona!: IPersona;
+
+  public get cssClass(): object {
+    return {
+      [cssName]: true,
+      [`${cssName}--developer`]: this.isPersonaDeveloper,
+      [`${cssName}--maker`]: this.isPersonaMaker,
+      [`${cssName}--founder`]: this.isPersonaFounder,
+    };
+  }
+
   get emailHref(): string {
     return `mailto:${emailAddress}`;
   }
@@ -60,20 +80,48 @@ export default class AppHeader extends Vue {
 <style scoped lang="stylus">
 $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.7)), url("../assets/backgrounds/andre-benz-1092194-unsplash.jpg")
 
-.header
++b('header')
   background-image: $printBg
-  background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1)), url("../assets/backgrounds/andre-benz-1092194-unsplash--mobile.jpg")
-  background-size cover
-  background-position center center
+  background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1))
   color white
   display flex
   text-align center
   text-shadow 0.1em 0.1em 1em rgba(black, 0.3)
   min-height 100vh
   padding 2em 0
+  position relative
+
+  +m('developer')
+    +e('bg')
+      // background-image url("../assets/backgrounds/david-kovalenko-414249-unsplash.jpg")
+      background-image url("../assets/backgrounds/developer-phood.jpg")
+
+  +m('founder')
+    +e('bg')
+      // background-image url("../assets/backgrounds/tabea-damm-579138-unsplash.jpg")
+      background-image url("../assets/backgrounds/andre-benz-1092194-unsplash.jpg")
+
+  +m('maker')
+    +e('bg')
+      background-color black
+      background-image url("../assets/backgrounds/emmad-216134-unsplash.jpg")
+      background-position center center
+      // background-image url("../assets/backgrounds/developer.jpg")
+
+  +e('bg')
+    background-position center center
+    background-size cover
+    content ' '
+    display block
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index -1
 
   +above(2)
-    background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1)), url("../assets/backgrounds/andre-benz-1092194-unsplash.jpg")
+    background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1))
 
   +$print()
     background none

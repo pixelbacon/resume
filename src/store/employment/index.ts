@@ -4,7 +4,8 @@ import { actions } from './actions';
 import { mutations } from './mutations';
 import { employments } from '@/data/employments';
 import { employmentTags } from '@/data/employmentTags';
-import { IEmploymentState, IRootState } from '@/types';
+import IRootState from '@/types/IRootState';
+import IEmploymentState from '@/types/IEmploymentState';
 
 export const state: IEmploymentState = {
   activeTags: [],
