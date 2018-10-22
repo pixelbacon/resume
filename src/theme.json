@@ -13,7 +13,7 @@
   },
   "font": {
     "family": {
-      "body": "Roboto",
+      "body": "Montserrat, Avenir, Helvetica, Arial, sans-serif",
       "secondary": "Raleway, Avenir, Helvetica, Arial, sans-serif"
     },
     "weight": {
