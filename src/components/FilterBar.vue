@@ -4,7 +4,8 @@
       div(ref="progressBar").filterBar__progressBar
       v-layout(row wrap align-center justify-space-between)
         v-flex
-          h1.filterBar__title {{title}}
+          h1.filterBar__title Michael Minor
+            span {{currentPersona.title}}
         v-flex.filterBar__tools
           ul
             li
@@ -16,12 +17,6 @@
         div(v-if="showFilters").filterBar__filters
           hr
           PersonaTagsVue.filterBar__filters__set.filterBar__personas
-          //- ExpandVue
-          //-   div(v-if="!hasActivePersona").filterBar__filters__set.filterBar__employment
-          //-     h4 Responsibilities
-          //-     p There's a lot going on in this resume... May be easier to use some filtering.
-          //-     p
-          //-       EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
 
 </template>
 
@@ -206,8 +201,20 @@ export default class FilterBar extends Vue {
   +e('title')
     font-size 12px
     font-size 6vw
-    line-height 1em
+    line-height 0.7em
     padding-bottom 0
+
+    > span
+      color: $theme.colors.info
+      font-weight: $theme.font.weight.extraBold
+      font-size 0.6em
+      font-style italic
+      // opacity 0.8
+
+      &:before
+        display table
+        content ' '
+        height 0
 
     +above(3)
       font-size 2em

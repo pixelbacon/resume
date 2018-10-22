@@ -5,17 +5,18 @@
     v-container(fluid).pl-0.pr-0
       v-layout(row wrap)
         v-flex(xs12 sm4 md3 v-for="(section, key) in skills" :key="key").p3
-          SectionWithListVue(:title="startCase(key)" :list="section")
-    //- h2 Capabilities & Experience
-    //- ul
-    //-   li(v-for="(item, index) in technicalities" :key="index") {{ item }}
+          SectionWithListVue(:title="startCase(section.title)" :list="section.items")
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 import _ from 'lodash';
 import SectionWithListVue from '@/components/SectionWithList.vue';
 import { skills } from '@/data/skills';
+import ISkillSet from '@/types/ISkillSet';
+
+const personaModule = namespace('persona');
 
 @Component({
   components: {
@@ -23,8 +24,7 @@ import { skills } from '@/data/skills';
   },
 })
 export default class Platter extends Vue {
-  public skills = skills;
-
+  @personaModule.Getter('skills') public skills!: ISkillSet[];
   public startCase = _.startCase;
 }
 </script>

@@ -39,8 +39,8 @@ export default class PersonaTag extends Vue {
   }
 
   public onClick(e: Event): void {
-    this.$router.push(this.persona.slug);
-    // this.setPersona(this.persona);
+    // this.$router.push(this.persona.slug);
+    this.setPersona(this.persona);
     // !this.active ? this.setPersona(this.persona) : this.clearPersona();
   }
 }

@@ -16,7 +16,6 @@ const personaRoutes: RouteConfig[] = personas.map((persona: IPersona): RouteConf
   beforeEnter(to, from, next): void {
     store.dispatch('app/hideFilters');
     store.dispatch('persona/setBySlug', persona.slug);
-    store.dispatch('employment/setActiveTags', persona.employmentTags);
     next();
   },
 }));

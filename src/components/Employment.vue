@@ -8,7 +8,7 @@
         EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
     v-layout(row wrap).employmentsContainer
       transition-group(name="fade" mode="out-in")
-        v-flex(xs12 v-for="(employment, index) in filteredEmployments" :key="index" v-if="index < viewLimit").p12
+        v-flex(xs12 v-for="(employment, index) in computedEmployments" :key="index" v-if="index < viewLimit").p12
             EmploymentItemVue(:employment="employment")
 </template>
 
@@ -22,6 +22,7 @@ import MoreOnVue from '@/components/MoreOn.vue';
 import EmploymentItemVue from '@/components/EmploymentItem.vue';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
 import IEmployment from '@/types/IEmployment';
+import IPersona from '@/types/IPersona';
 
 const employmentModule = namespace('employment');
 const personaModule = namespace('persona');
@@ -40,10 +41,16 @@ export default class Employment extends Vue {
   @employmentModule.Getter('filteredEmployments') public filteredEmployments!: IEmployment[];
   @employmentModule.Getter('hasFilters') public hasFilters!: boolean;
   @employmentModule.State('tags') public tags!: string[];
+  @personaModule.Getter('currentPersona') public currentPersona!: IPersona;
   @personaModule.Getter('hasActivePersona') public hasActivePersona!: boolean;
+  @personaModule.Getter('employments') public personaEmployments!: IEmployment[];
+
+  public get computedEmployments(): IEmployment[] {
+    return this.hasActivePersona ? this.personaEmployments : this.filteredEmployments;
+  }
 
   public get viewLimit(): number {
-    return this.hasFilters ? 99 : 8;
+    return this.hasFilters ? 99 : 4;
   }
 }
 </script>
