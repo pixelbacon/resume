@@ -1,17 +1,19 @@
 <template lang="pug">
   div.employment
     div.h4
-      div.employment__title {{employment.title}}
-      span.atBreaker @
+      //- span.atBreaker @
       div.employment__company
         a(v-if="employment.companyUrl" :href="employment.companyUrl" target="_blank") {{employment.company}}
         span(v-else) {{employment.company}}
+      div.employment__title {{employment.title}}
     //- div.employment__dateRange {{calculatedDate(employment)}}
     div.employment__dateRange {{formattedDates}}
     div.employment__summary
       p {{employment.summary}}
+    ul.employment__bulletPoints
+      li(v-for="(point, index) in employment.bulletPoints" :key="index").employment__bulletPoints__point {{point}}
     ExpandVue
-      div(v-if="hasFilters").employment__tags
+      div(v-if="hasFilters && !hasActivePersona").employment__tags
         EmploymentTagVue(v-for="(tag, index) in tags" :key="index" small :tag-text="tag")
 </template>
 
@@ -104,9 +106,15 @@ a
   +$print()
     // font-size 0.9em
 
+  +e('bulletPoints')
+    margin-bottom 1.5em
+
+    +e('point')
+      font-style italic
+
   +e('title')
     color: $theme.colors.secondary
-    display inline-block
+    // display inline-block
     margin-bottom 0
 
   +e('company')
