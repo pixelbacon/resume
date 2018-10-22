@@ -2,9 +2,6 @@
   // size A4 portrait
 
 body
-  font-family: $theme.font.family.body
-  font-size 16px
-
   +above(5)
     font-size 17px
 
@@ -12,8 +9,13 @@ body
     background: linear-gradient(135deg, rgba(white, 0.8), rgba(white, 0.5)) repeat, url("./../assets/patterns/concrete_seamless.png");
 
   +$print()
-      font-size 0.9em
+      font-size 0.8em !important
 
+.application
+  font-family: $theme.font.family.body !important
+  font-size 1em
+
+// H1...h6
 for $num in (1..6)
   $split = 0.25
   $fontSize = ((2.5) - ($split * $num)) * 1em
