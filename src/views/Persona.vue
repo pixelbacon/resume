@@ -47,11 +47,7 @@ import WhatIKnowVue from '@/components/WhatIKnow.vue';
     WhatIKnowVue,
   },
 })
-export default class Persona extends Vue {
-  // public beforeRouteEnter (to: any, from: any, next: () => void): void {
-  //   next();
-  // }
-}
+export default class Persona extends Vue {}
 </script>
 
 <style lang="stylus">
