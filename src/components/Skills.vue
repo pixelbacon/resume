@@ -1,7 +1,7 @@
 <template lang="pug">
   section.platter
-    h2 Platter
-    p Over the 2 decades of being a photographer, developer, designer, and many inbetween there's been quite a few languages, frameworks, and tools that were used in the process. Some are pretty rusty but hopefully you get the gist; I don't settle on any particular set of tools.
+    h2 Skillset
+    p Over the 2 decades of being a photographer, developer, designer, and many inbetween there's been quite a few languages, frameworks, and tools that were used in the process. Some are pretty rusty but hopefully you get the gist; I don't settle on any particular set of tools. If I used them once, they're buried somewhere in the vault and just needs a refresher and usually a production level code base is best.
     v-container(fluid).pl-0.pr-0
       v-layout(row wrap)
         v-flex(xs12 sm4 md3 v-for="(section, key) in skills" :key="key").p3
@@ -23,7 +23,7 @@ const personaModule = namespace('persona');
     SectionWithListVue,
   },
 })
-export default class Platter extends Vue {
+export default class Skills extends Vue {
   @personaModule.Getter('skills') public skills!: ISkillSet[];
   public startCase = _.startCase;
 }

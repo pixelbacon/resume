@@ -8,7 +8,7 @@
           img(src="../assets/me.jpg").me
         v-flex(xs12)
           h1.name Michael Minor
-          div.ct.h2 {{currentPersona.subTitle}}
+          div.subTitle.h2 {{currentPersona.subTitle}}
         v-flex(xs12 sm10 md9).summary.p10
           div.header__description
             p(v-for="(p, index) in currentPersona.description" :key="index") {{p}}
@@ -192,9 +192,9 @@ hr
   color: lighten($theme.colors.primary, 20%)
   font-weight: $theme.font.weight.extraBold
 
-.ct
-  // color: $theme.colors.secondary
-  color: lighten($theme.colors.secondary, 80%)
+.subTitle
+  color: $theme.colors.info
+  // color: lighten($theme.colors.secondary, 80%)
   font-size 2em
   font-weight: $theme.font.weight.bold
   margin-bottom 1em
@@ -205,7 +205,7 @@ hr
   top 1em
   right 1em
   color #0077B5
-  z-index: $depths.linkedIn
+  z-index 1
 
 .interactive
   +$print()

@@ -53,7 +53,7 @@ export const employments: IEmployment[] = [
   {
     title: 'Technical Advisor',
     personas: [
-      Persona.Developer,
+      // Persona.Developer,
       Persona.Founder,
       Persona.Maker,
     ],

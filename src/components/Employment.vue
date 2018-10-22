@@ -50,7 +50,8 @@ export default class Employment extends Vue {
   }
 
   public get viewLimit(): number {
-    return this.hasFilters ? 99 : 4;
+    // return this.hasFilters ? 99 : 4;
+    return 99;
   }
 }
 </script>

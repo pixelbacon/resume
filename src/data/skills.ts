@@ -42,7 +42,7 @@ export const skills: ISkillSet[] = [
   {
     title: 'Design',
     personas: [
-      Persona.Developer,
+      // Persona.Developer,
       Persona.Founder,
       Persona.Maker,
     ],
@@ -66,15 +66,15 @@ export const skills: ISkillSet[] = [
       Persona.Maker,
     ],
     items: [
-      '.Net (rusty)',
-      'ActionScript (rusty)',
-      'Bash (rusty)',
+      '.Net',
+      'ActionScript',
+      'Bash',
       'CSS/HTML/JSON/XML/YML',
       'JavaScript',
-      'PHP (rusty)',
-      'Python (rusty)',
-      'Ruby (rusty)',
-      'Unity (rusty)',
+      'PHP',
+      'Python',
+      'Ruby',
+      'Unity',
     ].sort(),
   },
   {

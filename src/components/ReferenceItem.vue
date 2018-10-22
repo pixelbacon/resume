@@ -1,13 +1,12 @@
 <template lang="pug">
   div.reference
-    div.h4
-      a(:href="reference.linkedIn" target="_blank").reference__name {{reference.name}}
-      span.atBreaker @
-      a(:href="reference.companyLink" target="_blank").reference__company {{reference.company}}
+    a(:href="reference.linkedIn" target="_blank").h3.reference__name {{reference.name}}
+    a(:href="reference.companyLink" target="_blank").h4.reference__company {{reference.company}}
     p.reference__title {{reference.title}}
     p.reference__affiliation {{reference.affiliation}}
-    div.reference__tags
-      v-chip(v-for="(tag, index) in reference.tags" :key="index" small) {{ tag }}
+    p.reference__linkedIn {{reference.linkedIn}}
+    //- div.reference__tags
+    //-   v-chip(v-for="(tag, index) in reference.tags" :key="index" small) {{ tag }}
 </template>
 
 <script lang="ts">
@@ -37,12 +36,10 @@ export default class Reference extends Vue {
 
   +e('name')
     color: $theme.colors.secondary
-    display inline-block
     margin-bottom 0
 
   +e('company')
     color: $theme.colors.primary
-    display inline-block
     margin-bottom 0
 
   +e('tags')
@@ -59,4 +56,7 @@ export default class Reference extends Vue {
   +e('affiliation')
     // font-size 0.9em
     // font-style italic
+
+  +e('linkedIn')
+    font-weight: $theme.font.weight.extraBold
 </style>

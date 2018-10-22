@@ -2,7 +2,7 @@
   section.references
     MoreOnVue(top-right)
     h2 References
-    p Due to the high profile of references (respectfully), contact information is available upon request. Thank you for your understanding.
+    p Due to the high profile of references (respectfully), contact information is available upon request. Feel free to contact them via their LinkedIn profile.
     //- v-container(fluid)
     v-layout(row wrap).references__items
       v-flex(xs12 sm6 xl4 v-for="(reference, index) in references" :key="index").p6

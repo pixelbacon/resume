@@ -1,7 +1,7 @@
 <template lang="pug">
   div.home
     AppHeaderVue.print-page
-    v-container(grid-list-lg :fluid="$vuetify.breakpoint.mdAndDown")
+    v-container(grid-list-xl :fluid="$vuetify.breakpoint.mdAndDown")
       v-layout(wrap row)
         v-flex(xs12 lg6).p12
           ExperienceVue
@@ -13,7 +13,7 @@
         v-flex(xs12 md6).p6
           ToDoVue
       div.print-break
-      PlatterVue
+      SkillsVue
       ReferencesVue.print-break
       EmploymentVue.print-break
       ReachOutVue.screen
@@ -22,16 +22,19 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 import AppHeaderVue from '@/components/AppHeader.vue';
 import EmploymentVue from '@/components/Employment.vue';
 import ExperienceVue from '@/components/Experience.vue';
 import NotesVue from '@/components/Notes.vue';
-import PlatterVue from '@/components/Platter.vue';
 import ProcessVue from '@/components/Process.vue';
 import ReachOutVue from '@/components/ReachOut.vue';
 import ReferencesVue from '@/components/References.vue';
+import SkillsVue from '@/components/Skills.vue';
 import ToDoVue from '@/components/ToDo.vue';
 import WhatIKnowVue from '@/components/WhatIKnow.vue';
+
+const personaModule = namespace('persona');
 
 @Component({
   components: {
@@ -39,15 +42,19 @@ import WhatIKnowVue from '@/components/WhatIKnow.vue';
     EmploymentVue,
     ExperienceVue,
     NotesVue,
-    PlatterVue,
     ProcessVue,
     ReachOutVue,
     ReferencesVue,
+    SkillsVue,
     ToDoVue,
     WhatIKnowVue,
   },
 })
-export default class Persona extends Vue {}
+export default class Persona extends Vue {
+  @personaModule.Getter('isPersonaDeveloper') public isPersonaDeveloper!: boolean;
+  @personaModule.Getter('isPersonaFounder') public isPersonaFounder!: boolean;
+  @personaModule.Getter('isPersonaMaker') public isPersonaMaker!: boolean;
+}
 </script>
 
 <style lang="stylus">
