@@ -1,10 +1,13 @@
 import IReference from './IReference';
+import { Persona } from './Persona';
 
 export default interface IPersona {
-  description?: string;
+  type: Persona;
+  background?: string;
+  description: string[];
   title: string;
   employmentTags?: string[];
-  references: IReference[];
+  skills?: object;
   slug: string;
   subTitle: string;
 }
