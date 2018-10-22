@@ -1,16 +1,3 @@
-// ELEMENT MIXIN
-// $el(elName)
-//   define(‘content’, lookup(elName))
-//   &__{elName}
-//     {content}
-//     {block}
-// // MODIFIER MIXIN
-// $mod(modName)
-//   define(‘content’, lookup(modName))
-//   &--{modName}
-//     {content}
-//     {block}
-
 $clearfix()
   &::after
     content ' '
@@ -53,3 +40,16 @@ $print_pageBreakAfter()
 
 $print_pageBreakBefore()
   page-break-before always
+
+$smallerByTypeOf($decrement = 0.1, $base = 1, $measurement = 1em)
+  for $n in (0..6)
+    $split = $decrement * $n
+    $fontSize = ($base - $split) * $measurement
+    $width = 100% - (100% * ($n * $split))
+    // $fontSize = (1 - (0.1 * $n)) * 1em
+
+    &:nth-of-type({$n + 1})
+      font-size $fontSize
+      width $width
+      margin-left auto
+      margin-right auto
