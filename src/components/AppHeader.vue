@@ -9,8 +9,9 @@
         v-flex(xs12)
           h1.name Michael Minor
           div.ct.h2 {{currentPersona.subTitle}}
-        v-flex(xs12 sm10 md9 lg7 xl6).summary.p10
-          p.summary__header Creating, designing, developing, pitching, and sustaining brands for {{yearsIn}} years. I keep seeing there is little value in being right compared to the far greater value in knowing when you're wrong. And most importantly having a team to figure out what that means.
+        v-flex(xs12 sm10 md9).summary.p10
+          div.header__description
+            p(v-for="(p, index) in currentPersona.description" :key="index") {{p}}
           //- p.summary__detail I have high functioning <a :href="aspergersUrl" target="_blank" class="aspergers">Aspergers</a>. It's a bit weird but I've focussed on its strengths since I was a child, so that's a thing.
         v-flex(xs12).screen
           a.pdfLink(:href="pdfUrl") Download PDF
@@ -90,20 +91,29 @@ $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.
   min-height 100vh
   padding 2em 0
   position relative
+  transition all 0.5s
+
+  +$print()
+    background none
+    border: 1px solid $theme.colors.primary
+    color black
+    text-shadow none
+
+  +above(2)
+    background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1))
 
   +m('developer')
     +e('bg')
       // background-image url("../assets/backgrounds/david-kovalenko-414249-unsplash.jpg")
-      background-image url("../assets/backgrounds/developer-phood.jpg")
+      background-image url("../assets/backgrounds/developer-mixed.jpg")
 
   +m('founder')
     +e('bg')
-      // background-image url("../assets/backgrounds/tabea-damm-579138-unsplash.jpg")
       background-image url("../assets/backgrounds/andre-benz-1092194-unsplash.jpg")
+      // background-image url("../assets/backgrounds/tabea-damm-579138-unsplash.jpg")
 
   +m('maker')
     +e('bg')
-      background-color black
       background-image url("../assets/backgrounds/emmad-216134-unsplash.jpg")
       background-position center center
       // background-image url("../assets/backgrounds/developer.jpg")
@@ -120,15 +130,16 @@ $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.
     height 100%
     z-index -1
 
-  +above(2)
-    background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1))
+  +e('description')
+    font-size 1.2em
 
-  +$print()
-    background none
-    border: 1px solid $theme.colors.primary
-    color black
-    text-shadow none
-    // background-image $printBg
+    p
+      $smallerByTypeOf()
+    // p
+    //   for $num in (1..6)
+    //     $fontSize = (1 - (0.1 * $num)) * 1em
+    //     &:nth-of-type({$num})
+    //       font-size $fontSize
 
 a
   +$print()
