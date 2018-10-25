@@ -69,11 +69,13 @@ export default class FilterBar extends Vue {
   }
 
   public get documentHeight(): number {
-    const D = document;
+    const el: HTMLElement = document.documentElement as HTMLElement;
+    const body: HTMLElement = document.body as HTMLElement;
+
     return Math.max(
-      D.body.scrollHeight, D.documentElement.scrollHeight,
-      D.body.offsetHeight, D.documentElement.offsetHeight,
-      D.body.clientHeight, D.documentElement.clientHeight,
+      body.scrollHeight, el.scrollHeight,
+      body.offsetHeight, el.offsetHeight,
+      body.clientHeight, el.clientHeight,
       0,
     );
     // const body: HTMLElement = document.querySelector('body') || document.body;
