@@ -26,7 +26,7 @@
           hr
           p.interactive For the interactive version, head to:
             br
-            a(:href="resumeUrl") {{resumeUrl}}{{currentPersona.slug}}
+            a(:href="resumeUrl") {{url}}
 </template>
 
 <script lang="ts">
@@ -70,6 +70,10 @@ export default class AppHeader extends Vue {
 
   get emailHref(): string {
     return `mailto:${emailAddress}`;
+  }
+
+  get url(): string {
+    return `${this.resumeUrl}/#${this.currentPersona.slug}`;
   }
 }
 </script>
