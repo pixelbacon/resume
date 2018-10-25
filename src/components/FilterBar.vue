@@ -69,20 +69,9 @@ export default class FilterBar extends Vue {
   }
 
   public get documentHeight(): number {
-    const el: HTMLElement = document.documentElement as HTMLElement;
-    const body: HTMLElement = document.body as HTMLElement;
-
-    return Math.max(
-      body.scrollHeight, el.scrollHeight,
-      body.offsetHeight, el.offsetHeight,
-      body.clientHeight, el.clientHeight,
-      0,
-    );
-    // const body: HTMLElement = document.querySelector('body') || document.body;
-    // return body.offsetHeight;
-    // const body = document.body;
-    // const html = document.documentElement;
-    // return Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight) || 0;
+    const db = document.body as HTMLElement;
+    const dde = document.documentElement as HTMLElement;
+    return Math.max(db.scrollHeight, dde.scrollHeight, db.offsetHeight, dde.offsetHeight, db.clientHeight, dde.clientHeight);
   }
 
   public get perRotation(): number {
@@ -121,7 +110,7 @@ export default class FilterBar extends Vue {
   }
 
   public checkScroll(e?: Event): void {
-    const yPos: number = e ? (e.target as any).documentElement.scrollTop : window.scrollY;
+    const yPos: number = window.scrollY;
     this.scrollDirection = this.scrollPosition > yPos ? 'up' : 'down';
     this.scrollPosition = yPos;
     this.scrolledPast = this.scrollPosition > this.$el.clientHeight / 2;
