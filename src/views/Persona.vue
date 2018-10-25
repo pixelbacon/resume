@@ -3,14 +3,14 @@
     AppHeaderVue.print-page
     //- IntroVideoModalVue
     div.howInbetween
-      v-container(grid-list-xl)
+      v-container( :fluid="useFluid" grid-list-xl)
         v-layout(wrap row)
           v-flex(xs12 lg6).p12
             HowItBeganVue
           v-flex(xs12 lg6).p12
             TheInbetweenVue
     div.processToDo
-      v-container(grid-list-xl :fluid="useFluid")
+      v-container(:fluid="useFluid" grid-list-xl)
         v-layout(wrap row)
           v-flex(xs12 md6).p6
             ProcessVue
