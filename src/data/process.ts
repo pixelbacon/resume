@@ -8,3 +8,5 @@ export const process: string[] = [
   'Double Captain & Coke, in a tall, w/ lime',
   'Postmortem: What was a win, what was a lose',
 ];
+
+export default process;

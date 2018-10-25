@@ -1,18 +1,18 @@
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
 // import Home from './views/Home.vue';
-import NotFound from '@/views/NotFound.vue';
-import Persona from '@/views/Persona.vue';
-import { personas } from '@/data/personas';
+import NotFoundVue from '@/views/NotFound.vue';
+import PersonaVue from '@/views/Persona.vue';
+import { personas } from '@/data';
 import store from '@/store';
-import IPersona from './types/IPersona';
+import { IPersona } from '@/@types';
 
 Vue.use(Router);
 
 const personaRoutes: RouteConfig[] = personas.map((persona: IPersona): RouteConfig => ({
   path: `${persona.slug}`,
   name: persona.slug,
-  component: Persona,
+  component: PersonaVue,
   beforeEnter(to, from, next): void {
     store.dispatch('app/hideFilters');
     store.dispatch('persona/setBySlug', persona.slug);
@@ -43,7 +43,7 @@ const routes = [
   {
     path: '*',
     name: 'notFound',
-    component: NotFound,
+    component: NotFoundVue,
   },
 ];
 

@@ -1,14 +1,6 @@
 import { GetterTree } from 'vuex';
-import { personas } from '@/data/personas';
-import IPersonaState from '@/types/IPersonaState';
-import IRootState from '@/types/IRootState';
-import { employments } from '@/data/employments';
-import { references } from '@/data/references';
-import { skills } from '@/data/skills';
-import IEmployment from '@/types/IEmployment';
-import { Persona } from '@/types/Persona';
-import ISkillSet from '@/types/ISkillSet';
-import IReference from '@/types/IReference';
+import { employments, personas, pdfUrls, references, skills } from '@/data';
+import { IEmployment, IPersonaState, IReference, IRootState, ISkillSet, Persona, IPdfUrl } from '@/@types';
 
 
 export const getters: GetterTree<IPersonaState, IRootState> = {
@@ -26,6 +18,9 @@ export const getters: GetterTree<IPersonaState, IRootState> = {
   },
   employments(state): IEmployment[] {
     return employments.filter( (employment: IEmployment) => employment.personas.includes(state.currentPersona.type));
+  },
+  pdfUrl(state): IPdfUrl {
+    return pdfUrls.find( (p: IPdfUrl) => p.persona === state.currentPersona.type) || pdfUrls[0];
   },
   references(state): IReference[] {
     return references.filter( (reference: IReference) => reference.personas.includes(state.currentPersona.type));

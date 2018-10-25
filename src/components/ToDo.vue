@@ -2,16 +2,16 @@
   section.toDo
     h2 To-Do
     ol
-      li(v-for="(item, index) in todos" :key="index") {{ item.description }}
+      li(v-for="(item, index) in toDos" :key="index") {{ item.description }}
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import IToDo from '@/types/IToDo';
-import { todos } from '@/data/todos';
+import { toDos } from '@/data';
 
 @Component({})
 export default class ToDo extends Vue {
-  public todos: IToDo[] = todos;
+  public toDos: IToDo[] = toDos;
 }
 </script>

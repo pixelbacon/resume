@@ -33,13 +33,9 @@
 import moment from 'moment';
 import { Component, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
-import { linkedIn, linkedInLiteral } from '@/data/linkedIn';
+import { aspergersUrl, linkedIn, emailAddress, linkedInLiteral, resumeUrl } from '@/data';
+import { IPersona, IPdfUrl } from '@/@types';
 import LinkedInIconVue from '@/components/LinkedInIcon.vue';
-import { aspergersUrl } from '@/data/aspergersUrl';
-import { emailAddress } from '@/data/emailAddress';
-import { pdfUrl } from '@/data/pdfUrl';
-import { resumeUrl } from '@/data/resumeUrl';
-import IPersona from '@/types/IPersona';
 
 const cssName = 'header';
 const personaModule = namespace('persona');
@@ -54,13 +50,13 @@ export default class AppHeader extends Vue {
   public emailAddress: string = emailAddress;
   public linkedIn: string = linkedIn;
   public linkedInLiteral: string = linkedInLiteral;
-  public pdfUrl: string = pdfUrl;
   public resumeUrl: string = resumeUrl;
   public yearsIn: number = moment().diff(moment('19981001'), 'years');
 
   @personaModule.Getter('isPersonaDeveloper') public isPersonaDeveloper!: boolean;
   @personaModule.Getter('isPersonaFounder') public isPersonaFounder!: boolean;
   @personaModule.Getter('isPersonaMaker') public isPersonaMaker!: boolean;
+  @personaModule.Getter('pdfUrl') public pdfUrl!: IPdfUrl;
   @personaModule.State('currentPersona') public currentPersona!: IPersona;
 
   public get cssClass(): object {

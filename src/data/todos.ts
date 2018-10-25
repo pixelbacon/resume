@@ -1,6 +1,6 @@
 import IToDo from '@/types/IToDo';
 
-export const todos: IToDo[] = [
+export const toDos: IToDo[] = [
   {
     completed: false,
     description: 'Play a major role in a company that will affect my grand children, and every one elses for that matter.',
@@ -30,3 +30,5 @@ export const todos: IToDo[] = [
     description: 'Retire onto a self sustaining ranch off the grid with a bunch of adorable fainting goats.',
   },
 ];
+
+export default toDos;
