@@ -3,8 +3,7 @@ import { getters } from './getters';
 import { actions } from './actions';
 import { mutations } from './mutations';
 import { personas } from '@/data';
-import IPersonaState from '@/types/IPersonaState';
-import IRootState from '@/types/IRootState';
+import { IPersonaState, IRootState } from '@/@types';
 
 export const state: IPersonaState = {
   personas,
@@ -20,3 +19,5 @@ export const persona: Module<IPersonaState, IRootState> = {
   actions,
   mutations,
 };
+
+export default persona;

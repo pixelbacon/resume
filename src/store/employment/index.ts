@@ -2,10 +2,8 @@ import { Module } from 'vuex';
 import { getters } from './getters';
 import { actions } from './actions';
 import { mutations } from './mutations';
-import { employments } from '@/data/employments';
-import { employmentTags } from '@/data/employmentTags';
-import IRootState from '@/types/IRootState';
-import IEmploymentState from '@/types/IEmploymentState';
+import { employments, employmentTags } from '@/data';
+import { IEmploymentState, IRootState } from '@/@types';
 
 export const state: IEmploymentState = {
   activeTags: [],
@@ -22,3 +20,5 @@ export const employment: Module<IEmploymentState, IRootState> = {
   actions,
   mutations,
 };
+
+export default employment;

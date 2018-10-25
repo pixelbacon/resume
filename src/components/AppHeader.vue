@@ -14,7 +14,7 @@
             p(v-for="(p, index) in currentPersona.description" :key="index") {{p}}
           //- p.summary__detail I have high functioning <a :href="aspergersUrl" target="_blank" class="aspergers">Aspergers</a>. It's a bit weird but I've focussed on its strengths since I was a child, so that's a thing.
         v-flex(xs12).screen
-          a.pdfLink(:href="pdfUrl") Download PDF
+          a.pdfLink(:href="pdfUrl.url") Download PDF
         v-flex(xs12).print.printFooter
           hr
           p
@@ -26,7 +26,7 @@
           hr
           p.interactive For the interactive version, head to:
             br
-            a(:href="resumeUrl") {{resumeUrl}}
+            a(:href="resumeUrl") {{resumeUrl}}{{currentPersona.slug}}
 </template>
 
 <script lang="ts">
@@ -79,7 +79,8 @@ $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.
 
 +b('header')
   background-image: $printBg
-  background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1))
+  background-image: linear-gradient(to bottom, rgba(black, 0.25) 0%, rgba(black, 0.5) 100%), linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1))
+  background-position center center
   color white
   display flex
   text-align center
@@ -96,7 +97,7 @@ $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.
     text-shadow none
 
   +above(2)
-    background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1))
+    // background-image: linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.colors.secondary, 0.9)), linear-gradient(0deg, rgba($theme.colors.secondary, 0.7), rgba($theme.colors.primary, 0.1))
 
   +m('developer')
     +e('bg')

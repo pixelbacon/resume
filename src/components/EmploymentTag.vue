@@ -8,7 +8,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 import {
   namespace,
 } from 'vuex-class';
-import { employmentTags } from '@/data/employmentTags';
+import { employmentTags } from '@/data';
 
 const employmentModule = namespace('employment');
 

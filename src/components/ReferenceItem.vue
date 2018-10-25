@@ -1,10 +1,15 @@
 <template lang="pug">
   div.reference
-    a(:href="reference.linkedIn" target="_blank").h3.reference__name {{reference.name}}
-    a(:href="reference.companyLink" target="_blank").h4.reference__company {{reference.company}}
+    a(:href="reference.companyLink" target="_blank").reference__company {{reference.company}}
+    a(:href="reference.linkedIn" target="_blank").reference__name {{reference.name}}
     p.reference__title {{reference.title}}
     p.reference__affiliation {{reference.affiliation}}
-    p.reference__linkedIn {{reference.linkedIn}}
+    div.reference__linkedIn
+      a(:href="reference.linkedIn")
+        span.screen
+          v-icon(small) link
+          span &nbsp;LinkedIn
+      div.print <strong>LinkedIn:</strong> {{reference.linkedIn}}
     //- div.reference__tags
     //-   v-chip(v-for="(tag, index) in reference.tags" :key="index" small) {{ tag }}
 </template>
@@ -24,23 +29,24 @@ export default class Reference extends Vue {
 +b('a')
   display block
 
-+b('h4')
-  margin-bottom -0.3em
-
 +b('reference')
-  margin-top 1.5em
+  // margin-top 1.5em
 
   +$print()
-    p
-      font-size 0.8em
+    // margin-bottom -1em
+    font-size 0.8em
 
   +e('name')
     color: $theme.colors.secondary
+    display block
+    font-size 1.4em
     margin-bottom 0
 
   +e('company')
     color: $theme.colors.primary
-    margin-bottom 0
+    display block
+    font-size 1.2em
+    margin-bottom 0em
 
   +e('tags')
     margin-top -0.5em
@@ -56,6 +62,7 @@ export default class Reference extends Vue {
   +e('affiliation')
     // font-size 0.9em
     // font-style italic
+    margin-bottom 0.5em
 
   +e('linkedIn')
     font-weight: $theme.font.weight.extraBold

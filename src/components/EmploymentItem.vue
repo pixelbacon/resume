@@ -8,8 +8,10 @@
       div.employment__title {{employment.title}}
     //- div.employment__dateRange {{calculatedDate(employment)}}
     div.employment__dateRange {{formattedDates}}
-    div.employment__summary
+    div.employment__summary.screen
       p {{employment.summary}}
+    //- v-layout(row wrap).employment__bulletPoints
+    //-   v-flex(v-for="(point, index) in employment.bulletPoints" :key="index" xs12 sm6 md4).employment__bulletPoints__point {{point}}
     ul.employment__bulletPoints
       li(v-for="(point, index) in employment.bulletPoints" :key="index").employment__bulletPoints__point {{point}}
     ExpandVue
@@ -21,11 +23,10 @@
 import moment from 'moment';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
-import { dateFormat } from '@/data/dateFormat';
+import { dateFormat } from '@/data';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
 import ExpandVue from '@/components/Expand.vue';
-import IEmployment from '@/types/IEmployment';
-import IMomentRange from '@/types/IMomentRange';
+import { IEmployment, IMomentRange } from '@/@types';
 
 const employmentModule = namespace('employment');
 const personaModule = namespace('persona');
@@ -104,32 +105,40 @@ a
 
 +b('employment')
   +$print()
+    page-break-inside avoid
+    margin-bottom -2em
     // font-size 0.9em
 
   +e('bulletPoints')
     margin-bottom 1.5em
 
-    +e('point')
+    +$print()
+      font-size 0.8em
+
+    &__point
       font-style italic
+
+  +e('company')
+    margin-bottom 0
+    font-size 0.9em
+    margin-bottom 0.1em
 
   +e('title')
     color: $theme.colors.secondary
-    // display inline-block
-    margin-bottom 0
-
-  +e('company')
-    display inline-block
-    margin-bottom 0
+    // font-size 1.2em
+    font-family: $theme.font.family.primary
+    font-size 1.1em
+    margin-bottom 0.2em
 
   +e('dateRange')
     color: $theme.colors.accent
     font-family: $theme.font.family.secondary
-    font-size 1.1em
-    // font-weight: $theme.font.weight.bold
-    margin-bottom 0.2em
+    font-size 1em
+    font-weight: $theme.font.weight.bold
+    margin-bottom 0.5em
 
     +$print()
-      font-size 0.9em
+      font-size 0.8em
 
   +e('summary')
     +$print()

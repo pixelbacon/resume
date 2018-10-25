@@ -1,19 +1,19 @@
 <template lang="pug">
-  section.employment
-    MoreOnVue(top-right)
-    h2 Employment
-    ExpandVue
-      div(v-if="!hasActivePersona").employment__filters.screen
-        p Go ahead and use the tags below to look and learn about specifics for places I've worked. I've gladly spanned multiple roles and various responsibilities, this may make it a bit easier to find out what those are.
-        EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
-    v-layout(row wrap).employmentsContainer
-      transition-group(name="fade" mode="out-in")
-        v-flex(xs12 v-for="(employment, index) in computedEmployments" :key="index" v-if="index < viewLimit").p12
-            EmploymentItemVue(:employment="employment")
+  section.employments
+    v-container(:fluid="useFluid" grid-list-xl)
+      MoreOnVue(top-right)
+      h2 Employment
+      ExpandVue
+        div(v-if="!hasActivePersona").employments__filters.screen
+          p Go ahead and use the tags below to look and learn about specifics for places I've worked. I've gladly spanned multiple roles and various responsibilities, this may make it a bit easier to find out what those are.
+          EmploymentTagVue(v-for="(tag, key) in tags" :key="key" :tag-text="tag")
+      v-layout(row wrap).employments__employment
+        v-flex(xs12 v-for="(employment, index) in computedEmployments" :key="index" v-if="index < viewLimit").p6
+          EmploymentItemVue(:employment="employment")
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
 import {
   namespace,
 } from 'vuex-class';
@@ -21,8 +21,8 @@ import ExpandVue from '@/components/Expand.vue';
 import MoreOnVue from '@/components/MoreOn.vue';
 import EmploymentItemVue from '@/components/EmploymentItem.vue';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
-import IEmployment from '@/types/IEmployment';
-import IPersona from '@/types/IPersona';
+import { IEmployment, IPersona } from '@/@types';
+import { UseFluid } from '@/mixins';
 
 const employmentModule = namespace('employment');
 const personaModule = namespace('persona');
@@ -35,7 +35,7 @@ const personaModule = namespace('persona');
     MoreOnVue,
   },
 })
-export default class Employment extends Vue {
+export default class Employment extends Mixins(UseFluid) {
   @employmentModule.State('activeTags') public activeTags!: string[];
   @employmentModule.State('employments') public employments!: IEmployment[];
   @employmentModule.Getter('filteredEmployments') public filteredEmployments!: IEmployment[];
@@ -50,16 +50,18 @@ export default class Employment extends Vue {
   }
 
   public get viewLimit(): number {
-    // return this.hasFilters ? 99 : 4;
-    return 99;
+    return this.hasFilters ? 99 : 5;
   }
 }
 </script>
 
 <style scoped lang="stylus">
-$padding = 0.2em
-
-+b('employment')
++b('employments')
   +e('filters')
-    padding-bottom 1.5em
+    clear both
+    padding-bottom 2em
+
+  +e('employment')
+    clear both
+    margin-bottom 2em
 </style>

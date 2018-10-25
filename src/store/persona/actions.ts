@@ -1,8 +1,5 @@
 import { ActionTree } from 'vuex';
-import IPersona from '@/types/IPersona';
-import IPersonaState from '@/types/IPersonaState';
-import IRootState from '@/types/IRootState';
-import { Persona } from '@/types/Persona';
+import { IPersona, IPersonaState, IRootState, Persona } from '@/@types';
 import router from '@/router';
 
 export const actions: ActionTree<IPersonaState, IRootState> = {

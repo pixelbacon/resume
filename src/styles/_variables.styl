@@ -5,11 +5,17 @@
  */
 rupture.scale = 0 480px 600px 960px 1264px 1904px
 
+// Colors, weights, etc
+$theme = json('./../theme.json', { hash: true })
+
 // Depths are used to make sure there is order on the z-index. Production wise it can be very easy tp lose track.
 $depths = {
   filterBar: 99,
   linkedIn: 100
 }
 
-// Colors, weights, etc
-$theme = json('./../theme.json', { hash: true })
+$backgrounds = {
+  primary: linear-gradient(45deg, darken($theme.colors.primary, 80%), darken($theme.colors.secondary, 50%))
+  secondary: linear-gradient(45deg, darken($theme.colors.secondary, 80%), darken($theme.colors.primary, 50%))
+  info: linear-gradient(45deg, darken($theme.colors.info, 80%), darken($theme.colors.primary, 80%))
+}

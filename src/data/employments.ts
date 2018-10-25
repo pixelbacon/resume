@@ -1,8 +1,8 @@
 import moment from 'moment';
-import { employmentTags } from './employmentTags';
-import IEmployment from '@/types/IEmployment';
-import { yearsIn } from '@/data/yearsIn';
-import { Persona } from '@/types/Persona';
+import employmentTags from './employmentTags';
+import yearsIn from './yearsIn';
+import IEmployment from '@/@types/IEmployment';
+import Persona from '@/@types/Persona';
 
 // export const employments: Array<{ title: string, company: string, companyUrl?: string, dates: any[], leaving?: string, summary: string, tags: any[] }> = [
 export const employments: IEmployment[] = [
@@ -20,7 +20,7 @@ export const employments: IEmployment[] = [
       'Retained repeat customeers as a developer, photographer, advisor, designer, etc',
       'Never said "no" to a client asking for something outside of my skillset at any time',
       'Work remotely 50% of the time',
-    ],
+    ].sort(),
     personas: [
       Persona.Developer,
       Persona.Founder,
@@ -65,10 +65,10 @@ export const employments: IEmployment[] = [
     summary: 'Waves plans on decentralizing the benefits of 10,000 hours, both for the knowledge holder and those who want to learn. Founded by Cam Bartzen, I serve as an advisor/mentor during the critical early stage of a startup where finding co-founders, understanding their product, and finding a rhythm are the utmost important.',
     bulletPoints: [
       'Teaching my theory of \'Make It Easy\', leading to a new found sense of strength in ideas and product on founder level',
-      'Enabled methods for better product development',
+      'Enabled methods for better product development through qualming fear beyond titles',
       'Enabled improved leadership through correlating intent with product',
       'Knowledge transfer based on the importance of finding fellow founders',
-    ],
+    ].sort(),
     leaving: '',
     tags: [
       employmentTags.advisor,
@@ -145,7 +145,7 @@ export const employments: IEmployment[] = [
       'Added sales based analytics to Assessment to enable customer and sales team to increase ability to sell to new and existing customers',
       'Educated fellow cofounders on managing and interacting with technical based roles',
       'Went to TechStars: Boulder 2017 class',
-    ],
+    ].sort(),
     tags: [
       employmentTags.analytics,
       employmentTags.animation,
@@ -185,7 +185,7 @@ export const employments: IEmployment[] = [
       'Introduced game mechanics from a product and brand cogniscant perspective',
       'Planned entire tech stack through 15 pages of documentation, leading to being on the Technical Governance for company and client',
       'Initially brought in to help a Angular/Sass based career search tool, leading to full time employment',
-    ],
+    ].sort(),
     tags: [
       employmentTags.startup,
       employmentTags.social,
@@ -224,7 +224,7 @@ export const employments: IEmployment[] = [
       'Guided designers to start with responsive-first approach',
       'Educated company as to what a Creative Technologist is capable of and how they can increase productivity 2x or more',
       'Worked almost entirely remote, with 2 weeks periods in New Jersey at HQ',
-    ],
+    ].sort(),
     tags: [
       employmentTags.agency,
       employmentTags.analytics,
@@ -259,7 +259,7 @@ export const employments: IEmployment[] = [
       'Mentored lesser experienced developers and designers on quicker prototyping to meet client expectations',
       'Planned timelines lasting multiple months with cooldowns for documentation, unit testing, client revision windows',
       'First complex, production level Angular project w/ Laravel backend.',
-    ],
+    ].sort(),
     tags: [
       employmentTags.agency,
       employmentTags.analytics,
@@ -302,7 +302,7 @@ export const employments: IEmployment[] = [
       'Worked directly with Art Directors to ensure technical limitations never got in their way',
       'Consistently created well structured, re-usable, properly commented code for developers below or at same level',
       'Took on projects that required undocumented, open source frameworks and tools',
-    ],
+    ].sort(),
     tags: [
       employmentTags.agency,
       employmentTags.analytics,
@@ -343,7 +343,7 @@ export const employments: IEmployment[] = [
       'Coached and mentored employees on sustainable development, client relations, and iterative design',
       'Madonna was the largest client, breaking iTunes sales records for her album Hard Candy through shareable widget',
       'Very high output to input ratio based on my own fringe theories of development, client management, and sales strategy',
-    ],
+    ].sort(),
     leaving: '',
     tags: [
       employmentTags.agency,
@@ -388,7 +388,7 @@ export const employments: IEmployment[] = [
       'Often required and gladly participate in postmortems to make sure a knowledge transfer happened when contracts would end',
       'Documented code as it was being developed',
       'Worked directly with Art Directors in charge of multi-national brands',
-    ],
+    ].sort(),
     leaving: '',
     tags: [
       employmentTags.agency,
@@ -431,7 +431,7 @@ export const employments: IEmployment[] = [
       'Built live inventory system linked to site and Paypal',
       'Designed logo, website, and all print',
       'Put industry titans on their toes by running on close to no resources while producing products they did not think were possible',
-    ],
+    ].sort(),
     leaving: '',
     tags: [
       employmentTags.analytics,
@@ -477,7 +477,7 @@ export const employments: IEmployment[] = [
       'Helped community building through forums, online gaming, open lines of communication',
       'Helped get product into most widely played paintball game on Steam',
       'Helped design and build booth for International Amatuer Open',
-    ],
+    ].sort(),
     leaving: '',
     tags: [
       employmentTags.analytics,
@@ -504,3 +504,5 @@ export const employments: IEmployment[] = [
     ],
   },
 ];
+
+export default employments;

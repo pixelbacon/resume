@@ -1,8 +1,6 @@
-import IPersona from '@/types/IPersona';
-import { employmentTags } from '@/data/employmentTags';
-import { referenceTags } from '@/data/referenceTags';
-import { yearsIn } from '@/data/yearsIn';
-import { Persona } from '@/types/Persona';
+import employmentTags from '@/data/employmentTags';
+import yearsIn from '@/data/yearsIn';
+import { IPersona, Persona} from '@/@types';
 
 export const personas: IPersona[] = [
   {
@@ -60,3 +58,5 @@ export const personas: IPersona[] = [
     ],
   },
 ];
+
+export default personas;

@@ -1,7 +1,5 @@
 import { GetterTree } from 'vuex';
-import IEmployment from '@/types/IEmployment';
-import IEmploymentState from '@/types/IEmploymentState';
-import IRootState from '@/types/IRootState';
+import { IEmployment, IEmploymentState, IRootState } from '@/@types';
 
 export const getters: GetterTree<IEmploymentState, IRootState> = {
   hasFilters(state): boolean {

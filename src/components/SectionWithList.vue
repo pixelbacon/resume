@@ -10,12 +10,12 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class SectionWithList extends Vue {
-  @Prop() private list!: [];
+  @Prop() private list!: ['Missing list'];
   @Prop() private title!: string;
 }
 </script>
 
 <style scoped lang="stylus">
-section
-  margin-bottom 0
++b('sectionWithList')
+  margin-bottom 1em
 </style>

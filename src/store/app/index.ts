@@ -3,9 +3,8 @@ import { Module } from 'vuex';
 import { getters } from './getters';
 import { actions } from './actions';
 import { mutations } from './mutations';
-import { version } from '@/data/version';
-import IAppState from '@/types/IAppState';
-import IRootState from '@/types/IRootState';
+import { version } from '@/data';
+import { IAppState, IRootState } from '@/@types';
 
 export const state: IAppState = {
   lastVersion: Cookies.get('version') || '',
@@ -22,3 +21,5 @@ export const app: Module<IAppState, IRootState> = {
   actions,
   mutations,
 };
+
+export default app;

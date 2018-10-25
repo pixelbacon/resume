@@ -6,7 +6,7 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 import { employmentTags } from '@/data/employmentTags';
-import IPersona from '@/types/IPersona';
+import { IPersona } from '@/@types';
 
 const personaModule = namespace('persona');
 

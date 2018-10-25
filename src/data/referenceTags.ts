@@ -8,3 +8,5 @@ export const referenceTags = {
   pupil: 'pupil',
   startups: 'startups',
 };
+
+export default referenceTags;

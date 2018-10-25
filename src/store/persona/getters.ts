@@ -1,7 +1,6 @@
 import { GetterTree } from 'vuex';
-import { employments, personas, pdfUrls, references, skills } from '@/data';
-import { IEmployment, IPersonaState, IReference, IRootState, ISkillSet, Persona, IPdfUrl } from '@/@types';
-
+import { employments, personas, pdfUrls, processes, references, skills, toDos } from '@/data';
+import { IEmployment, IPersonaState, IPdfUrl, IProcess, IReference, IRootState, ISkillSet, IToDo, Persona } from '@/@types';
 
 export const getters: GetterTree<IPersonaState, IRootState> = {
   hasActivePersona(state): boolean {
@@ -22,10 +21,16 @@ export const getters: GetterTree<IPersonaState, IRootState> = {
   pdfUrl(state): IPdfUrl {
     return pdfUrls.find( (p: IPdfUrl) => p.persona === state.currentPersona.type) || pdfUrls[0];
   },
+  process(state): IProcess {
+    return processes.find( (process: IProcess) => process.persona === state.currentPersona.type) || processes[0];
+  },
   references(state): IReference[] {
     return references.filter( (reference: IReference) => reference.personas.includes(state.currentPersona.type));
   },
   skills(state): ISkillSet[] {
     return skills.filter( (skillSet: ISkillSet) => skillSet.personas.includes(state.currentPersona.type));
+  },
+  toDos(state): IToDo[] {
+    return toDos.filter( (todo: IToDo) => todo.personas.includes(state.currentPersona.type));
   },
 };

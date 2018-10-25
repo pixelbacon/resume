@@ -31,7 +31,7 @@ import PersonaTagsVue from '@/components/PersonaTags.vue';
 import ExpandVue from '@/components/Expand.vue';
 import LinkedInIconVue from '@/components/LinkedInIcon.vue';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
-import IPersona from '@/types/IPersona';
+import { IPersona } from '@/@types';
 
 const appModule = namespace('app');
 const employmentModule = namespace('employment');
@@ -69,8 +69,15 @@ export default class FilterBar extends Vue {
   }
 
   public get documentHeight(): number {
-    const body: HTMLElement = document.querySelector('body') || document.body;
-    return body.offsetHeight;
+    const D = document;
+    return Math.max(
+      D.body.scrollHeight, D.documentElement.scrollHeight,
+      D.body.offsetHeight, D.documentElement.offsetHeight,
+      D.body.clientHeight, D.documentElement.clientHeight,
+      0,
+    );
+    // const body: HTMLElement = document.querySelector('body') || document.body;
+    // return body.offsetHeight;
     // const body = document.body;
     // const html = document.documentElement;
     // return Math.max(body.scrollHeight, body.offsetHeight, body.getBoundingClientRect().height, html.clientHeight, html.scrollHeight, html.offsetHeight) || 0;
@@ -160,6 +167,8 @@ export default class FilterBar extends Vue {
 
   +e('progressBar')
     background black
+    border-right: 1px solid $theme.colors.secondary
+    box-shadow 0 0 2em rgba(black, 1)
     opacity 0.2
     position absolute
     top 0
@@ -207,14 +216,14 @@ export default class FilterBar extends Vue {
     > span
       color: $theme.colors.info
       font-weight: $theme.font.weight.extraBold
-      font-size 0.6em
-      font-style italic
+      font-size 0.8em
+      // font-style italic
       // opacity 0.8
 
       &:before
         display table
         content ' '
-        height 0
+        height 6px
 
     +above(3)
       font-size 2em

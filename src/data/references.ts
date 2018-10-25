@@ -1,7 +1,7 @@
 import { linkRef } from './linkRef';
 import { referenceTags } from './referenceTags';
-import IReference from '@/types/IReference';
-import { Persona } from '@/types/Persona';
+import IReference from '@/@types/IReference';
+import Persona from '@/@types/Persona';
 
 export const references: IReference[] = [
   {
@@ -110,7 +110,8 @@ export const references: IReference[] = [
   {
     name: 'Samantha Geitz',
     linkedIn: `http://bit.ly/michael-minor-samantha-geitz`,
-    title: 'Senior Full-Stack Application Developer at Tighten Co., Co-Founder at Betafish LLC',
+    // title: 'Senior Full-Stack Application Developer at Tighten Co., Co-Founder at Betafish LLC',
+    title: 'Technical Co-Founder at Betafish LLC',
     company: 'Betafish LLC',
     companyLink: `http://bit.ly/michael-minor-betafish`,
     personas: [
@@ -216,3 +217,5 @@ export const references: IReference[] = [
     ],
   },
 ];
+
+export default references;

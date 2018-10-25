@@ -1,7 +1,5 @@
 import { ActionTree } from 'vuex';
-
-import IAppState from '@/types/IAppState';
-import IRootState from '@/types/IRootState';
+import { IAppState, IRootState } from '@/@types';
 
 export const actions: ActionTree<IAppState, IRootState> = {
   toggleFilters({commit}): void {

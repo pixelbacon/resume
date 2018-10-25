@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-import { linkedIn, linkedInLiteral } from '@/data/linkedIn';
+import { linkedIn, linkedInLiteral } from '@/data';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component

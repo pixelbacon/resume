@@ -32,3 +32,5 @@ export const employmentTags = {
   youth: 'youth',
   ux: 'ui/ux',
 };
+
+export default employmentTags;

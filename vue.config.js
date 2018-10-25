@@ -1,10 +1,13 @@
 // vue.config.js
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
     ? '/resume/'
     : '/',
+  crossorigin:  process.env.NODE_ENV === 'production'
+    ? undefined
+    : 'anonymous',
   css: {
     loaderOptions: {
       stylus: {
@@ -15,5 +18,11 @@ module.exports = {
         ]
       }
     }
-  }
-}
+  },
+  devServer: {
+    compress: true,
+    headers: {
+      'Access-Control-Allow-Origin': '\*',
+    },
+  },
+};

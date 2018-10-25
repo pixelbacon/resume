@@ -1,5 +1,5 @@
-import { Persona } from '@/types/Persona';
-import ISkillSet from '@/types/ISkillSet';
+import Persona from '@/@types/Persona';
+import ISkillSet from '@/@types/ISkillSet';
 
 export const skills: ISkillSet[] = [
   {
@@ -42,7 +42,7 @@ export const skills: ISkillSet[] = [
   {
     title: 'Design',
     personas: [
-      // Persona.Developer,
+      Persona.Developer,
       Persona.Founder,
       Persona.Maker,
     ],
@@ -156,3 +156,5 @@ export const skills: ISkillSet[] = [
     ].sort(),
   },
 ];
+
+export default skills;

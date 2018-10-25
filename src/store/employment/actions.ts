@@ -1,6 +1,5 @@
 import { ActionTree } from 'vuex';
-import IEmploymentState from '@/types/IEmploymentState';
-import IRootState from '@/types/IRootState';
+import { IEmploymentState, IRootState } from '@/@types';
 
 const checkPersonaForCustomTags = (state: IEmploymentState, dispatch: any, rootGetters: any) => {
   if (!rootGetters['persona/hasActivePersona']) {
