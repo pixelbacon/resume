@@ -23,6 +23,9 @@ export default class App extends Mixins(UseFluid) {
 +b('footer')
   background: linear-gradient(-45deg, darken($theme.colors.primary, 90%), darken($theme.colors.secondary, 90%)) !important
   box-shadow 0 0 3em rgba(black, 0.5)
-  // font-size 0.8em !important
+  font-size 0.8em !important
   z-index 1
+
+  +above(3)
+    font-size 0.9em
 </style>
