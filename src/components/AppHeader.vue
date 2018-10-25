@@ -230,16 +230,17 @@ hr
   margin 0 auto
   margin-top 1em
   padding 0.4em 0.6em
-  font-size 0.9em
+  font-size 1.2em
   font-weight bold
-  letter-spacing 0.1em
+  // letter-spacing 0.1em
   transition all 0.25s
 
   &:hover
     color white
     background: $theme.colors.primary
+    border-radius 0.33em
     box-shadow 0 0 1em rgba(white, 0.25)
-    letter-spacing 0.2em
+    letter-spacing 0.1em
     text-decoration none
     text-shadow 0 0 0.33em rgba(black, 0.25), 0 0 1em rgba(white, 0.5)
     transform scale(1.1)
