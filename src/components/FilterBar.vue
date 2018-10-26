@@ -62,8 +62,8 @@ export default class FilterBar extends Vue {
 
   @Watch('showFilters')
   public onShowFiltersChanged(val: boolean, oldVal: boolean) {
-    document.documentElement.style.overflow = val ? 'hidden' : 'scroll';
-    // document.body.style.position = 'fixed'
+    const dde = document.documentElement as HTMLElement;
+    dde.style.overflow = val ? 'hidden' : 'scroll';
   }
 
   public get classes(): object {
