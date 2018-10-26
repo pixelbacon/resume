@@ -1,7 +1,7 @@
 <template lang="pug">
 div.personaTags
   //- h3 Hats
-  p I've worn quite a lot in many many, many years in my self taught career. This may seem 'over the top' (pun intended) but it should be helpful.
+  p I've worn quite a lot hats in my many, many years of a self taught career. This may seem 'over the top' (pun intended) but it should be helpful.
   p
     PersonaTagVue(v-for="(persona, key) in personas" :key="key" outline :persona="persona")
     //- a(v-for="(PersonaTag, key) in PersonaTags" :key="key") {{PersonaTag.title}}

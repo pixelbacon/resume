@@ -1,5 +1,6 @@
 <template lang="pug">
   div(:class="classes" v-scroll="onScroll")
+    div(@click.stop="onFilterToggleClick").filterBar__cover
     v-container(fluid).filterBar__container
       div.filterBar__bg
         div(ref="progressBar").filterBar__progressBar
@@ -59,10 +60,17 @@ export default class FilterBar extends Vue {
   public scrolledPast: boolean = false;
   public scrolledUp: boolean = false;
 
+  @Watch('showFilters')
+  public onShowFiltersChanged(val: boolean, oldVal: boolean) {
+    document.documentElement.style.overflow = val ? 'hidden' : 'scroll';
+    // document.body.style.position = 'fixed'
+  }
+
   public get classes(): object {
     return {
       [`${cssName}`]: true,
       [`${cssName}--scroll`]: this.scrolled || this.showFilters,
+      [`${cssName}--showFilters`]: this.showFilters,
       // [`${cssName}--scroll`]: this.scrolled && this.scrollDirection === 'up',
     };
   }
@@ -152,9 +160,18 @@ export default class FilterBar extends Vue {
   +m('scroll')
     padding-top 0
 
+    +e('filters')
+      opacity 1
+      transform translateY(0)
+
     +e('bg')
       opacity 1
       transform translateY(0)
+
+  +m('showFilters')
+    +e('cover')
+      opacity 0.75
+      top 0
 
   +e('bg')
     // background: darken($theme.colors.secondary, 20%)
@@ -170,6 +187,19 @@ export default class FilterBar extends Vue {
     left 0
     height 100%
     width 100%
+    z-index -1
+
+  +e('cover')
+    background black
+    display block
+    content ' '
+    opacity 0
+    position fixed
+    top 100%
+    left 0
+    right 0
+    bottom 0
+    transition all 0.5s
     z-index -1
 
   +e('progressBar')
@@ -193,6 +223,10 @@ export default class FilterBar extends Vue {
     // width 100%
 
   +e('filters')
+    opacity 0
+    transform translateY(-33%)
+    transition all 0.5s
+
     +e('set')
       margin-bottom 2em
 
@@ -221,8 +255,10 @@ export default class FilterBar extends Vue {
     padding-bottom 0
 
     +above(3)
-      font-size 5vh
+      font-size 5vw
 
+    +above(4)
+      font-size 2em
 
   +e('title')
     color: $theme.colors.info
@@ -233,7 +269,10 @@ export default class FilterBar extends Vue {
     // opacity 0.8
 
     +above(3)
-      font-size 2.5vh
+      font-size 2.5vw
+
+    +above(4)
+      font-size 1.5em
 
 // .filterBar
 //   &--scrolled

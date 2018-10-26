@@ -2,8 +2,8 @@
   div(:class="cssClass").header.print-page
     div.header__bg.screen
     //- LinkedInIconVue(:large="true")
-    v-container(fill-height).header__container
-      v-layout(align-center fill-height justify-center row wrap)
+    v-container(fill-height fluid).header__container
+      v-layout(align-center justify-center row fill-height wrap)
         v-flex(xs9 sm5 md4 lg3).p4
           img(src="../assets/me.jpg").me
         v-flex(xs12)
@@ -119,9 +119,6 @@ $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.
       background-position center center
       // background-image url("../assets/backgrounds/developer.jpg")
 
-  +e('container')
-    margin-top 4em
-
   +e('bg')
     background-position center center
     background-size cover
@@ -167,6 +164,7 @@ hr
   box-shadow: 0 0 3em rgba(black, 0.3), 0 0 6em rgba($theme.colors.secondary, 0.33), 0 0 100vw rgba($theme.colors.secondary, 1)
   overflow hidden
   margin-bottom 1em
+  margin-top 4em
   width 100%
   height auto
 

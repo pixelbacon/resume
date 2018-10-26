@@ -17,5 +17,6 @@ export default class SectionWithList extends Vue {
 
 <style scoped lang="stylus">
 +b('sectionWithList')
-  margin-bottom 1em
+  +above(3)
+    margin-bottom 1em
 </style>
