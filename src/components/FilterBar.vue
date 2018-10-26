@@ -134,7 +134,7 @@ export default class FilterBar extends Vue {
     const yPos: number = window.scrollY;
     this.scrollDirection = this.scrollPosition > yPos ? 'up' : 'down';
     this.scrollPosition = yPos;
-    this.scrolledPast = this.scrollPosition > this.$el.clientHeight / 2;
+    this.scrolledPast = this.scrollPosition > 100;
     this.scrollPer = Math.ceil(yPos / (this.documentHeight - this.windowHeight) * 100);
     // if (this.scrolledPast) {
     //   this.hideFilters();
@@ -189,8 +189,8 @@ export default class FilterBar extends Vue {
 
   +e('bg')
     // background: darken($theme.colors.secondary, 20%)
-    background: $backgrounds.info
-    box-shadow 0 0 2em rgba(black, 0.33)
+    background: $backgrounds.primary
+    box-shadow 0 0 3em rgba(black, 0.5)
     transform translateY(-100%)
     transition all 0.5s
     display block
