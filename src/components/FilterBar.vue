@@ -157,7 +157,8 @@ export default class FilterBar extends Vue {
       transform translateY(0)
 
   +e('bg')
-    background: darken($theme.colors.secondary, 20%)
+    // background: darken($theme.colors.secondary, 20%)
+    background: $backgrounds.info
     box-shadow 0 0 2em rgba(black, 0.33)
     transform translateY(-100%)
     transition all 0.5s

@@ -1,6 +1,6 @@
 <template lang="pug">
-  div.home
-    AppHeaderVue.print-page
+  div.persona
+    AppHeaderVue(ref="header").print-page
     //- IntroVideoModalVue
     div.howInbetween
       v-container( :fluid="useFluid" grid-list-xl)
