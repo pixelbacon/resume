@@ -62,8 +62,16 @@ export default class FilterBar extends Vue {
 
   @Watch('showFilters')
   public onShowFiltersChanged(val: boolean, oldVal: boolean) {
+    const db = document.body as HTMLElement;
     const dde = document.documentElement as HTMLElement;
-    dde.style.overflow = val ? 'hidden' : 'scroll';
+    db.style.overflowY =
+    dde.style.overflowY = val ? 'hidden' : 'scroll';
+
+    if (val) {
+      document.body.addEventListener('touchmove', this.onBodyTouch, { passive: false });
+    } else {
+      document.body.removeEventListener('touchmove', this.onBodyTouch);
+    }
   }
 
   public get classes(): object {
@@ -73,6 +81,12 @@ export default class FilterBar extends Vue {
       [`${cssName}--showFilters`]: this.showFilters,
       // [`${cssName}--scroll`]: this.scrolled && this.scrollDirection === 'up',
     };
+  }
+
+  public onBodyTouch(e:Event): void {
+    if (this.showFilters) {
+      e.preventDefault();
+    }
   }
 
   public get documentHeight(): number {
@@ -142,7 +156,7 @@ export default class FilterBar extends Vue {
 <style lang="stylus" scoped>
 +b('filterBar')
   position fixed
-  top 0
+  top -1px
   left 0
   width 100%
   z-index: $depths.filterBar
@@ -224,7 +238,7 @@ export default class FilterBar extends Vue {
 
   +e('filters')
     opacity 0
-    transform translateY(-33%)
+    transform translateY(-15%)
     transition all 0.5s
 
     +e('set')
