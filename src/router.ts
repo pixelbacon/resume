@@ -21,16 +21,6 @@ const personaRoutes: RouteConfig[] = personas.map((persona: IPersona): RouteConf
 }));
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: Home,
-  //   beforeEnter(to, any, next): void {
-  //     console.log(routes);
-  //     // alert(routes.toString());
-  //     next();
-  //   },
-  // },
   ...personaRoutes,
   // {
   //   path: '/about',
