@@ -83,7 +83,7 @@ export default class FilterBar extends Vue {
     };
   }
 
-  public onBodyTouch(e:Event): void {
+  public onBodyTouch(e: Event): void {
     if (this.showFilters) {
       e.preventDefault();
     }
