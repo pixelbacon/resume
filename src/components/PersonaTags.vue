@@ -1,6 +1,6 @@
 <template lang="pug">
-div.filterBar__PersonaTags
-  h3 Hats
+div.personaTags
+  //- h3 Hats
   p I've worn quite a lot in many many, many years in my self taught career. This may seem 'over the top' (pun intended) but it should be helpful.
   p
     PersonaTagVue(v-for="(persona, key) in personas" :key="key" outline :persona="persona")
@@ -25,6 +25,7 @@ export default class SimpleComponent extends Vue {
 <style lang="stylus" scoped>
 +b('personaTags')
   color white
+  text-align center
 
 +$hTags()
   color white

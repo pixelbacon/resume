@@ -6,7 +6,7 @@ export const personas: IPersona[] = [
   {
     type: Persona.Maker,
     slug: '/',
-    title: 'Maker',
+    title: 'Creative Technologist',
     subTitle: 'Maker of Things + Creative Technologist',
     description: [
       `Creating, designing, developing, pitching, and sustaining brands for ${yearsIn} years. I keep seeing there is little value in being right compared to the far greater value in knowing when you're wrong. And most importantly having a team to figure out what that means.`,

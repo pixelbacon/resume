@@ -1,13 +1,13 @@
 <template lang="pug">
   div(:class="cssClass").header.print-page
     div.header__bg.screen
-    LinkedInIconVue(:large="true")
-    v-container()
-      v-layout(align-center justify-center row wrap)
-        v-flex(xs10 sm6 md4 lg3).p4
+    //- LinkedInIconVue(:large="true")
+    v-container(fill-height).header__container
+      v-layout(align-center fill-height justify-center row wrap)
+        v-flex(xs9 sm5 md4 lg3).p4
           img(src="../assets/me.jpg").me
         v-flex(xs12)
-          h1.name Michael Minor
+          h1.name.print Michael Minor
           div.subTitle.h2 {{currentPersona.subTitle}}
         v-flex(xs12 sm10 md9).summary.p10
           div.header__description
@@ -119,6 +119,9 @@ $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.
       background-position center center
       // background-image url("../assets/backgrounds/developer.jpg")
 
+  +e('container')
+    margin-top 4em
+
   +e('bg')
     background-position center center
     background-size cover
@@ -198,7 +201,7 @@ hr
   // color: lighten($theme.colors.secondary, 80%)
   font-size 2em
   font-weight: $theme.font.weight.bold
-  margin-bottom 1em
+  // margin-bottom 1em
 
 .linkedInIcon
   $screen-only()

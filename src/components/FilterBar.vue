@@ -1,37 +1,36 @@
 <template lang="pug">
   div(:class="classes" v-scroll="onScroll")
     v-container(fluid).filterBar__container
-      div(ref="progressBar").filterBar__progressBar
+      div.filterBar__bg
+        div(ref="progressBar").filterBar__progressBar
       v-layout(row wrap align-center justify-space-between)
         v-flex
-          h1.filterBar__title Michael Minor
-            span {{currentPersona.title}}
+          h1.filterBar__name Michael Minor
+          ExpandVue
+            div(v-if="scrolled").filterBar__title {{currentPersona.title}}
         v-flex.filterBar__tools
           ul
             li
-              LinkedInIconVue(:large="largeIcons")
+              LinkedInIconVue(large)
             li
               a(title="Toggle Filters" @click.stop="onFilterToggleClick")
-                v-icon(color="primary" :large="largeIcons") mdi-filter-outline
+                v-icon(color="primary" large) mdi-filter-outline
       ExpandVue
         div(v-if="showFilters").filterBar__filters
           hr
           PersonaTagsVue.filterBar__filters__set.filterBar__personas
-
 </template>
 
 <script lang="ts">
 import { TweenMax } from 'gsap';
 import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
-import {
-  namespace,
-} from 'vuex-class';
-import { personas } from '@/data/personas';
+import { namespace } from 'vuex-class';
+import { personas } from '@/data';
+import { IPersona } from '@/@types';
 import PersonaTagsVue from '@/components/PersonaTags.vue';
 import ExpandVue from '@/components/Expand.vue';
 import LinkedInIconVue from '@/components/LinkedInIcon.vue';
 import EmploymentTagVue from '@/components/EmploymentTag.vue';
-import { IPersona } from '@/@types';
 
 const appModule = namespace('app');
 const employmentModule = namespace('employment');
@@ -63,7 +62,7 @@ export default class FilterBar extends Vue {
   public get classes(): object {
     return {
       [`${cssName}`]: true,
-      [`${cssName}--scroll`]: this.scrolled,
+      [`${cssName}--scroll`]: this.scrolled || this.showFilters,
       // [`${cssName}--scroll`]: this.scrolled && this.scrollDirection === 'up',
     };
   }
@@ -134,8 +133,6 @@ export default class FilterBar extends Vue {
 
 <style lang="stylus" scoped>
 +b('filterBar')
-  background: darken($theme.colors.secondary, 20%)
-  box-shadow 0 0 2em rgba(black, 0.5)
   position fixed
   top 0
   left 0
@@ -143,18 +140,36 @@ export default class FilterBar extends Vue {
   z-index: $depths.filterBar
   max-height 100vh
   overflow visible
-  opacity 0
-  transform translateY(-100%)
+  padding-top 0.5em
   transition all 0.5s
 
+  +above(3)
+    padding-top 1em
+
+  +above(4)
+    padding-top 2em
+
   +m('scroll')
-    opacity 1
-    transform translateY(0)
+    padding-top 0
 
-    // +e('tools')
-    //   opacity 1
+    +e('bg')
+      opacity 1
+      transform translateY(0)
 
-    // +e('container')
+  +e('bg')
+    background: darken($theme.colors.secondary, 20%)
+    box-shadow 0 0 2em rgba(black, 0.33)
+    transform translateY(-100%)
+    transition all 0.5s
+    display block
+    content ' '
+    opacity 0
+    position absolute
+    top 0
+    left 0
+    height 100%
+    width 100%
+    z-index -1
 
   +e('progressBar')
     background black
@@ -164,7 +179,7 @@ export default class FilterBar extends Vue {
     position absolute
     top 0
     left 0
-    width 100%
+    width 0
     bottom 0
     display block
     content ' '
@@ -198,26 +213,26 @@ export default class FilterBar extends Vue {
       +above(3)
         margin-left 1em
 
-  +e('title')
+  +e('name')
     font-size 12px
     font-size 6vw
-    line-height 0.7em
+    line-height 0.8em
     padding-bottom 0
 
-    > span
-      color: $theme.colors.info
-      font-weight: $theme.font.weight.extraBold
-      font-size 0.8em
-      // font-style italic
-      // opacity 0.8
+    +above(3)
+      font-size 5vh
 
-      &:before
-        display table
-        content ' '
-        height 6px
+
+  +e('title')
+    color: $theme.colors.info
+    font-weight: $theme.font.weight.extraBold
+    font-size 0.8em
+    font-size 4vw
+    // font-style italic
+    // opacity 0.8
 
     +above(3)
-      font-size 2em
+      font-size 2.5vh
 
 // .filterBar
 //   &--scrolled
