@@ -65,7 +65,7 @@ export default class FilterBar extends Vue {
     const db = document.body as HTMLElement;
     const dde = document.documentElement as HTMLElement;
     db.style.overflowY =
-    dde.style.overflowY = val ? 'hidden' : 'scroll';
+    dde.style.overflowY = val ? 'hidden' : 'auto';
 
     if (val) {
       document.body.addEventListener('touchmove', this.onBodyTouch, { passive: false });
