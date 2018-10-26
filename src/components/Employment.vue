@@ -10,6 +10,7 @@
       v-layout(row wrap).employments__employment
         v-flex(xs12 v-for="(employment, index) in computedEmployments" :key="index" v-if="index < viewLimit").p6
           EmploymentItemVue(:employment="employment")
+      MoreOnVue.screen
 </template>
 
 <script lang="ts">
@@ -50,7 +51,7 @@ export default class Employment extends Mixins(UseFluid) {
   }
 
   public get viewLimit(): number {
-    return this.hasFilters ? 99 : 5;
+    return this.hasFilters ? 99 : 6;
   }
 }
 </script>
