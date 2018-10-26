@@ -107,6 +107,10 @@ $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.
     +e('bg')
       // background-image url("../assets/backgrounds/david-kovalenko-414249-unsplash.jpg")
       background-image url("../assets/backgrounds/developer-mixed.jpg")
+      background-position left center
+
+      +above(4)
+        background-position center center
 
   +m('founder')
     +e('bg')
@@ -116,7 +120,11 @@ $printBg = linear-gradient(135deg, rgba($theme.colors.accent, 0.6), rgba($theme.
   +m('maker')
     +e('bg')
       background-image url("../assets/backgrounds/emmad-216134-unsplash.jpg")
-      background-position center center
+      // background-image url("../assets/backgrounds/hide-obara-434309-unsplash.jpg")
+      background-position right center
+
+      +above(4)
+        // background-position center center
       // background-image url("../assets/backgrounds/developer.jpg")
 
   +e('bg')
