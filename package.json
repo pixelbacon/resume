@@ -26,7 +26,7 @@
     "gsap": "^2.0.2",
     "js-cookie": "^2.2.0",
     "localtunnel": "^1.9.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "material-design-icons-iconfont": "^3.0.3",
     "moment": "^2.22.2",
     "moment-range": "^4.0.1",
